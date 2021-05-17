@@ -20,10 +20,7 @@
     <title><?= $title ?></title>
 </head>
 <body>
-    
-<h1>
-  Click on the hamburger icon →
-</h1>
+
 <div  class="open">
 	<span class="cls"></span>
 	<span>
