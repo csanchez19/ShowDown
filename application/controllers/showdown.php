@@ -14,7 +14,6 @@ class showdown extends CI_Controller {
 	{
 		$data['title'] = 'ShowDown! - Competeix i guanya!';
 
-        $data['carles'] = 'tus huevos';
         $this->template->load('layout', 'home', $data);
 	}
 }
