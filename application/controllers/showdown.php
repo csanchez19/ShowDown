@@ -7,10 +7,14 @@ class showdown extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->helper(array('form', 'url'));
+                $this->load->library('template');
         }
 
 	public function index()
 	{
-		$this->load->view('home');
+		$data['title'] = 'ShowDown! - Competeix i guanya!';
+
+        $data['carles'] = 'tus huevos';
+        $this->template->load('layout', 'home', $data);
 	}
 }
