@@ -27,22 +27,17 @@
 	<span>
 		<ul class="sub-menu ">
 			<li>
-				<a href="#about" title="about">Sobre / About</a>
+				<a href="#perfil" title="perfil">Perfil</a>
 			</li>
 			<li>
-				<a href="#skills" title="skills">Habilidades / Skills</a>
+				<a href="#winners" title="Winners League">Winners League</a>
 			</li>
 			<li>
-				<a href="#jobs" title="jobs">Trabalhos / Jobs</a>
-			</li>
-			<li>
-				<a href="#contact" title="contact">Contato / Contact</a>
+				<a href="#termes" title="Termes i condicions">Termes i condicions</a>
 			</li>
 		</ul>
 	</span>
 	<span class="cls"></span>
-</div>
-
 </div>
 
     <?= $contents ?>

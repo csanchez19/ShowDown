@@ -14,6 +14,22 @@ class showdown extends CI_Controller {
 	{
 		$data['title'] = 'ShowDown! - Competeix i Guanya!';
 
-        $this->template->load('layout', 'home', $data);
+                $this->template->load('layout', 'home', $data);
 	}
+
+        public function register_user(){
+
+                $data['title'] = 'ShowDown! - Registrat!';
+
+                $this->template->load('layout', 'register_user', $data);
+        }
+
+        public function login(){
+
+                $data['title'] = 'ShowDown! - Loguejat!';
+
+                $this->template->load('layout', 'login', $data);
+        }
 }
+
+?>
