@@ -12,13 +12,7 @@ class showdown extends CI_Controller {
 
 	public function index()
 	{
-<<<<<<< HEAD
-		$data['title'] = 'ShowDown! - i ';
-=======
 		$data['title'] = 'ShowDown! - Competeix i Guanya!';
->>>>>>> e139352988d734d9b6df90b956afc1e0bbfde527
-
-        $data['test'] = 'Victor';
 
         $this->template->load('layout', 'home', $data);
 	}
