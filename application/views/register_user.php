@@ -11,6 +11,7 @@
             <?php
                 echo form_open('showdown/register_user');
 
+                    //NOM
                     echo '<div class="form-group">';
                     echo form_label('Nom', 'nom');
                     $valueNom = (!empty($nom))?$nom:'';
@@ -22,7 +23,8 @@
                     echo form_input($dataNom);
                     echo form_error('nom'); 
                     echo '</div>';
-
+                    
+                    //COGNOMS
                     echo '<div class="form-group">';
                     echo form_label('Cognoms', 'cognoms');
                     $valueCognoms = (!empty($cognoms))?$cognoms:'';
