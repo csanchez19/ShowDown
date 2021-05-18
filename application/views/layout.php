@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.tutorialjinni.com/jquery-bracket/0.11.1/jquery.bracket.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css">
+    <link rel="shortcut icon" href="<?php echo base_url() ;?> favicon.png">
     <!--<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom.css">-->
     <script src="<?php echo base_url(); ?>hamburger/script.js"></script>
     <!--SCRIPTS-->
@@ -35,6 +36,12 @@
 			<li>
 				<a href="#termes" title="Termes i condicions">Termes i condicions</a>
 			</li>
+            <li>
+                <?php echo anchor('showdown/register_user', 'Registrar-se', 'class="h1, btn, btn-danger"') ?>
+            </li>
+            <li>
+                <?php echo anchor('showdown/login', 'Login', 'class="h1, btn, btn-danger"') ?>
+            </li>
 		</ul>
 	</span>
 	<span class="cls"></span>
