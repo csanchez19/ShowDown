@@ -25,6 +25,8 @@
 	<script src="sweetalert2.all.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="sweetalert2.min.js"></script>
+    <!--Scripts nuestros-->
+    <script src = "<?php echo base_url(); ?>js/functions.js"></script>
 
     <title><?= $title ?></title>
 </head>
@@ -61,19 +63,19 @@
     <footer></footer>
 
     <script>
-        $(document).ready(function() {
-		$(document).delegate('.open', 'click', function(event){
-			$(this).addClass('oppenned');
-			event.stopPropagation();
-		})
-		$(document).delegate('body', 'click', function(event) {
-			$('.open').removeClass('oppenned');
-		})
-		$(document).delegate('.cls', 'click', function(event){
-			$('.open').removeClass('oppenned');
-			event.stopPropagation();
-		});
-	});
+     $(document).ready(function() {
+        $(document).delegate('.open', 'click', function(event){
+            $(this).addClass('oppenned');
+            event.stopPropagation();
+        })
+        $(document).delegate('body', 'click', function(event) {
+            $('.open').removeClass('oppenned');
+        })
+        $(document).delegate('.cls', 'click', function(event){
+            $('.open').removeClass('oppenned');
+            event.stopPropagation();
+        });
+    });
 
     function goRegister()
     {
