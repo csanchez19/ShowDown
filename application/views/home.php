@@ -1,7 +1,7 @@
 
 <div class="container-fluid top_div">
     <div class="row">
-        <div class="col-lg-5 offset-lg-6 col-12 div_botones">
+        <div class="col-lg-5 offset-lg-5 col-12 div_botones">
             <h1 class="text-center">ShowDown! <br> Competeix i Guanya!</h1>
             <div class="row mt-5">
                 <div class="col-6 text-center">

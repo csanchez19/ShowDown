@@ -29,6 +29,7 @@
     </div>
 </div>
 
+
 <div  class="open">
 	<span class="cls"></span>
 	<span>
@@ -42,12 +43,6 @@
 			<li>
 				<a href="#termes" title="Termes i condicions">Termes i condicions</a>
 			</li>
-            <li>
-                <?php echo anchor('showdown/register_user', 'Registrar-se', 'class="h1, btn, btn-danger"') ?>
-            </li>
-            <li>
-                <?php echo anchor('showdown/login', 'Login', 'class="h1, btn, btn-danger"') ?>
-            </li>
 		</ul>
 	</span>
 	<span class="cls"></span>
