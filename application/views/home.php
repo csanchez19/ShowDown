@@ -8,7 +8,7 @@
                     <button class="btnLogin">LOGUEJAR-SE</button>
                 </div>
                 <div class="col-6 text-center">
-                    <button class="btnRegister">REGISTRAR-SE</button>
+                    <?php echo anchor('Controlador_Final/register_user', 'REGISTRAR-SE', 'class="btnRegister"'); ?>
                 </div>
             </div>
         </div>
