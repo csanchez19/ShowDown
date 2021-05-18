@@ -4,8 +4,8 @@
     <h1> ShowDown! - Registrat! </h1>
 </header>
 
-<div class="container form">
-        <div class="col-xl-12">
+<div class="container form mt-5">
+        <div class="marco col-xl-12">
             <h3> Registre </h3>
 
             <?php
