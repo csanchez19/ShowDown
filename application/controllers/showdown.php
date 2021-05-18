@@ -37,7 +37,7 @@ class showdown extends CI_Controller {
                         $this->form_validation->set_rules('nom', 'Nom', 'required|max_length[20]',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
                         $this->form_validation->set_rules('cognoms', 'Cognoms', 'required|max_length[40]',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
                         $this->form_validation->set_rules('usuari', 'Usuari', 'required|max_length[20]|is_unique[usuaris.usuari]',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.', 'is_unique' => 'Aquest usuari ja existeix.'));
-                        $this->form_validation->set_rules('dni', 'Dni', 'required|max_length[9]',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
+                        $this->form_validation->set_rules('dni', 'Dni', 'required|max_length[9]|callback_valid_dni',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.', 'valid_dni' => 'El dni es incorrecte.'));
                         $this->form_validation->set_rules('correu', 'Correu', 'required|valid_email',array('required' => 'Obligatori omplir el camp %s', 'valid_email' => 'El correu introduït ha de tenir un format vàlid.'));
                         $this->form_validation->set_rules('naix', 'Data de naixement', 'required',array('required' => 'Obligatori omplir el camp %s'));
                         $this->form_validation->set_rules('password', 'Password', 'required',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
