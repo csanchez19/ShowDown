@@ -5,3 +5,10 @@ header h1{
 .form{
     color:#ad1414; 
 }
+
+.marco{
+    border: 2px solid red;
+    border-radius: 5px;
+    box-shadow: -1px 1px 10px 0px;
+    padding: 40px;
+}
