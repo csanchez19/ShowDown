@@ -12,3 +12,8 @@ header h1{
     box-shadow: -1px 1px 10px 0px;
     padding: 40px;
 }
+
+.btn-primary{
+    background-color: #BA181B !important;
+    border: black;
+}
