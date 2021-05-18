@@ -135,7 +135,7 @@
                     $dataButton = array(
                         'name' => 'register',
                         'value' => 'Registrar-se',
-                        'class' => 'btnRegister mt-4'
+                        'class' => 'custom-btn btn-5 mt-4'
                     );
                     echo '<div class="form-group text-center">';
                     echo form_submit($dataButton);
