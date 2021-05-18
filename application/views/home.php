@@ -4,12 +4,29 @@
         <div class="text-center col-12 div_botones">
             <h1 class="text-center">ShowDown! <br> Competeix i Guanya!</h1>
             <div class="row mt-5">
-                <div class="col-6 text-right">
+                <!--<div class="col-6 text-right">
                     <button onclick="goLogin()" class="btnLogin">LOGUEJAR-SE</button>
                 </div>
                 <div class="col-6 text-left">
                     <button onclick="goRegister()" class="btnRegister">REGISTRAR-SE</button>
-                </div>
+                </div>-->
+                <?php
+                    if($this->session->userdata('username') != ''){
+                        echo '<div class="col-6 text-right">
+                                <button onclick="goLogin()" class="btnLogin">CREAR TORNEIG</button>
+                            </div>
+                            <div class="col-6 text-left">
+                                <button onclick="goRegister()" class="btnRegister">BUSCAR TORNEIG</button>
+                            </div>';
+                    }else{
+                        echo '<div class="col-6 text-right">
+                                <button onclick="goLogin()" class="btnLogin">LOGUEJAR-SE</button>
+                            </div>
+                            <div class="col-6 text-left">
+                                <button onclick="goRegister()" class="btnRegister">REGISTRAR-SE</button>
+                            </div>';
+                    }  
+                ?>
             </div>
         </div>
     </div>

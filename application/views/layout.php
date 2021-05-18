@@ -36,6 +36,15 @@
     <div class="col-12 text-center">
         <a href="<?php echo base_url(); ?>"><img class="logo text-center" src="<?php echo base_url(); ?>content/img/logo.png" alt=""></a>
     </div>
+	<?php
+		if($this->session->userdata('username') != '')  
+		{  
+			echo '<div class="user">';
+			echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b> <img style="border-radius: 50%;" src="'.base_url().'content/img/user-img.png" width="2%"></p>'; 
+			echo '<a class="btn btn-dark" href="'.base_url().'index.php/showdown/logout">Logout</a>'; 
+			echo '</div>';
+		}  
+	?>
 </div>
 
 

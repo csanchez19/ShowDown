@@ -13,6 +13,11 @@
     }
 
 
+a{
+    text-decoration: none !important;
+    color: white !important;
+}
+
 .div_botones
 {
     margin-top: 10rem !important;
@@ -30,6 +35,15 @@ body
     text-align: center !important;
     left: 40%;
     width: 20%;
+}
+
+/*css logged-in*/
+.user{
+    position: absolute;
+    text-align: left !important;
+    color: white;
+    left: 10%;
+    top: 5%;
 }
 
 .btnLogin

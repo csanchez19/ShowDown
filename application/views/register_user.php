@@ -1,10 +1,13 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>css/register.css">
+<div class="container-fluid top_div">
+    <div class="row">
+        <div class="text-center col-12 div_botones">
+            <h1 class="text-center">ShowDown! <br> Registrat i comença a competir</h1>
+        </div>
+    </div>
+</div>
 
-<header class="text-center">
-    <h1></h1>
-</header>
-
-<div class="container form mt-5">
+<div class="container form">
         <div class="marco col-xl-12">
             <?php
                 echo form_open('showdown/validation');
@@ -132,7 +135,7 @@
                     $dataButton = array(
                         'name' => 'register',
                         'value' => 'Registrar-se',
-                        'class' => 'btn btn-primary mt-4'
+                        'class' => 'btnRegister mt-4'
                     );
                     echo '<div class="form-group text-center">';
                     echo form_submit($dataButton);

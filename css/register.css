@@ -6,7 +6,10 @@
     border: 2px solid red;
     border-radius: 5px;
     box-shadow: -1px 1px 10px 0px;
+    background-color: black;
     padding: 40px;
+    position: relative;
+    top: -110px;
 }
 
 .btn-primary{

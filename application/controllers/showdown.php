@@ -82,6 +82,9 @@ class showdown extends CI_Controller {
                                         );
                                         $this->session->set_userdata($session_data);
                                         redirect(base_url()); 
+                                }else{
+                                        $this->session->set_flashdata('error', 'Invalid Username and/or Password'); 
+                                        redirect(base_url() . 'index.php/showdown/login'); 
                                 }
 
                         }
@@ -95,6 +98,12 @@ class showdown extends CI_Controller {
 
                 $this->template->load('layout', 'login', $data);
         }
+
+        //LOG OUT
+        public function logout(){  
+                $this->session->unset_userdata('username');  
+                redirect(base_url());  
+        } 
 
         /**
         * Valid DNI
