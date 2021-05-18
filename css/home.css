@@ -1,9 +1,9 @@
 .top_div
 {
-    /*background: url(../content/img/top.jpg);*/
+    background: url(../content/img/top2.png);
     background-size: cover;
     background-attachment: fixed;
-    height: 70%;
+    height: 79%;
 }
 
     .top_div h1
@@ -14,5 +14,44 @@
 
 .div_botones
 {
-    margin-top: 6rem !important;
+    margin-top: 10rem !important;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+
+.logo
+{
+    position: absolute;
+    text-align: center !important;
+    left: 40%;
+    width: 20%;
+}
+
+.btnLogin
+{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: black;
+    border: 2px solid #d00;
+    color: #d00;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.btnRegister
+{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #d00;
+    border: 2px solid black;
+    color: black;
+    font-weight: 700;
+    font-size: 1.2em;
 }

@@ -23,32 +23,6 @@
 </head>
 <body>
 
-<style>
-    body
-    {
-        overflow-x: hidden;
-    }
-
-    .logo
-    {
-        position: absolute;
-        text-align: center !important;
-        left: 40%;
-        width: 20%;
-    }
-
-    .difuminado
-    {
-        height: 70vh;
-        background: url(../content/img/top.jpg);
-        z-index: -99;
-    }
-</style>
-
-<div class="difuminado">
-
-</div>
-
 <div class="row">
     <div class="col-12 text-center">
         <img class="logo text-center" src="<?php echo base_url(); ?>content/img/logo.png" alt="">
