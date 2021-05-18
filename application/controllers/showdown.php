@@ -63,7 +63,7 @@ class showdown extends CI_Controller {
                         }
                 }else if(isset($_POST['login'])){
                         $this->form_validation->run();
-                        $this->form_validation->set_rule('usuari', 'Usuari', 'required|max_length[20]', array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
+                        $this->form_validation->set_rules('usuari', 'Usuari', 'required|max_length[20]', array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
                         $this->form_validation->set_rules('password3', 'Password', 'required',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
                 
                         $dades=$this->input->post();

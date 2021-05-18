@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Farro&family=Montserrat&display=swap');
+
 .top_div
 {
     background: url(../content/img/top2.png);
@@ -19,6 +21,7 @@
 body
 {
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .logo
@@ -65,7 +68,7 @@ body
 .btnRegister:hover
 {
     cursor: pointer;
-    color: red;
+    color: white;
     animation: goBig 2s infinite;
 }
 
