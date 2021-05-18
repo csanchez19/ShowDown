@@ -293,3 +293,14 @@ html {
       transform: translatey(-5px);
     }
   }
+
+  .logo
+  {
+    position: absolute;
+    width: 70%;
+  }
+
+  .difuminado
+  {
+      background: url("../content/img/top.jpg");
+  }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.tutorialjinni.com/jquery-bracket/0.11.1/jquery.bracket.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/home.css">
     <link rel="shortcut icon" href="<?php echo base_url() ;?> favicon.png">
     <!--<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom.css">-->
     <script src="<?php echo base_url(); ?>hamburger/script.js"></script>
@@ -22,6 +23,37 @@
 </head>
 <body>
 
+<style>
+    body
+    {
+        overflow-x: hidden;
+    }
+
+    .logo
+    {
+        position: absolute;
+        text-align: center !important;
+        left: 40%;
+        width: 20%;
+    }
+
+    .difuminado
+    {
+        height: 70vh;
+        background: url(../content/img/top.jpg);
+        z-index: -99;
+    }
+</style>
+
+<div class="difuminado">
+
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <img class="logo text-center" src="<?php echo base_url(); ?>content/img/logo.png" alt="">
+    </div>
+</div>
 
 <div  class="open">
 	<span class="cls"></span>
