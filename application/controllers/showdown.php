@@ -83,7 +83,7 @@ class showdown extends CI_Controller {
                                         $this->session->set_userdata($session_data);
                                         redirect(base_url()); 
                                 }else{
-                                        $this->session->set_flashdata('error', 'Invalid Username and/or Password'); 
+                                        $this->session->set_flashdata('error', 'Usuari o contrasenya incorrectes.'); 
                                         redirect(base_url() . 'index.php/showdown/login'); 
                                 }
 

@@ -10,6 +10,11 @@
 
 <div class="container form">
         <div class="marco col-xl-12">
+                <?php 
+                    echo '<div class="text-center">';
+                    echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';
+                    echo '</div>';
+                ?>
             <?php
                 echo form_open('showdown/validation');
 
