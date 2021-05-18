@@ -70,12 +70,12 @@
 
     function goRegister()
     {
-        $.get("showdown/register_user");
+        window.location.href = "/ShowDown/index.php/showdown/register_user";
     }
 
     function goLogin()
     {
-        $.get("showdown/login");
+        window.location.href = "/ShowDown/index.php/showdown/login";
     }
     </script>
     
