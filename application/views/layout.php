@@ -67,6 +67,16 @@
 			event.stopPropagation();
 		});
 	});
+
+    function goRegister()
+    {
+        $.get("showdown/register_user");
+    }
+
+    function goLogin()
+    {
+        $.get("showdown/login");
+    }
     </script>
     
 
