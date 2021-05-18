@@ -25,6 +25,8 @@ a{
 
 body
 {
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
 }
@@ -118,15 +120,15 @@ body
     -webkit-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
     -moz-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
     box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
-    -webkit-box-shadow: 14px 14px 0px -2px rgb(168, 21, 24);
-    -moz-box-shadow: 14px 14px 0px -2px rgb(168, 21, 24);
-    box-shadow: 14px 14px 0px -2px rgb(168, 21, 24);
+    -webkit-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
+    -moz-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
+    box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
 }
 
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: black;
+    color: white;
     border-radius: 0px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
@@ -230,4 +232,12 @@ body
   .btn-6:hover:after{
     width:100%;
     transition:800ms ease all;
+  }
+
+  .titolActius
+  {
+      margin-top: 6rem;
+      color: white;
+      font-weight: 600;
+      font-style: italic;
   }

@@ -77,17 +77,17 @@
                 </div>-->
                 <?php
                     if($this->session->userdata('username') != ''){
-                        echo '<div class="col-6 text-right">
+                        echo '<div class="col-lg-6 col-12 text-right mt-5 mt-lg-0">
                                 <button onclick="goLogin()" class="custom-btn btn-5"><span>CREAR TORNEIG</span></button>
                             </div>
-                            <div class="col-6 text-left">
+                            <div class="col-lg-6 col-12 text-left mt-lg-0 mt-5">
                                 <button onclick="goRegister()" class="custom-btn btn-6">BUSCAR TORNEIG</button>
                             </div>';
                     }else{
-                        echo '<div class="col-6 text-right">
+                        echo '<div class="col-lg-6 col-12 text-right mt-5 mt-lg-0">
                                 <button onclick="goLogin()" class="custom-btn btn-5"><span>LOGUEJAR-SE</span></button>
                             </div>
-                            <div class="col-6 text-left">
+                            <div class="col-lg-6 col-12 text-left mt-5 mt-lg-0">
                                 <button onclick="goRegister()" class="custom-btn btn-6">REGISTRAR-SE</button>
                             </div>';
                     }  
@@ -98,18 +98,25 @@
 </div>
 
 <div class="container mt-5">
-    <table class="caja text-center">
-        <tr class="fila">
-            <td><p class="text">Crea o Apuntat a tornejos!</p></td>
-        </tr>
-        <tr class="fila">
-            <td><p class="text">Acumula punts mentre jugues!</p></td>
-        </tr>
-        <tr class="fila">
-            <td><p class="text">Intercanvia els punts a la nostra Winners League!</p></td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-12">
+            <table class="caja text-center">
+                <tr class="fila">
+                    <td><p class="text">Crea o Apuntat a tornejos!</p></td>
+                </tr>
+                <tr class="fila">
+                    <td><p class="text">Acumula punts mentre jugues!</p></td>
+                </tr>
+                <tr class="fila">
+                    <td><p class="text">Intercanvia els punts a la nostra Winners League! <span class="badge bg-danger"> New! </span></p></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 
+<div class="container">
+    <h2 class="text-center titolActius">TORNEJOS ACTIUS</h2>
     <div class="row">
         <div class="col-12">
 
