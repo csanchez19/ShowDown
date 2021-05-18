@@ -27,10 +27,13 @@ class showdown extends CI_Controller {
         //VISTA REGISTRE PERSONA
         public function register_user(){
 
-                $data['title'] = 'ShowDown! - Registrat!';
+                $this->template->load('layout', 'register_user');
 
-                $this->template->load('layout', 'register_user', $data);
+                
+        }
 
+        //VALIDACIO DADES USUARI
+        public function validation(){
                 if(isset($_POST['register'])){
                         $this->form_validation->run();
                         $this->form_validation->set_rules('nom', 'Nom', 'required|max_length[20]',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));

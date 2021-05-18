@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>css/register.css">
 
 <header class="text-center">
-    <h1> <?= $title ?> </h1>
+    <h1> ShowDown! - Registrat! </h1>
 </header>
 
 <div class="container form">
@@ -9,7 +9,7 @@
             <h3> Registre </h3>
 
             <?php
-                echo form_open('showdown/register_user');
+                echo form_open('showdown/validation');
 
                     //NOM
                     echo '<div class="form-group">';
