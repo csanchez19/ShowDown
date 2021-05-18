@@ -9,6 +9,7 @@ class showdown extends CI_Controller {
                 $this->load->helper(array('form', 'url'));
                 $this->load->library('template');
                 $this->load->library('form_validation');
+                $this->load->library('session');
                 $this->load->database();
         }
 
@@ -58,7 +59,31 @@ class showdown extends CI_Controller {
                                 echo 'alert("Usuari registrat correctament. Ja pots loguejar-te")';
                                 echo '</script>';
                                 
-                                $this->template->load('layout', 'home', $dades);
+                                redirect(base_url()); 
+                        }
+                }else if(isset($_POST['login'])){
+                        $this->form_validation->run();
+                        $this->form_validation->set_rule('usuari', 'Usuari', 'required|max_length[20]', array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
+                        $this->form_validation->set_rules('password3', 'Password', 'required',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
+                
+                        $dades=$this->input->post();
+
+                        if($this->form_validation->run() == FALSE){
+                                $this->template->load('layout', 'login', $dades);
+                        }else{
+                                $username = $this->input->post('usuari');
+                                $password = $this->input->post('password3');
+
+                                //modelo can login
+                                $this->load->model('users_model');
+                                if($this->users_model->can_login($username, $password)){
+                                        $session_data = array(
+                                                'username' => $username
+                                        );
+                                        $this->session->set_userdata($session_data);
+                                        redirect(base_url()); 
+                                }
+
                         }
                 }
         }

@@ -25,6 +25,18 @@
 
             return $num_files;
         }
+
+        public function can_login($username, $password){
+            $this->db->where('usuari', $username);
+            $this->db->where('contrasenya', $password);
+            $query = $this->db->get('usuaris'); //SELECT * FROM usuaris WHERE usuari = '$username' AND contrasenya = '$password'
+        
+            if($query->num_rows() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 
 
