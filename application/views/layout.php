@@ -32,7 +32,7 @@
 
 <div class="row">
     <div class="col-12 text-center">
-        <img class="logo text-center" src="<?php echo base_url(); ?>content/img/logo.png" alt="">
+        <a href="<?php echo base_url(); ?>"><img class="logo text-center" src="<?php echo base_url(); ?>content/img/logo.png" alt=""></a>
     </div>
 </div>
 

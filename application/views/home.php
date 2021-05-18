@@ -5,7 +5,7 @@
             <h1 class="text-center">ShowDown! <br> Competeix i Guanya!</h1>
             <div class="row mt-5">
                 <div class="col-6 text-right">
-                    <button onclick="goLogin()" class="btnLogin">LOGEJAR-SE</button>
+                    <button onclick="goLogin()" class="btnLogin">LOGUEJAR-SE</button>
                 </div>
                 <div class="col-6 text-left">
                     <button onclick="goRegister()" class="btnRegister">REGISTRAR-SE</button>
@@ -30,7 +30,7 @@
 
     <div class="row">
         <div class="col-12">
-            
+
         </div>
     </div>
 </div>
