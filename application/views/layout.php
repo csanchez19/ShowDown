@@ -74,6 +74,16 @@
 			event.stopPropagation();
 		});
 	});
+
+    function goRegister()
+    {
+        window.location.href = "/ShowDown/index.php/showdown/register_user";
+    }
+
+    function goLogin()
+    {
+        window.location.href = "/ShowDown/index.php/showdown/login";
+    }
     </script>
     
 
