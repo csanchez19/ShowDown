@@ -52,10 +52,11 @@
             </table>
         </div>
     </div>
-
+</div>
 
     <h2 class="text-center titolActius mb-5">TORNEJOS ACTIUS</h2>
 
+<div class="container">
     <div class="row d-block">
         <div class="col-12 mt-5 main_tournament">
             <p class="text-left">Torneig increible</p>
@@ -69,7 +70,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 
 <!--Scripts nuestros-->
