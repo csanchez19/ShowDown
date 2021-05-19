@@ -241,3 +241,28 @@ body
       font-weight: 600;
       font-style: italic;
   }
+
+  footer{
+    font-size: 0.9em;
+    background-color: #181818;
+  }
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}

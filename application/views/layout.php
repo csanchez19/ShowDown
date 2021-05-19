@@ -69,7 +69,76 @@
     <?= $contents ?>
 
 
-    <footer></footer>
+    <!-- Footer -->
+<footer class="text-center text-white mt-5">
+  <!-- Grid container -->
+  <div class="container-fluid p-4">
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+        eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+
+    <!-- Section: Links -->
+    <section class="">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-4  mb-4 mb-md-0">
+          <h5 class="text-uppercase">Navega</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Perfil</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Winners League</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Termes i condicions</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Xarxes Socials</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Facebook</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Twitter</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Instra</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contacto</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <p>Tel: 661643232</p>
+            </li>
+            <li>
+              <p>Email 1: anlon636@gmail.com</p>
+            </li>
+            <li>
+              <p>Email 2: csanchezf@gmail.com</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright: ShowDown!
+  </div>
+</footer>
 
     <script>
      $(document).ready(function() {
