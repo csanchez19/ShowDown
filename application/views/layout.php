@@ -75,9 +75,8 @@
   <div class="container-fluid p-4">
     <section class="mb-4">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
+        A ShowDown volem crear un entorn que faciliti la creació i gestió de tornejos online d'una manera intuïtiva i casual.
+
       </p>
     </section>
 
@@ -117,7 +116,7 @@
         </div>
 
         <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Contacto</h5>
+          <h5 class="text-uppercase">Contacte</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
