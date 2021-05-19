@@ -56,21 +56,8 @@
 
     <h2 class="text-center titolActius mb-5">TORNEJOS ACTIUS</h2>
 
-<div class="container">
-    <div class="row d-block">
-        <div class="col-12 mt-5 main_tournament">
-            <p class="text-left">Torneig increible</p>
-            <div class="row">
-                <div class="col-6 text-left">
-                    <p>21 places - MAIG 13, 15:00 EST</p>
-                </div>
-                <div class="col-6 text-right">
-                    <p>Hello Kitty Online</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 
 
 <!--Scripts nuestros-->
