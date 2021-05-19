@@ -7,6 +7,7 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.tutorialjinni.com/jquery-bracket/0.11.1/jquery.bracket.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b2f7b5e2e7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/home.css">
     <link rel="shortcut icon" href="<?php echo base_url() ;?> favicon.png">
@@ -59,7 +60,7 @@
 				<a href="#winners" title="Winners League">Winners League</a>
 			</li>
 			<li>
-				<a href="#termes" title="Termes i condicions">Termes i condicions</a>
+				<?php echo '<a href="'.base_url().'index.php/showdown/termes">Termes i condicions</a>' ?>
 			</li>
 		</ul>
 	</span>
@@ -75,9 +76,8 @@
   <div class="container-fluid p-4">
     <section class="mb-4">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
+        A ShowDown volem crear un entorn que faciliti la creació i gestió de tornejos online d'una manera intuïtiva i casual.
+
       </p>
     </section>
 
@@ -111,13 +111,13 @@
               <a href="#!" class="text-white">Twitter</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Instra</a>
+              <a href="#!" class="text-white">Instagram</a>
             </li>
           </ul>
         </div>
 
         <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Contacto</h5>
+          <h5 class="text-uppercase">Contacte</h5>
 
           <ul class="list-unstyled mb-0">
             <li>

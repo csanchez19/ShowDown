@@ -99,6 +99,11 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'login', $data);
         }
 
+        //VISTA TERMES I CONDICIONS
+        public function termes(){
+                $this->template->load('layout', 'termes');
+        }
+
         //LOG OUT
         public function logout(){  
                 $this->session->unset_userdata('username');  
