@@ -59,7 +59,7 @@
 				<a href="#winners" title="Winners League">Winners League</a>
 			</li>
 			<li>
-				<a href="#termes" title="Termes i condicions">Termes i condicions</a>
+				<?php echo '<a href="'.base_url().'index.php/showdown/termes">Termes i condicions</a>' ?>
 			</li>
 		</ul>
 	</span>
@@ -110,7 +110,7 @@
               <a href="#!" class="text-white">Twitter</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Instra</a>
+              <a href="#!" class="text-white">Instagram</a>
             </li>
           </ul>
         </div>
