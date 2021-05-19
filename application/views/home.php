@@ -54,10 +54,22 @@
     </div>
 </div>
 
-    <h2 class="text-center titolActius mb-5">TORNEJOS ACTIUS</h2>
+    <h2 class="text-center titolActius mb-5">VIDEOJOCS PRINCIPALS</h2>
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-4 game-card">
+            
+        </div>
+        <div class="col-4 game-card">
 
+        </div>
+        <div class="col-4 game-card">
+
+        </div>
+    </div>
+</div>
 
 
 <!--Scripts nuestros-->
