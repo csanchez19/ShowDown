@@ -7,6 +7,7 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.tutorialjinni.com/jquery-bracket/0.11.1/jquery.bracket.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b2f7b5e2e7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/home.css">
     <link rel="shortcut icon" href="<?php echo base_url() ;?> favicon.png">

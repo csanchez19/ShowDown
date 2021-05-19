@@ -1,0 +1,25 @@
+.card{
+    position: relative;
+    z-index: 10;
+    width: 98%;
+    border-radius: 4px;
+    padding-bottom: 40px;
+    background: #1d1d1d;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.card-header{
+    background: #A4161A;
+    width: 100%;
+    text-align: center;
+}
+
+.accordion{
+    position: relative;
+    top: -100px;
+}
