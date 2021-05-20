@@ -34,6 +34,7 @@ body
 {
     position: absolute;
     text-align: center !important;
+    top: 20px;
     left: 40%;
     width: 20%;
 }
@@ -255,17 +256,17 @@ body
 
 /*SCROLLBAR MOD*/
 
-/* width */
+/* width*/
 ::-webkit-scrollbar {
 width: 10px;
 }
 
-/* Track */
+/* Track*/
 ::-webkit-scrollbar-track {
 background: #f1f1f1; 
 }
 
-/* Handle */
+/* Handle*/ 
 ::-webkit-scrollbar-thumb {
 background: #888; 
 }
@@ -329,4 +330,114 @@ background: #555;
   {
     color: white;
     background: rgb(0, 0, 0, 0.6);
+  }
+
+  .fondoFortnite
+  {
+    background: url(../content/img/portadaFifa.png);
+    background-position: center;
+    height: 478px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background-size: cover;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    border-bottom-right-radius: 56px;
+  }
+
+  .fondoLol
+  {
+    background: url(../content/img/fondoLol.jpg);
+    height: 478px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background-size: cover;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    border-bottom-right-radius: 56px;
+  }
+
+  .fondoCod
+  {
+    background: url(../content/img/fondoSF.png);
+    background-position: center;
+    height: 478px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background-size: cover;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    border-bottom-right-radius: 56px;
+  }
+
+  .game-card-lol
+  {
+
+  }
+
+  .game-card-cod
+  {
+    
+  }
+
+  .game-card-fortnite
+  {
+    
+  }
+
+  .fortniteguy
+  {
+    margin-top: 50px;
+    filter: brightness(100%) !important;
+  }
+
+  .codguy
+  {
+    margin-top: 50px;
+  }
+
+  .gnar
+  {
+    margin-top: 50px;
+  }
+
+  .escalar
+  {
+    transition: 0.2s;
+  }
+
+  .escalar:hover
+  {
+    transform: scale(1.1);
+  }
+
+  .text-game
+  {
+    color: white;
+    display: inherit;
+    padding: 32px;
+    font-size: 18px;
+    column-gap: 16px;
+    grid-template-columns: 40px 1fr;
+  }
+
+    .text-game p
+    {
+      font-size: 14px;
+    }
+
+    .text-game span
+    {
+      font-size: 12px;
+    }
+
+  .fondo-game
+  {
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 1, 1);
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   }

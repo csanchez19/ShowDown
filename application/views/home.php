@@ -1,13 +1,17 @@
 
 <style>
 
+.filaBotones
+{
+    margin-bottom: 15rem;
+}
+
 </style>
 
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
-            <h1 class="text-center">ShowDown! <br> Competeix i Guanya!</h1>
-            <div class="row mt-5">
+            <div class="row mt-5 filaBotones">
                 <!--<div class="col-6 text-right">
                     <button onclick="goLogin()" class="btnLogin">LOGUEJAR-SE</button>
                 </div>
@@ -37,8 +41,8 @@
 </div>
 
 <div class="container mb-5 mt-5">
-    <div class="row d-block">
-        <div class="col-12">
+    <div class="row justify-content-center d-inline">
+        <div class="offset-3 col-8 text-center">
             <table class="caja text-center">
                 <tr class="fila">
                     <td><p class="text">Crea o Apuntat a tornejos!</p></td>
@@ -59,14 +63,35 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-4 game-card">
-            
+        <div class="col-4 game-card-fortnite">
+            <a class="fondoFortnite fondo-game" href="">
+                <div class="text-game">
+                    <p>Fifa 21</p>
+                    <br>
+                    <span>Num torneos</span>
+                </div>
+                <img class="fortniteguy escalar" src="<?php echo base_url(); ?>content/img/bicho.png" alt="">
+            </a>
         </div>
-        <div class="col-4 game-card">
-
+        <div class="col-4 game-card-cod">
+            <a class="fondoCod fondo-game" href="">
+            <div class="text-game">
+                    <p>Street Fighter</p>
+                    <br>
+                    <span>Num torneos</span>
+                </div>
+                <img class="codGuy escalar" src="<?php echo base_url(); ?>content/img/sfchar.png" alt="">
+            </a>
         </div>
-        <div class="col-4 game-card">
-
+        <div class="col-4 game-card-lol">
+            <a class="fondoLol fondo-game" href="">
+            <div class="text-game">
+                    <p>League of Legends</p>
+                    <br>
+                    <span>Num torneos</span>
+                </div>
+                <img class="gnar escalar" src="<?php echo base_url(); ?>content/img/gnar.png" alt="">
+            </a>
         </div>
     </div>
 </div>
