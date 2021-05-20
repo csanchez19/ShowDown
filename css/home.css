@@ -557,6 +557,7 @@ background: #555;
 
   .dadesCobrament
   {
+    color: rgb(206, 50, 53);
     font-weight: 600;
     font-style: italic;
     position: relative;
@@ -569,4 +570,14 @@ background: #555;
   .divCobrament
   {
     border-bottom: 1px solid rgb(206, 50, 53);
+  }
+
+  .div_login
+  {
+    margin-top: 15rem;
+  }
+
+  .text_card
+  {
+    font-size: 0.9em;
   }

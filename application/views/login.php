@@ -3,13 +3,13 @@
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
-            <h1 class="text-center">ShowDown! <br> Loguejat per seguir competint</h1>
+            <h1 class="text-center div_botones2">Fes Log-In i comença a competir!</h1>
         </div>
     </div>
 </div>
 
-<div class="container form">
-        <div class="marco col-xl-12">
+<div class="container div_login pt-5 form">
+        <div class="marco col-xl-6 offset-xl-3">
                 <?php 
                     echo '<div class="text-center">';
                     echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';
