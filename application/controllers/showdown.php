@@ -105,7 +105,7 @@ class showdown extends CI_Controller {
         }
 
         //VISTA TORNEJOS
-        public function tournament(){
+        public function tournaments(){
                 $this->template->load('layout', 'tournaments');
         }
 
