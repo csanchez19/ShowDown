@@ -45,13 +45,13 @@
         <div class="offset-3 col-8 text-center">
             <table class="caja text-center">
                 <tr class="fila">
-                    <td><p class="text">Crea o Apuntat a tornejos!</p></td>
+                    <td><a class="escalar" href=""><p class="text escalar">Crea o Apuntat a tornejos!</p></a></td>
                 </tr>
                 <tr class="fila">
-                    <td><p class="text">Acumula punts mentre jugues!</p></td>
+                    <td><a class="escalar" href=""><p class="text escalar">Acumula punts mentre jugues!</p></a></td>
                 </tr>
                 <tr class="fila">
-                    <td><p class="text">Intercanvia els punts a la nostra Winners League! <span class="badge bg-danger"> New! </span></p></td>
+                    <td><a class="escalar" href=""><p class="text escalar">Intercanvia els punts a la nostra Winners League! <span class="badge bg-danger"> New! </span></p></a></td>
                 </tr>
             </table>
         </div>

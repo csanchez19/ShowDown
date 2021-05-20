@@ -33,6 +33,10 @@
 </head>
 <body>
 
+<style>
+ 
+</style>
+
 <div class="row">
     <div class="col-12 text-center">
         <a href="<?php echo base_url(); ?>"><img class="logo text-center" src="<?php echo base_url(); ?>content/img/logo.png" alt=""></a>
@@ -127,7 +131,7 @@
               <p>Email 1: anlon636@gmail.com</p>
             </li>
             <li>
-              <p>Email 2: csanchezf@gmail.com</p>
+              <p>Email 2: csanchezf197@gmail.com</p>
             </li>
           </ul>
         </div>

@@ -131,7 +131,7 @@ body
     color: white;
     border-radius: 0px;
     padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     background: transparent;
     cursor: pointer;
@@ -140,6 +140,25 @@ body
     display: inline-block;
     outline: none;
     border: 2px solid black;
+    font-weight: 600;
+    font-size: 1.1em;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .custom-btn2 {
+    width: 160px;
+    height: 40px;
+    color: white;
+    padding: 10px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: url(../content/img/botonRojo.jpg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
     font-weight: 600;
     font-size: 1.1em;
     font-style: italic;
@@ -232,6 +251,70 @@ body
   .btn-6:hover:after{
     width:100%;
     transition:800ms ease all;
+  }
+
+/* 7 */
+.btn-7 {
+  background: url(../content/img/botonRojo.jpg);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-7 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-7:before,
+  .btn-7:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgb(206, 50, 53);
+    transition: all 0.3s ease;
+  }
+  .btn-7:before{
+     height: 0%;
+     width: 2px;
+  }
+  .btn-7:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-7:hover{
+    color: white;
+    background: transparent;
+  }
+  .btn-7:hover:before {
+    height: 100%;
+  }
+  .btn-7:hover:after {
+    width: 100%;
+  }
+  .btn-7 span:before,
+  .btn-7 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgb(206, 50, 53);
+    transition: all 0.3s ease;
+  }
+  .btn-7 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-7 span:after {
+    height: 2px;
+    width: 0%;
+  }
+  .btn-7 span:hover:before {
+    height: 100%;
+  }
+  .btn-7 span:hover:after {
+    width: 100%;
   }
 
   .titolActius
@@ -440,4 +523,50 @@ background: #555;
     transition-property: opacity;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  .div_botones2
+  {
+    margin-bottom: 14rem;
+  }
+
+  .text_box:hover
+  {
+    transition: 0.2s;
+  }
+
+    .text_box:hover
+    {
+      transition: 0.2s;
+      transform: scale(1.3);
+    }
+
+    .marco{
+      border: 5px solid #BA181B;
+      -webkit-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
+      -moz-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
+      box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
+      -webkit-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
+      -moz-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
+      box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
+      background-color: black;
+      padding: 40px;
+      position: relative;
+      top: -110px;
+  }
+
+  .dadesCobrament
+  {
+    font-weight: 600;
+    font-style: italic;
+    position: relative;
+    bottom: -40px;
+    background-color: black;
+    width: 20%;
+    left: 40%;
+  }
+
+  .divCobrament
+  {
+    border-bottom: 1px solid rgb(206, 50, 53);
   }

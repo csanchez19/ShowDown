@@ -3,9 +3,13 @@
 }
 
 .marco{
-    border: 2px solid red;
-    border-radius: 5px;
-    box-shadow: -1px 1px 10px 0px;
+    border: 5px solid #BA181B;
+    -webkit-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
+    -moz-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
+    box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
+    -webkit-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
+    -moz-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
+    box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
     background-color: black;
     padding: 40px;
     position: relative;
