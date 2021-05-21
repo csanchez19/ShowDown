@@ -608,3 +608,57 @@ background: #555;
     border-radius: 50%;
     width: 7%;
   }
+
+  .textProfile p
+  {
+    color:rgb(206, 50, 53);
+    font-weight: 600;
+    font-style: italic;
+  }
+
+.title
+{
+  color: white;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.marginado
+{
+  margin-top: 8rem;
+}
+
+.cajaPerfil
+{
+  border: 2px solid rgb(206, 50, 53);
+  padding-top: 20px;
+}
+
+  .cajaPerfil span
+  {
+    font-size: 3em;
+    color: white;
+    background-color: rgba(87, 60, 60, 0.6);
+  }
+
+  .cajaPerfil p 
+  {
+    padding-top: 35px;
+    color: white;
+  }
+
+.banner
+{
+  background-color:rgb(43, 42, 42);
+  position: relative;
+}
+
+.marioHome
+{
+  position: relative;
+  margin-top: -65%;
+  margin-left: 60%;
+  width: 50%;
+  top: 80%;
+  left: 8%;
+}

@@ -75,7 +75,7 @@
 
 
     <!-- Footer -->
-<footer class="text-center text-white mt-5">
+<footer style="margin-top: 7rem" class="text-center text-white">
   <!-- Grid container -->
   <div class="container-fluid p-4">
     <section class="mb-4">
