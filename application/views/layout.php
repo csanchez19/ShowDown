@@ -45,7 +45,7 @@
 		if($this->session->userdata('username') != '')  
 		{  
 			echo '<div class="user">';
-			echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b> <img style="border-radius: 50%;" src="'.base_url().'content/img/user-img.png" width="2%"></p>'; 
+			echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b> <img class="fotoPerfil" src="'.base_url().'content/img/mario.jpg"></p>'; 
 			echo '<a class="btn btn-dark" href="'.base_url().'index.php/showdown/logout">Logout</a>'; 
 			echo '</div>';
 		}  

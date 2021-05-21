@@ -9,7 +9,7 @@
 </div>
 
 <div class="container div_login pt-5 form">
-        <div class="marco col-xl-6 offset-xl-3">
+        <div class="marco2 col-xl-6 offset-xl-3">
                 <?php 
                     echo '<div class="text-center">';
                     echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';
@@ -45,16 +45,14 @@
                     echo form_error('password');
                     echo '</div>';
 
-                    //SUBMIT
-                    $dataButton = array(
-                        'name' => 'login',
-                        'value' => 'Loguejat',
-                        'class' => 'btnLogin mt-4'
-                    );
-                    echo '<div class="form-group text-center">';
-                    echo form_submit($dataButton);
-                    echo '</div>';
+                    ?>
 
+                <div class="form-group pt-5 text-center">
+                    <label for="enviar" class="sr-only"></label>
+                    <button type="submit" name="login" onclick class="custom-btn2 btn-7"><span>LOG-IN</span></button>
+                </div>
+
+            <?php        
                 echo form_close()
             ?>
         </div>

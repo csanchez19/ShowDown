@@ -21,7 +21,7 @@
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
         aria-controls="collapseOne1">
         <h5 class="mb-0">
-          En que consisteix ShowDown! <i class="fas fa-angle-down rotate-icon"></i>
+          En que consisteix ShowDown!&nbsp;<i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -30,7 +30,7 @@
     <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
       data-parent="#accordionEx">
       <div class="card-body text_card">
-      Així doncs, ShowDown!, consisteix en una pàgina web en la que un cop registrats, podem accedir a diferents tornejos de diferents videojocs en línia i de diferents modalitats. <br>
+      Així doncs, <span>ShowDown!</span>, consisteix en una pàgina web en la que un cop registrats, podem accedir a diferents tornejos de diferents videojocs en línia i de diferents modalitats. <br>
       El funcionament d’aquesta plataforma online es basa en la participació constant a tornejos de diferents videojocs per a poder aspirar a aconseguir premis que sempre decideix el creador del torneig.  
       </div>
     </div>
@@ -46,7 +46,7 @@
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
         aria-expanded="false" aria-controls="collapseTwo2">
         <h5 class="mb-0">
-          Mecànica de la Winners League <i class="fas fa-angle-down rotate-icon"></i>
+          Mecànica de la Winners League&nbsp;<i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -55,13 +55,9 @@
     <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
       data-parent="#accordionEx">
       <div class="card-body text_card">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-        labore sustainable VHS.
+      La <span>Winners League</span> és un esdeveniment temàtic trimestral que consisteix en un sistema d’acumulació de punts que s’obtenen al llarg del trimestre segons els resultats obtinguts en els diferents tornejos als que participa l’usuari. <br> 
+      Quan queda una setmana de trimestre, comença el període de bescanviament, o el període de <span>Points2Prizes</span>, durant aquest temps, els usuaris podran, amb la quantitat de punts que hagin obtingut, aconseguir premis que oferiran els administradors. <br>
+      Gràcies a la situació actual epidemiològica, al moviment revolucionari que hi ha actualment envers al mon dels videojocs, i també, amb l’ajuda de la idea de la <span>Winners League</span>, creiem que és el moment més òptim per a llançar aquesta proposta. 
       </div>
     </div>
 
@@ -76,7 +72,7 @@
       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
         aria-expanded="false" aria-controls="collapseThree3">
         <h5 class="mb-0">
-         Que guanyen els jugadors  <i class="fas fa-angle-down rotate-icon"></i>
+         Que guanyen els jugadors?&nbsp;<i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -85,13 +81,10 @@
     <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
       data-parent="#accordionEx">
       <div class="card-body text_card">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-        labore sustainable VHS.
+        Els premis que poden obtenir els jugadors són els disponibles a la <span>Winners League</span>, aquests 
+        premis s'aconsegueixen si el jugador es troba entre les posicions més altes del <span>Rànking</span>.
+        Les recompenses poden anar des de recompenses monetàries fins a productes electrònics com ratolins, teclats o catifes.
+        Els premis disponibles varien cada trimestre, és a dir, cada <span>Season</span> de la <span>Winners League</span>.
       </div>
     </div>
 
