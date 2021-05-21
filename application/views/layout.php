@@ -64,7 +64,7 @@
 				<a href="#winners" title="Winners League">Winners League</a>
 			</li>
 			<li>
-				<?php echo '<a href="'.base_url().'index.php/showdown/termes">Termes i condicions</a>' ?>
+				<?php echo '<a href="'.base_url().'index.php/showdown/termes">Termes i Condicions</a>' ?>
 			</li>
 		</ul>
 	</span>

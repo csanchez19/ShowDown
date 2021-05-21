@@ -31,7 +31,7 @@
       data-parent="#accordionEx">
       <div class="card-body text_card">
       Així doncs, ShowDown!, consisteix en una pàgina web en la que un cop registrats, podem accedir a diferents tornejos de diferents videojocs en línia i de diferents modalitats. <br>
-El funcionament d’aquesta plataforma online es basa en la participació constant a tornejos de diferents videojocs per a poder aspirar a aconseguir premis que sempre decideix el creador del torneig.  
+      El funcionament d’aquesta plataforma online es basa en la participació constant a tornejos de diferents videojocs per a poder aspirar a aconseguir premis que sempre decideix el creador del torneig.  
       </div>
     </div>
 
