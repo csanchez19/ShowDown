@@ -35,12 +35,73 @@
         </div>
         <div class="col-3 offset-1 text-center cajaPerfil">
             <span class="">0</span>
-            <p class="">Tornejos de Participacions a Tornejos</p>
+            <p class="">Participacions a Tornejos</p>
         </div>
         <div class="col-3 offset-1 text-center cajaPerfil">
             <span class="">0</span>
-            <p class="">Tornejos Creats</p>
+            <p class="">Partides Jugades</p>
             <p style="color: rgb()"></p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-3 text-center cajaPerfil cajaPerfil2">
+            <div class="row">
+                <div class="col-4 leftSquare">
+                    <img src="<?php echo base_url(); ?>content/img/trophyGranate.png" class="w-100 mt-4" alt="">
+                    <p class="position mt-4">1ST</p>
+                </div>
+                <div class="col-8">
+                    <span class="">0</span>
+                    <p class="mt-5">Tornejos Guanyats</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 offset-1 text-center cajaPerfil cajaPerfil2">
+            <div class="row">
+                <div class="col-4 leftSquare">
+                    <img src="<?php echo base_url(); ?>content/img/trophyGranate.png" style="visibility:hidden;" class="w-100 mt-4" alt="">
+                    <p class="position mt-4">2ND</p>
+                </div>
+                <div class="col-8">
+                    <span class="">0</span>
+                    <p class="mt-5">Segona Posició</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 offset-1 text-center cajaPerfil cajaPerfil2">
+            <div class="row">
+                <div class="col-4 leftSquare">
+                    <img src="<?php echo base_url(); ?>content/img/trophyGranate.png" style="visibility:hidden;" class="w-100 mt-4" alt="">
+                    <p class="position mt-4">TOP 10</p>
+                </div>
+                <div class="col-8">
+                    <span class="">0</span>
+                    <p class="mt-5">Entre els 10 Millors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row marginado">
+        <div class="col-12 cajaMiTourn">
+            <div class="row">
+                <div class="col-12 text-center miTournTop">
+                    <p class="pt-3 pb-1">Els meus Tornejos</p>
+                </div>
+                <div class="col-12">
+                    <p style="visibility:hidden;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores dolor exercitationem maxime voluptatibus
+                        placeat et ut eaque laudantium, esse voluptatem officia, a modi facilis enim praesentium architecto. Veniam, labore?Lorem,
+                        ipsum dolor sit amet consectetur adipisicing elit. At aspernatur ipsum deserunt, delectus repellendus non? Minus quos magni 
+                        sint at voluptas. Ad neque accusantium quasi sed eligendi illo quia voluptate! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Tempora vel, aliquid eum inventore itaque eos saepe cumque et, facilis nemo dolore, modi autem tempore in fugiat. 
+                        Quibusdam necessitatibus totam voluptatibus! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Eaque quasi quo mollitia cumque, consequuntur, aperiam dolorum at quidem corporis necessitatibus inventore deserunt! 
+                        Quisquam sed ab ea itaque quam commodi nam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Architecto magnam magni autem quasi saepe inventore id rerum quis qui consequatur. 
+                        Temporibus eveniet ipsum voluptatibus, repellat similique voluptatem asperiores reiciendis nesciunt!</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

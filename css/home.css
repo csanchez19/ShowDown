@@ -638,7 +638,8 @@ background: #555;
   {
     font-size: 3em;
     color: white;
-    background-color: rgba(87, 60, 60, 0.6);
+    position: relative;
+    top: 20px !important;
   }
 
   .cajaPerfil p 
@@ -713,3 +714,42 @@ background: #555;
   height: 20px;
   padding-right: 30px;
 }
+
+/*.leftSquare
+{
+  background-color:rgb(43, 42, 42);
+}
+
+.leftSquare p
+{
+  color:rgb(206, 50, 53);
+}*/
+
+.leftSquare
+{
+  background-color: rgba(87, 60, 60, 0.6);
+  height: 218px;
+  border-right: 2px solid rgb(206, 50, 53);
+}
+
+.cajaPerfil2
+{
+  border: 2px solid rgb(206, 50, 53);
+  padding-top: 0px !important;
+}
+
+.cajaMiTourn
+{
+  border: 2px solid rgb(206, 50, 53);
+}
+
+.miTournTop
+{
+  border-bottom: 2px solid rgb(206, 50, 53);
+  background-color: rgba(87, 60, 60, 0.6);
+}
+
+  .miTournTop p
+  {
+    color: white;
+  }
