@@ -44,28 +44,36 @@
     <div class="row">
         <div class="col-8 offset-2">
             <div class="row justify-content-center d-inline">
-                <div class="col-12 banner pb-2 pt-2">
+                <div class="col-12 banner pb-2 mb-5 pt-2">
                     <div class="row">
                         <div class="col">
-                            <p class="text escalar ml-3">Crea o Apuntat a tornejos!</p>
+                            <p class="text escalar mt-2 ml-3">Crea o Apuntat a tornejos!</p>
                         </div>
                         <div class="col text-right">
-                            <img src="<?php echo base_url(); ?>content/img/marioCopa.png" class="mr-5 marioHome" alt="">
+                            <img src="<?php echo base_url(); ?>content/img/marioCopa.png" class="mr-5 escalar marioHome" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="col-12 banner mt-5 pb-2 pt-2">
+                <div class="col-12 banner banner2 pb-2 pt-2">
                     <div class="row">
                         <div class="col">
-                            <img src="<?php echo base_url(); ?>content/img/kunckles.png" class="mr-5 marioHome" alt="">
+                            <img src="<?php echo base_url(); ?>content/img/kunckles.png" class="mr-5 escalar knucklesHome" alt="">
                         </div>
                         <div class="col">
-                            <p class="text escalar mr-3">Crea o Apuntat a tornejos!</p>
+                            <p class="text text2 escalar mt-2 mr-3">Acumula punts a mesura que participes!</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 banner mt-5 pb-5 pt-5">
-                <a class="escalar" href=""><p class="text escalar ml-5">Intercanvia els punts a la nostra Winners League! <span class="badge bg-danger ml-3"> New! </span></p></a>   
+                <div class="col-12 banner banner2 pb-5 pt-5">
+                <div class="row">
+                        <div class="col-8">
+                            <a class="escalar" href=""><p class="text text3 escalar ml-5">Intercanvia els punts a la nostra Winners League! <span class="badge bg-danger ml-3"> New </span></p></a>
+                        </div>
+                        <div class="col-4">
+                            <img src="<?php echo base_url(); ?>content/img/darius.png" class="mr-5 escalar dariusHome" alt="">
+                        </div>
+                    </div>
+                   
                 </div>
             </div>
         </div>

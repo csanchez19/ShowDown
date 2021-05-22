@@ -651,14 +651,65 @@ background: #555;
 {
   background-color:rgb(43, 42, 42);
   position: relative;
+  height: 145px;
 }
 
 .marioHome
 {
   position: relative;
-  margin-top: -65%;
-  margin-left: 60%;
-  width: 50%;
-  top: 80%;
-  left: 8%;
+    margin-top: -60%;
+    margin-left: 60%;
+    width: 50%;
+    top: 80%;
+    left: 8%;
+}
+
+.knucklesHome
+{
+  position: relative;
+  margin-top: -52%;
+  margin-left: 0%;
+  width: 60%;
+  top: 125%;
+  left: -30%;
+}
+
+.dariusHome
+{
+  position: relative;
+    margin-top: -60%;
+    margin-left: 60%;
+    width: 50%;
+    top: 80%;
+    left: 8%;
+}
+
+.text2
+{
+  color: white;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 17px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 20px;
+}
+
+.banner2
+{
+  margin-top:5rem;
+}
+
+.text3 {
+  color: white;
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: 500;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+  height: 20px;
+  padding-right: 30px;
 }
