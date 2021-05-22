@@ -114,6 +114,11 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'perfil');
         }
 
+        public function tournament()
+        {
+                $this->template->load('layout', 'tournament');
+        }
+
         //LOG OUT
         public function logout(){  
                 $this->session->unset_userdata('username');  

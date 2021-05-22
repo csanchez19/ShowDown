@@ -753,3 +753,41 @@ background: #555;
   {
     color: white;
   }
+
+  .tournamentTitle
+  {
+    color: white !important;
+    font-size: 1.3em;
+  }
+
+  .mainTorneo
+  {
+    padding: 20px;
+    background-color: rgb(43, 42, 42, 0.3);
+  }
+
+  .cajaInfo
+  {
+    border: 2px solid rgb(206, 50, 53);
+  }
+
+  .cajaInfoTop
+  {
+    border-bottom: 2px solid rgb(206, 50, 53);
+  }
+
+  .cajaInfoTop h1
+  {
+    color: white;
+     font-size:1.2em;
+  }
+
+  .infoLeft p 
+  {
+    color: rgb(206, 50, 53);
+  }
+
+  .infoRight p
+  {
+    color: white;
+  }
