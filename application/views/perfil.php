@@ -5,7 +5,7 @@
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
-            <h1 style="visibility: hidden;" class="text-center div_botones2">Registra't i comença a competir!</h1>
+            <h1 style="" class="text-center div_botones2">El meu Perfil</h1>
         </div>
     </div>
 </div>

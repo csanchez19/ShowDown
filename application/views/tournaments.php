@@ -1,3 +1,11 @@
+<div class="container-fluid top_div">
+    <div class="row">
+        <div class="text-center col-12 div_botones">
+            <h1 class="text-center div_botones2">Torneig</h1>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="main_tournament">
         <div class="row d-block">
@@ -19,9 +27,9 @@
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container justify-content-center mt-5">
     <div class="row">
-        <div class="col-4 torneo1 torneo">
+        <div class="col mr-auto torneo1 torneo">
             <div class="row">
                 <div class="col-12 first_half"></div>
             </div>
@@ -39,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 torneo2 torneo">
+        <div class="col mr-auto torneo2 torneo">
             <div class="row">
                     <div class="col-12 first_half"></div>
                 </div>
@@ -57,7 +65,7 @@
                     </div>
                 </div>
             </div>
-        <div class="col-4 torneo3 torneo">
+        <div class="col torneo3 torneo">
             <div class="row">
                     <div class="col-12 first_half"></div>
                 </div>

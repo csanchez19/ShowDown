@@ -58,7 +58,7 @@
 	<span>
 		<ul class="sub-menu ">
 			<li>
-				<a href="#perfil" title="perfil">Perfil</a>
+      <?php echo '<a href="'.base_url().'index.php/showdown/perfil">Perfil</a>' ?>
 			</li>
 			<li>
 				<a href="#winners" title="Winners League">Winners League</a>
