@@ -791,3 +791,16 @@ background: #555;
   {
     color: white;
   }
+
+  .copaN1
+  {
+    width: 12%;
+  }
+
+  .nCup
+  {
+    color: black;
+    position: relative;
+    top: 65px;
+    font-weight: 600;
+  }

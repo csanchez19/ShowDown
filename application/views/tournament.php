@@ -35,13 +35,41 @@
                     <div class="row">
                         <div class="col infoLeft text-left">
                             <p>Data d'Inici</p>
+                            <p class="pt-4">Plataforma</p>
+                            <p class="pt-4">Places</p>
+                            <p class="pt-4">Premi</p>
                         </div>
                         <div class="col infoRight text-right">
                             <p>MAIG 13, 15:00 EST</p>
+                            <p class="pt-4">PC</p>
+                            <p class="pt-4">21</p>
+                            <p class="pt-4">No</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>  
+    </div>
+
+    <h2 class="marginado text-center" style="color: white;">Recompenses Winners League</h2>
+
+    <div class="row marginado text-center">
+        <div class="col escalar">
+        <p class="nCup">1st</p>
+            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="copaN1" alt="">
+            <p style="color: white"><span>1000</span> punts</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-2 col-3 text-center escalar">
+            <p class="nCup">2nd</p>
+            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="w-50" alt="">
+            <p style="color: white"><span>1000</span> punts</p>
+        </div>
+        <div class="col-3 offset-2 text-center escalar">
+            <p class="nCup">3rd</p>
+            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="w-50" alt="">
+            <p style="color: white"><span>1000</span> punts</p>
+        </div>
     </div>
 </div>
