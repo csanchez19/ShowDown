@@ -31,7 +31,7 @@
     <div class="row justify-content-center">
         <div class="col-12 text-center">
             <div class="row justify-content-center">
-                <div class="col-3 torneo1 torneo">
+                <div class="col-3 torneo1 torneo escalar">
                     <div class="row">
                         <div class="col-12 first_half"></div>
                     </div>
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 offset-1 torneo2 torneo">
+                <div class="col-3 offset-1 torneo2 torneo escalar">
                     <div class="row">
                             <div class="col-12 first_half"></div>
                         </div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                     </div>
-                <div class="col-3 offset-1 torneo3 torneo">
+                <div class="col-3 offset-1 torneo3 torneo escalar">
                     <div class="row">
                             <div class="col-12 first_half"></div>
                         </div>
@@ -92,7 +92,7 @@
     <div class="row justify-content-center mt-5">
         <div class="col-12 text-center">
             <div class="row justify-content-center">
-                <div class="col-3 torneo1 torneo">
+                <div class="col-3 torneo1 torneo escalar">
                     <div class="row">
                         <div class="col-12 first_half"></div>
                     </div>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 offset-1 torneo2 torneo">
+                <div class="col-3 offset-1 torneo2 torneo escalar">
                     <div class="row">
                             <div class="col-12 first_half"></div>
                         </div>
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                     </div>
-                <div class="col-3 offset-1 torneo3 torneo">
+                <div class="col-3 offset-1 torneo3 torneo escalar">
                     <div class="row">
                             <div class="col-12 first_half"></div>
                         </div>
@@ -153,7 +153,7 @@
     <div class="row justify-content-center mt-5">
         <div class="col-12 text-center">
             <div class="row justify-content-center">
-                <div class="col-3 torneo1 torneo">
+                <div class="col-3 torneo1 torneo escalar">
                     <div class="row">
                         <div class="col-12 first_half"></div>
                     </div>
@@ -171,7 +171,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 offset-1 torneo2 torneo">
+                <div class="col-3 offset-1 torneo2 torneo escalar">
                     <div class="row">
                             <div class="col-12 first_half"></div>
                         </div>
