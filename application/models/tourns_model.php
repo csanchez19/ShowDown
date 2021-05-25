@@ -13,6 +13,13 @@
             return $query->result();
         }
 
+        //SELECT TOTS ELS TORNEJOS
+        public function sel_tornejos(){
+            $query = $this->db->query('SELECT * FROM torneig');
+
+            return $query->result();
+        }
+
         //INSERT TORNEIG
         public function inserirTourn(){
             $nom = $_POST["nom"];

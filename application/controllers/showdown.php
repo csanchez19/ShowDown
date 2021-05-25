@@ -139,7 +139,12 @@ class showdown extends CI_Controller {
 
         //VISTA TOTS ELS TORNEJOS
         public function tournaments(){
-                $this->template->load('layout', 'tournaments');
+                $this->load->model('tourns_model');
+
+                //sel tornejos
+                $dades['result'] = $this->tourns_model->sel_tornejos();
+
+                $this->template->load('layout', 'tournaments', $dades);
         }
 
         public function perfil()
