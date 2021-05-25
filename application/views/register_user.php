@@ -92,6 +92,7 @@ echo base_url(); ?>css/register.css">
                                 'class' => 'form-control',
                                 'type' => 'text',
                                 'onfocus' => "(this.type='date')",
+                                'onfocusout' => "(this.type='text')",
                                 'placeholder' => 'Data de naixement'
                             );
                             echo form_input($dataNaix);
