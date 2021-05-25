@@ -97,7 +97,7 @@ class showdown extends CI_Controller {
                         $this->load->model('tourns_model');
 
                         $this->form_validation->run();
-                        $this->form_validation->set_rules('nom', 'Nom', 'required|is_unique[usuaris.usuari]',array('required' => 'Obligatori omplir el camp %s', 'is_unique' => 'Ja existeix un torneig amb aquest nom.'));
+                        $this->form_validation->set_rules('nom', 'Nom', 'required|is_unique[torneig.nom]',array('required' => 'Obligatori omplir el camp %s', 'is_unique' => 'Ja existeix un torneig amb aquest nom.'));
                         $this->form_validation->set_rules('data', 'Data del torneig', 'required',array('required' => 'Obligatori omplir el camp %s'));
                         $this->form_validation->set_rules('jocs', 'Joc', 'required',array('required' => 'Obligatori omplir el camp %s'));
                         $this->form_validation->set_rules('places', 'Número de places', 'required',array('required' => 'Obligatori omplir el camp %s'));
