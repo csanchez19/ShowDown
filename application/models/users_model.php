@@ -16,10 +16,14 @@
             $naix = $_POST["naix"];
             $pass = $_POST["password"];
             $paypal = $_POST["paypal"];
+            $provincia = $_POST["provincia"];
+            $poblacio = $_POST["poblacio"];
+            $codipostal = $_POST["codipostal"];
+            $direccio = $_POST["carrer"]." ".$_POST["numero"]." ".$_POST["pis"];  
             $rol = "usuari";
 
-            $sql = "INSERT INTO usuaris(nom,cognoms,usuari,dni,correu,data,contrasenya,paypal,rol)
-                    VALUES('$nom','$cognoms','$usuari','$dni','$correu','$naix','$pass','$paypal','$rol') ";
+            $sql = "INSERT INTO usuaris(nom,cognoms,usuari,dni,correu,data,contrasenya,paypal,provincia,poblacio,codiPostal,direccio,rol)
+                    VALUES('$nom','$cognoms','$usuari','$dni','$correu','$naix','$pass','$paypal','$provincia','$poblacio','$codipostal','$direccio','$rol') ";
             
             $this->db->query($sql);
             $num_files = $this->db->affected_rows();

@@ -44,6 +44,11 @@ class showdown extends CI_Controller {
                         $this->form_validation->set_rules('password', 'Password', 'required',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
                         $this->form_validation->set_rules('password2', 'Password', 'Matches[password]',array('Matches' => 'Les contrasenyes no coincideixen.'));
                         $this->form_validation->set_rules('paypal', 'Paypal', 'required|valid_email',array('required' => 'Obligatori omplir el camp %s', 'valid_email' => 'El paypal introduït ha de tenir un format vàlid.'));
+                        $this->form_validation->set_rules('provincia', 'Provincia', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('poblacio', 'Poblacio', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('codipostal', 'Codi Postal', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('carrer', 'Carrer', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('numero', 'numero', 'required',array('required' => 'Obligatori omplir el camp %s'));
                         
                         $dades = $this->input->post();
 
@@ -55,8 +60,8 @@ class showdown extends CI_Controller {
                                 $this->load->model('users_model');
                                 $res['resultat'] = $this->users_model->inserirUsuari($_POST);
 
-                                echo '<script language="javascript">';
-                                echo 'alert("Usuari registrat correctament. Ja pots loguejar-te")';
+                                echo '<script type="text/javascript">';
+                                echo 'alert("Usuari registrat correctament, ja pots loguejar-te")';
                                 echo '</script>';
                                 
                                 redirect(base_url()); 
