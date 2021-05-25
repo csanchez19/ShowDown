@@ -93,6 +93,8 @@ class showdown extends CI_Controller {
                                 }
 
                         }
+                }else if($_POST['register_tourn']){
+
                 }
         }
 
@@ -109,7 +111,7 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'termes');
         }
 
-        //VISTA TORNEJOS
+        //VISTA TOTS ELS TORNEJOS
         public function tournaments(){
                 $this->template->load('layout', 'tournaments');
         }
@@ -119,9 +121,15 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'perfil');
         }
 
+        //VISTA TORNEIG INDIVIDUAL
         public function tournament()
         {
                 $this->template->load('layout', 'tournament');
+        }
+
+        //VISTA REGISTRE TORNEIG
+        public function register_tourn(){
+                $this->template->load('layout', 'register_tourn');
         }
 
         //LOG OUT
