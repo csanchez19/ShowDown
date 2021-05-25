@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/b2f7b5e2e7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/home.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/medias.css">
     <link rel="shortcut icon" href="<?php echo base_url() ;?> favicon.png">
     <!--<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom.css">-->
     <script src="<?php echo base_url(); ?>hamburger/script.js"></script>
@@ -88,7 +89,7 @@
     <!-- Section: Links -->
     <section class="">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-4  mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-4 col-12  mb-4 mb-md-0">
           <h5 class="text-uppercase">Navega</h5>
 
           <ul class="list-unstyled mb-0">
@@ -104,7 +105,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-4 col-12 mb-4 mb-md-0">
           <h5 class="text-uppercase">Xarxes Socials</h5>
 
           <ul class="list-unstyled mb-0">
@@ -120,7 +121,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-4 col-12 mb-4 mb-md-0">
           <h5 class="text-uppercase">Contacte</h5>
 
           <ul class="list-unstyled mb-0">
