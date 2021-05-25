@@ -89,7 +89,7 @@
     <!-- Section: Links -->
     <section class="">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-4  mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-4 col-12  mb-4 mb-md-0">
           <h5 class="text-uppercase">Navega</h5>
 
           <ul class="list-unstyled mb-0">
@@ -105,7 +105,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-4 col-12 mb-4 mb-md-0">
           <h5 class="text-uppercase">Xarxes Socials</h5>
 
           <ul class="list-unstyled mb-0">
@@ -121,7 +121,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-4 col-4 mb-4 mb-md-0">
+        <div class="col-lg-4 col-md-4 col-12 mb-4 mb-md-0">
           <h5 class="text-uppercase">Contacte</h5>
 
           <ul class="list-unstyled mb-0">

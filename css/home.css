@@ -541,12 +541,6 @@ background: #555;
 
     .marco{
       border: 5px solid #BA181B;
-      -webkit-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
-      -moz-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
-      box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
-      -webkit-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
-      -moz-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
-      box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
       background-color: black;
       padding: 40px;
       position: relative;
@@ -557,12 +551,6 @@ background: #555;
 
   .marco2{
     border: 5px solid #BA181B;
-    -webkit-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
-    -moz-box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
-    box-shadow: 22px 22px 0px -2px rgba(131,17,19,1);
-    -webkit-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
-    -moz-box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
-    box-shadow: 14px 14px 0px -2px rgb(206, 50, 53);
     background-color: black;
     padding: 40px;
     margin-top: -10%;

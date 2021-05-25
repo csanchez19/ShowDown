@@ -8,9 +8,9 @@
 </div>
 
 <div class="container form">
-        <div class="marco offset-2 col-xl-8">
+        <div class="marco offset-xl-2 col-xl-8 col-12">
             <form action="">
-                <div class="pt-1  text-center divCobrament">
+                <div class="pt-1 text-center divCobrament">
                     <p class="dadesCobrament">Dades Personals</p>
                 </div>
                 <div class="form-group mt-5 pt-5">
