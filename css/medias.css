@@ -123,7 +123,21 @@
         margin-top: -10%;
     }
 
+    .copaN1 {
+        width: 30%;
+    }
 
+    .widthCopa
+    {
+        width: 100%;
+    }
+
+    .nCup {
+        color: black;
+        position: relative;
+        top: 45px;
+        font-weight: 600;
+    }
 }
 
 /* Small devices (landscape phones, less than 768px) */

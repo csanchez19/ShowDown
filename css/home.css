@@ -547,7 +547,10 @@ background: #555;
       top: -110px;
   }
 
-
+  .widthCopa
+  {
+    width: 50%;
+  }
 
   .marco2{
     border: 5px solid #BA181B;

@@ -12,14 +12,14 @@
     <div class="row justify-content-center">
         <div class="col-12 mainTorneo">
             <div class="row">
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <img src="<?php echo base_url(); ?>content/img/fifa.png" class="w-100" alt="">
                 </div>
-                <div class="col-5 pt-5 text-center">
-                    <p class="tournamentTitle mt-4">Torneig Increible</p>
+                <div class="col-lg-5 col-12 pt-5 text-center">
+                    <p class="tournamentTitle mt-lg-4 mt-0">Torneig Increible</p>
                 </div>
-                <div class="col-3 pt-5 text-center">
-                    <button class="custom-btn btn-7 mt-3" style="font-size: 1em !important"><span style="font-size: 1em !important">APUNTAR-SE</span></button>
+                <div class="col-lg-3 col-12 pt-5 text-center">
+                    <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important"><span style="font-size: 1em !important">APUNTAR-SE</span></button>
                 </div>
             </div>
         </div>
@@ -35,15 +35,15 @@
                     <div class="row">
                         <div class="col infoLeft text-left">
                             <p>Data d'Inici</p>
-                            <p class="pt-4">Plataforma</p>
-                            <p class="pt-4">Places</p>
-                            <p class="pt-4">Premi</p>
+                            <p class="pt-lg-4 pt-5">Plataforma</p>
+                            <p class="pt-lg-4 pt-5">Places</p>
+                            <p class="pt-lg-4 pt-5">Premi</p>
                         </div>
                         <div class="col infoRight text-right">
                             <p>MAIG 13, 15:00 EST</p>
-                            <p class="pt-4">PC</p>
-                            <p class="pt-4">21</p>
-                            <p class="pt-4">No</p>
+                            <p class="pt-lg-4 pt-4">PC</p>
+                            <p class="pt-lg-4 pt-5">21</p>
+                            <p class="pt-lg-4 pt-5">No</p>
                         </div>
                     </div>
                 </div>
@@ -53,22 +53,22 @@
 
     <h2 class="marginado text-center" style="color: white;">Recompenses Winners League</h2>
 
-    <div class="row marginado text-center">
-        <div class="col escalar">
-        <p class="nCup">1st</p>
-            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="copaN1" alt="">
+    <div class="row justify-content-center marginado text-center">
+        <div class="col-3 escalar">
+            <p class="nCup">1st</p>
+            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
             <p style="color: white"><span>1000</span> punts</p>
         </div>
     </div>
     <div class="row">
         <div class="offset-2 col-3 text-center escalar">
             <p class="nCup">2nd</p>
-            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="w-50" alt="">
+            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
             <p style="color: white"><span>1000</span> punts</p>
         </div>
         <div class="col-3 offset-2 text-center escalar">
             <p class="nCup">3rd</p>
-            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="w-50" alt="">
+            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
             <p style="color: white"><span>1000</span> punts</p>
         </div>
     </div>
