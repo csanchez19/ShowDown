@@ -16,9 +16,10 @@
             $naix = $_POST["naix"];
             $pass = $_POST["password"];
             $paypal = $_POST["paypal"];
+            $rol = "usuari";
 
-            $sql = "INSERT INTO usuaris(nom,cognoms,usuari,dni,correu,data,contrasenya,paypal)
-                    VALUES('$nom','$cognoms','$usuari','$dni','$correu','$naix','$pass','$paypal') ";
+            $sql = "INSERT INTO usuaris(nom,cognoms,usuari,dni,correu,data,contrasenya,paypal,rol)
+                    VALUES('$nom','$cognoms','$usuari','$dni','$correu','$naix','$pass','$paypal','$rol') ";
             
             $this->db->query($sql);
             $num_files = $this->db->affected_rows();
