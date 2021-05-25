@@ -60,8 +60,8 @@ class showdown extends CI_Controller {
                                 $this->load->model('users_model');
                                 $res['resultat'] = $this->users_model->inserirUsuari($_POST);
 
-                                echo '<script language="javascript">';
-                                echo 'alert("Usuari registrat correctament. Ja pots loguejar-te")';
+                                echo '<script type="text/javascript">';
+                                echo 'alert("Usuari registrat correctament, ja pots loguejar-te")';
                                 echo '</script>';
                                 
                                 redirect(base_url()); 
