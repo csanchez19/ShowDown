@@ -14,10 +14,10 @@
     <div class="row">
         <div class="col-12">
             <div class="row">
-                <div class="col-2">
+                <div class="col-lg-2 col-6">
                     <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
                 </div>
-                <div class="col-2 textProfile">
+                <div class="col-12 col-lg-2 textProfile">
                     <p class="mt-5" style="font-size: 1.7em">Username</p>
                     <p class="">Membre des de 2000</p>
                 </div>
@@ -29,15 +29,15 @@
 <div class="container marginado">
     <h1 class="title">Estadístiques Generals</h1>
     <div class="row justify-content-center mt-5">
-        <div class="col-3 text-center cajaPerfil">
+        <div class="col-lg-3 col-12 mt-lg-0 mt-5 text-center cajaPerfil">
             <span class="">0</span>
             <p class="">Tornejos Creats</p>
         </div>
-        <div class="col-3 offset-1 text-center cajaPerfil">
+        <div class="col-lg-3 offset-lg-1 mt-lg-0 col-12 mt-5 text-center cajaPerfil">
             <span class="">0</span>
             <p class="">Participacions a Tornejos</p>
         </div>
-        <div class="col-3 offset-1 text-center cajaPerfil">
+        <div class="col-lg-3 offset-lg-1 mt-lg-0 mt-5 col-12 text-center cajaPerfil">
             <span class="">0</span>
             <p class="">Partides Jugades</p>
             <p style="color: rgb()"></p>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="row justify-content-center mt-5">
-        <div class="col-3 text-center cajaPerfil cajaPerfil2">
+        <div class="col-lg-3 col-12 mt-lg-0 mt-5 text-center cajaPerfil cajaPerfil2">
             <div class="row">
                 <div class="col-4 leftSquare">
                     <img src="<?php echo base_url(); ?>content/img/trophyGranate.png" class="w-100 mt-4" alt="">
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 offset-1 text-center cajaPerfil cajaPerfil2">
+        <div class="col-lg-3 offset-lg-1 col-12 mt-lg-0 mt-5 text-center cajaPerfil cajaPerfil2">
             <div class="row">
                 <div class="col-4 leftSquare">
                     <img src="<?php echo base_url(); ?>content/img/trophyGranate.png" style="visibility:hidden;" class="w-100 mt-4" alt="">
@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-3 offset-1 text-center cajaPerfil cajaPerfil2">
+        <div class="col-lg-3 offset-lg-1 col-12 mt-lg-0 mt-5 text-center cajaPerfil cajaPerfil2">
             <div class="row">
                 <div class="col-4 leftSquare">
                     <img src="<?php echo base_url(); ?>content/img/trophyGranate.png" style="visibility:hidden;" class="w-100 mt-4" alt="">
