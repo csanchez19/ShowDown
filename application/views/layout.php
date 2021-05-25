@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/b2f7b5e2e7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/home.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/medias.css">
     <link rel="shortcut icon" href="<?php echo base_url() ;?> favicon.png">
     <!--<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom.css">-->
     <script src="<?php echo base_url(); ?>hamburger/script.js"></script>

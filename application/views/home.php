@@ -20,17 +20,17 @@
                 </div>-->
                 <?php
                     if($this->session->userdata('username') != ''){
-                        echo '<div class="col-lg-6 col-12 text-right mt-5 mt-lg-0">
+                        echo '<div class="col-lg-6 col-12 text-right-lg text-center mt-5 mt-lg-0">
                                 <button onclick="goLogin()" class="custom-btn btn-5"><span>CREAR TORNEIG</span></button>
                             </div>
-                            <div class="col-lg-6 col-12 text-left mt-lg-0 mt-5">
+                            <div class="col-lg-6 col-12 text-left-lg text-center mt-lg-0 mt-5">
                                 <button onclick="goRegister()" class="custom-btn btn-6">BUSCAR TORNEIG</button>
                             </div>';
                     }else{
-                        echo '<div class="col-lg-6 col-12 text-right mt-5 mt-lg-0">
+                        echo '<div class="col-lg-6 col-12 text-right-lg text-center mt-5 mt-lg-0">
                                 <button onclick="goLogin()" class="custom-btn btn-5"><span>LOGUEJAR-SE</span></button>
                             </div>
-                            <div class="col-lg-6 col-12 text-left mt-5 mt-lg-0">
+                            <div class="col-lg-6 col-12 text-left-lg text-center mt-5 mt-lg-0">
                                 <button onclick="goRegister()" class="custom-btn btn-6">REGISTRAR-SE</button>
                             </div>';
                     }  
@@ -85,7 +85,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-4 game-card-fortnite">
+        <div class="col-lg-4 col-12 mt-5 mt-lg-0 game-card-fortnite">
             <a class="fondoFortnite fondo-game" href="">
                 <div class="text-game">
                     <p>Fifa 21</p>
@@ -95,7 +95,7 @@
                 <img class="fortniteguy escalar" src="<?php echo base_url(); ?>content/img/bicho.png" alt="">
             </a>
         </div>
-        <div class="col-4 game-card-cod">
+        <div class="col-lg-4 col-12 mt-5 mt-lg-0 game-card-cod">
             <a class="fondoCod fondo-game" href="">
             <div class="text-game">
                     <p>Street Fighter</p>
@@ -105,7 +105,7 @@
                 <img class="codGuy escalar" src="<?php echo base_url(); ?>content/img/sfchar.png" alt="">
             </a>
         </div>
-        <div class="col-4 game-card-lol">
+        <div class="col-lg-4 col-12 mt-5 mt-lg-0 game-card-lol">
             <a class="fondoLol fondo-game" href="">
             <div class="text-game">
                     <p>League of Legends</p>

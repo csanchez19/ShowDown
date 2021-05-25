@@ -28,6 +28,7 @@ body
   background-color: black;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    z-index: -99;
 }
 
 .logo
@@ -217,9 +218,6 @@ body
     width:100%;
     transition:800ms ease all;
   }
-
-
-
 
   .btn-6:hover {
     color: white;
