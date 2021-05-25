@@ -12,17 +12,11 @@ echo base_url(); ?>css/register.css">
 </div>
 
 <div class="container form">
-<<<<<<< HEAD
-        <div class="marco offset-xl-2 col-xl-8 col-12">
-            <form action="">
-                <div class="pt-1 text-center divCobrament">
-=======
         <div class="marco offset-2 col-xl-8">
 
             <?php echo form_open('showdown/validation'); ?>
 
                 <div class="pt-1  text-center divCobrament">
->>>>>>> fa222824a34f87367f501a68fa5b2b679f64eca8
                     <p class="dadesCobrament">Dades Personals</p>
                 </div>
                 <div class="form-group mt-5 pt-5">
