@@ -78,7 +78,7 @@ echo base_url(); ?>css/register.css">
                                 'class' => 'form-control',
                                 'placeholder' => 'DNI'
                             );
-                            echo form_input($dataNom);
+                            echo form_input($dataDni);
                             echo form_error('dni'); ?>
                         </div>
                         <div class="col">
