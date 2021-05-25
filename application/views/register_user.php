@@ -87,6 +87,7 @@ echo base_url(); ?>css/register.css">
                             $valueNaix=(!empty($naix))?$naix:'';
                             $dataNaix = array(
                                 'name' => 'naix',
+                                'id' => 'datefield',
                                 'value' => $valueNaix,
                                 'class' => 'form-control',
                                 'type' => 'date'
@@ -253,6 +254,22 @@ echo base_url(); ?>css/register.css">
 
         </div>
 </div>
+
+<script>
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10){
+            dd='0'+dd
+        } 
+        if(mm<10){
+            mm='0'+mm
+        } 
+
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("datefield").setAttribute("max", today);
+</script>
 
 <!--http://[::1]/showdown/index.php/showdown/register_user-->
 
