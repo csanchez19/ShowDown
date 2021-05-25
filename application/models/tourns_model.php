@@ -15,9 +15,16 @@
 
         //SELECT TOTS ELS TORNEJOS
         public function sel_tornejos(){
-            $query = $this->db->query('SELECT * FROM torneig');
+            $query = $this->db->query('SELECT * FROM torneig t JOIN joc j ON(j.Id = t.codiJoc)');
 
             return $query->result();
+        }
+
+        //SELECT TORNEIG INDIVIDUAL
+        public function selTorneig($codiTorneig){
+            $query = $this->db->query('SELECT * FROM torneig t JOIN joc j ON(j.Id = t.codiJoc) WHERE t.codiTorneig ='.$codiTorneig);
+
+            return $query->row();
         }
 
         //INSERT TORNEIG

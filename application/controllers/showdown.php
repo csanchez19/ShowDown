@@ -153,9 +153,13 @@ class showdown extends CI_Controller {
         }
 
         //VISTA TORNEIG INDIVIDUAL
-        public function tournament()
-        {
-                $this->template->load('layout', 'tournament');
+        public function tournament($codiTorneig)
+        {       
+                $this->load->model('tourns_model');
+
+                $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
+
+                $this->template->load('layout', 'tournament', $dades);
         }
 
         //VISTA REGISTRE TORNEIG
