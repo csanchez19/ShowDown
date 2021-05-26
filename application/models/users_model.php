@@ -49,6 +49,20 @@
 
             return $query->row();
         }
+
+        public function sel_usuarisAll()
+        {
+            $query = $this->db->query('SELECT * FROM usuaris');
+
+            return $query->row();
+        }
+
+        public function sel_puntos()
+        {
+            $query = $this->db->query('SELECT * FROM usuaris ORDER BY punts DESC');
+
+            return $query->result();
+        }
     }
 
 

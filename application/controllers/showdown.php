@@ -164,7 +164,11 @@ class showdown extends CI_Controller {
 
         public function WinnersLeague()
         {
-                $this->template->load('layout', 'winnersleague');
+                $this->load->model('users_model');
+
+                $dades['result'] = $this->users_model->sel_puntos();
+                
+                $this->template->load('layout', 'winnersleague', $dades);
         }
 
         //VISTA TORNEIG INDIVIDUAL

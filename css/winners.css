@@ -3,8 +3,78 @@
 
 }
 
-.top_divW h2
+.top_Winners h2
 {
     font-weight: 600;
     color: white;
+    font-size: 4vw;
+}
+
+.taulaRanking
+{
+    background-color: white;
+}
+
+.posicio
+{
+    border-bottom: 2px solid #e77304;
+    background-color: white;
+}
+
+.nPosicio {
+    background-color: #e77304;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: 2rem;
+}
+
+.nPosicio p {
+    color: white;
+    padding-top: 3px;
+}
+
+.fotoRanking
+{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.ziggs
+{
+    position: absolute;
+    width: 35%;
+    left: 61%;
+    /* top: 22px; */
+    top: 145%;
+}
+
+.punts
+{
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-style: oblique;
+}
+
+.top_Winners span
+{
+    font-weight: 600;
+    font-style: italic;
+}
+
+.div_botonesW h1
+{
+    font-weight: bold;
+}
+
+.div_orange
+{
+    background-color: #e77304;
+}
+
+.div_premios
+{
+    background-color: rgba(0,172,246,255);
+    height: 300px;
+    width: 100%;
 }
