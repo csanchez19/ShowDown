@@ -1,3 +1,8 @@
+
+<script src="<?php echo base_url(); ?>jquery-bracket-master/dist/jquery.bracket.min.js"></script>
+
+<link type="text/css" href="<?php echo base_url(); ?>jquery-bracket-master/dist/jquery.bracket.min.css" rel="stylesheet">
+
 <title>Torneig</title>
 
 <div class="container-fluid top_div">
@@ -72,23 +77,13 @@
             <p style="color: white"><span>1000</span> punts</p>
         </div>
     </div>
+
+
+    <div class="row justify-content-center demo">
+    
+    </div>
 </div>
 
+<!--Scripts nuestros-->
+<script src = "<?php echo base_url();?>js/test.js"></script>
 
-
-<script>
-    window.onload = function(){
-        if(document.getElementById("Fifa")){
-            document.getElementById("Fifa").src="http://localhost/showdown/content/img/fifa.png";
-        }
-        
-        if(document.getElementById("Street fighter")){
-            document.getElementById("Street fighter").src="http://localhost/showdown/content/img/streetf.png";
-        }
-        
-        if(document.getElementById("League of legends")){
-            document.getElementById("League of legends").src="http://localhost/showdown/content/img/lol.png";
-        }
-
-    }
-</script>
