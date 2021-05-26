@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/custom.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/home.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/medias.css">
-    <link rel="shortcut icon" href="<?php echo base_url() ;?> favicon.png">
     <!--<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom.css">-->
     <script src="<?php echo base_url(); ?>hamburger/script.js"></script>
 
@@ -29,7 +28,7 @@
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!--<script src="sweetalert2.min.js"></script>-->
 
-    <title><?= $title ?></title>
+    <title>ShowDown! - Crea i competeix</title>
 </head>
 <body>
 
