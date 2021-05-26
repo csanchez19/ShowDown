@@ -28,15 +28,26 @@
     </div>
 </div>
 
-<select class="form-control" name="jocs" id="jocs">
-    <option value="">Selecciona el joc...</option>
-        <?php 
-            foreach($result as $row)
-            { 
-                echo '<option value="'.$row->Id.'">'.$row->Nom.'</option>';
-            }
-        ?>
-</select>
+<form method="post">
+    <div class="container text-center marginado">
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <select class="form-control w-50" name="jocs" id="jocs">
+                    <option value="">Selecciona el joc...</option>
+                        <?php 
+                            foreach($resultJocs as $row)
+                            { 
+                                echo '<option value="'.$row->Id.'">'.$row->Nom.'</option>';
+                            }
+                        ?>
+                </select>
+            </div>
+            <div class="col-2">
+                <button name="filterBtn" type="submit" class="custom-btn btn-7"><span>Filtrar</span></button>
+            </div>
+        </div>
+    </div>  
+</form>
 
 <div class="container-fluid mt-5">
     <div class="row justify-content-center">
@@ -44,7 +55,55 @@
             <div class="row justify-content-center">
             <?php
             $cont = 0;
-                foreach($result as $row){
+            
+            if(isset($_POST["filterBtn"]))
+            {
+                $joc = $_POST["jocs"];
+
+                /*$query = 'SELECT * FROM torneig WHERE codiJoc = "'.$joc'"';
+
+                $res = mysqli_query($query); */ 
+
+                    foreach($result as $row){
+                        echo '<style>
+    
+                        .fondoTorneo'.$cont.'
+                        {
+                            background: url('.base_url().'content/img/'.$row->Id.'.png);
+                            background-size: cover;   
+                            background-position: center;
+                        }
+                        
+                        </style>';
+                        echo '<div id="'.$row->Nom.'" class="col-lg-3 col-12 mt-lg-0 mt-5 m-lg-5 m-0 torneo1 fondoTorneo'.$cont.' torneo escalar">';
+                        echo '<div class="row">';
+                        echo '<div class="col-12 first_half"></div>';
+                        echo '</div>';
+                        echo '<div class="row">';
+                        echo '<div class="col-12 tournament-text">';
+                        echo '<p class="text-left">'.$row->nom.'</p>';
+                        echo '<div class="row">';
+                        echo '<div class="col-6">';
+                        echo '<p class="text-left">Places: '.$row->places.', 18:00 EST</p>';
+                        echo '</div>';
+                        echo '<div class="col-6">';
+                        echo '<p class="text-right">'.$row->Nom.'</p>';
+                        echo '</div>';
+                        echo '<div class="col">';
+                        echo '<a class="btn btn-dark" href="'.base_url().'index.php/showdown/tournament/'.$row->codiTorneig.'">+info</a>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        $cont++;
+                    }
+                
+            }
+            else
+            {
+                foreach($result as $row)
+                {
                     echo '<style>
 
                     .fondoTorneo'.$cont.'
@@ -78,6 +137,7 @@
                     echo '</div>';
                     $cont++;
                 }
+            }
             ?>
             </div>
         </div>

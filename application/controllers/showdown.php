@@ -162,6 +162,11 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'perfil', $dades);
         }
 
+        public function WinnersLeague()
+        {
+                $this->template->load('layout', 'winnersleague');
+        }
+
         //VISTA TORNEIG INDIVIDUAL
         public function tournament($codiTorneig)
         {       
