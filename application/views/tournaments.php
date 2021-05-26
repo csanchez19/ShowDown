@@ -1,6 +1,4 @@
 
-
-
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
@@ -29,6 +27,16 @@
         </div>
     </div>
 </div>
+
+<select class="form-control" name="jocs" id="jocs">
+    <option value="">Selecciona el joc...</option>
+        <?php 
+            foreach($result as $row)
+            { 
+                echo '<option value="'.$row->Id.'">'.$row->Nom.'</option>';
+            }
+        ?>
+</select>
 
 <div class="container-fluid mt-5">
     <div class="row justify-content-center">

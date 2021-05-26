@@ -59,14 +59,18 @@
 	<span>
 		<ul class="sub-menu ">
 			<li>
-      <?php echo '<a href="'.base_url().'index.php/showdown/perfil">Perfil</a>' ?>
-			</li>
-			<li>
 				<a href="#winners" title="Winners League">Winners League</a>
 			</li>
 			<li>
 				<?php echo '<a href="'.base_url().'index.php/showdown/termes">Termes i Condicions</a>' ?>
 			</li>
+      <?php if(isset($_SESSION['username']))
+      {
+        echo '<li>
+         <a href="'.base_url().'index.php/showdown/perfil">Perfil</a>
+        </li>';
+      }
+      ?>
 		</ul>
 	</span>
 	<span class="cls"></span>

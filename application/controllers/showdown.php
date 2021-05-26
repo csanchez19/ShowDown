@@ -144,12 +144,22 @@ class showdown extends CI_Controller {
                 //sel tornejos
                 $dades['result'] = $this->tourns_model->sel_tornejos();
 
+                //sel jocs
+                $dades['resultJocs'] = $this->tourns_model->sel_jocs();
+
                 $this->template->load('layout', 'tournaments', $dades);
         }
 
         public function perfil()
         {
-                $this->template->load('layout', 'perfil');
+                $this->load->model('users_model');
+                
+                $username = $this->session->userdata('username');
+
+                //sel tornejos
+                $dades['result'] = $this->users_model->sel_usuaris($username);
+
+                $this->template->load('layout', 'perfil', $dades);
         }
 
         //VISTA TORNEIG INDIVIDUAL

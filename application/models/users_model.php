@@ -42,6 +42,13 @@
                 return false;
             }
         }
+
+        public function sel_usuaris($username)
+        {
+            $query = $this->db->query('SELECT * FROM usuaris WHERE usuari = "'.$username.'"');
+
+            return $query->row();
+        }
     }
 
 
