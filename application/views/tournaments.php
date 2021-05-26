@@ -63,9 +63,6 @@
 </div>
 
 <script>
-    window.onload = function(){
-
-
         /*
         // Find all images inside "image" id
         $("#image").find("img").each(function(){
@@ -110,7 +107,6 @@
             document.getElementById("League of legends").style.backgroundPosition = "center";
         }*/
 
-    }
 </script>
 
 <!--<div class="container-fluid mt-5">
