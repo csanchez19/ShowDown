@@ -18,8 +18,8 @@
                     <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
                 </div>
                 <div class="col-12 col-lg-2 textProfile">
-                    <p class="mt-5" style="font-size: 1.7em">Username</p>
-                    <p class="">Membre des de 2000</p>
+                    <p class="mt-5" style="font-size: 1.7em"><?php echo $result->usuari; ?></p>
+                    <p class="">Membre des de <?php echo $result->dataCreat; ?></p>
                 </div>
             </div>
         </div>

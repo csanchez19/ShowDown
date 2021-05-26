@@ -1,3 +1,4 @@
+
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
@@ -27,13 +28,34 @@
     </div>
 </div>
 
+<select class="form-control" name="jocs" id="jocs">
+    <option value="">Selecciona el joc...</option>
+        <?php 
+            foreach($result as $row)
+            { 
+                echo '<option value="'.$row->Id.'">'.$row->Nom.'</option>';
+            }
+        ?>
+</select>
+
 <div class="container-fluid mt-5">
     <div class="row justify-content-center">
         <div class="col-12 text-center">
             <div class="row justify-content-center">
             <?php
+            $cont = 0;
                 foreach($result as $row){
-                    echo '<div id="'.$row->Nom.'" class="col-3 m-5 torneo1 torneo escalar">';
+                    echo '<style>
+
+                    .fondoTorneo'.$cont.'
+                    {
+                        background: url('.base_url().'content/img/'.$row->Id.'.png);
+                        background-size: cover;   
+                        background-position: center;
+                    }
+                    
+                    </style>';
+                    echo '<div id="'.$row->Nom.'" class="col-lg-3 col-12 mt-lg-0 mt-5 m-lg-5 m-0 torneo1 fondoTorneo'.$cont.' torneo escalar">';
                     echo '<div class="row">';
                     echo '<div class="col-12 first_half"></div>';
                     echo '</div>';
@@ -42,7 +64,7 @@
                     echo '<p class="text-left">'.$row->nom.'</p>';
                     echo '<div class="row">';
                     echo '<div class="col-6">';
-                    echo '<p class="text-left">'.$row->places.' Places '.$row->places.', 18:00 EST</p>';
+                    echo '<p class="text-left">Places: '.$row->places.', 18:00 EST</p>';
                     echo '</div>';
                     echo '<div class="col-6">';
                     echo '<p class="text-right">'.$row->Nom.'</p>';
@@ -54,7 +76,7 @@
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
-
+                    $cont++;
                 }
             ?>
             </div>

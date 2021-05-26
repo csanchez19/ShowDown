@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-  <div class="offset-2 col-8">
+  <div class="offset-lg-2 col-lg-8 col-12">
 <!--Accordion wrapper-->
 <div class="container-fluid accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 

@@ -386,27 +386,6 @@ background: #555;
     width: 90%;
   }
 
-  .torneo1
-  {
-    background: url(../content/img/lol.png);
-    background-size: cover;   
-    background-position: center;
-  }
-  
-  .torneo2
-  {
-    background: url(../content/img/streetf.png);
-    background-size: cover;
-    background-position: center;
-  }
-
-  .torneo3
-  {
-    background: url(../content/img/fifa.png);
-    background-size: cover;
-    background-position: center;
-  }
-
   .tournament-text
   {
     color: white;
@@ -547,7 +526,10 @@ background: #555;
       top: -110px;
   }
 
-
+  .widthCopa
+  {
+    width: 50%;
+  }
 
   .marco2{
     border: 5px solid #BA181B;
