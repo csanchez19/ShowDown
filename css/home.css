@@ -7,6 +7,15 @@
     height: 79%;
 }
 
+
+.top_divW
+{
+    background: url(../content/img/summer1.png);
+    background-size: cover;
+    height: 100%;
+    background-position: top;
+}
+
     .top_div h1
     {
         color: white;
@@ -21,6 +30,10 @@ a{
 .div_botones
 {
     margin-top: 10rem !important;
+}
+
+.div_botonesW {
+  margin-top: 30rem !important;
 }
 
 body
