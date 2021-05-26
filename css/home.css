@@ -386,27 +386,6 @@ background: #555;
     width: 90%;
   }
 
-  .torneo1
-  {
-    background: url(../content/img/lol.png);
-    background-size: cover;   
-    background-position: center;
-  }
-  
-  .torneo2
-  {
-    background: url(../content/img/streetf.png);
-    background-size: cover;
-    background-position: center;
-  }
-
-  .torneo3
-  {
-    background: url(../content/img/fifa.png);
-    background-size: cover;
-    background-position: center;
-  }
-
   .tournament-text
   {
     color: white;

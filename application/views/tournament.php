@@ -40,17 +40,10 @@
                             <p class="pt-lg-4 pt-5">Premi</p>
                         </div>
                         <div class="col infoRight text-right">
-<<<<<<< HEAD
-                            <p>MAIG 13, 15:00 EST</p>
-                            <p class="pt-lg-4 pt-4">PC</p>
-                            <p class="pt-lg-4 pt-5">21</p>
-                            <p class="pt-lg-4 pt-5">No</p>
-=======
                             <p><?php echo $result->data ?></p>
                             <p class="pt-4">PC</p>
                             <p class="pt-4"><?php echo $result->places ?></p>
                             <p class="pt-4">No</p>
->>>>>>> df172a3f969a951004aec6711b1f49e3f1916390
                         </div>
                     </div>
                 </div>

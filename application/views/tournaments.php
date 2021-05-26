@@ -1,3 +1,6 @@
+
+
+
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
@@ -32,8 +35,19 @@
         <div class="col-12 text-center">
             <div class="row justify-content-center">
             <?php
+            $cont = 0;
                 foreach($result as $row){
-                    echo '<div id="'.$row->Nom.'" class="col-3 m-5 torneo1 torneo escalar">';
+                    echo '<style>
+
+                    .fondoTorneo'.$cont.'
+                    {
+                        background: url('.base_url().'content/img/'.$row->Id.'.png);
+                        background-size: cover;   
+                        background-position: center;
+                    }
+                    
+                    </style>';
+                    echo '<div id="'.$row->Nom.'" class="col-lg-3 col-12 mt-lg-0 mt-5 m-lg-5 m-0 torneo1 fondoTorneo'.$cont.' torneo escalar">';
                     echo '<div class="row">';
                     echo '<div class="col-12 first_half"></div>';
                     echo '</div>';
@@ -42,7 +56,7 @@
                     echo '<p class="text-left">'.$row->nom.'</p>';
                     echo '<div class="row">';
                     echo '<div class="col-6">';
-                    echo '<p class="text-left">'.$row->places.' Places '.$row->places.', 18:00 EST</p>';
+                    echo '<p class="text-left">Places: '.$row->places.', 18:00 EST</p>';
                     echo '</div>';
                     echo '<div class="col-6">';
                     echo '<p class="text-right">'.$row->Nom.'</p>';
@@ -54,7 +68,7 @@
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
-
+                    $cont++;
                 }
             ?>
             </div>
@@ -62,68 +76,6 @@
     </div>
 </div>
 
-<<<<<<< HEAD
-    <div class="row justify-content-center mt-5">
-        <div class="col-12 text-center">
-            <div class="row justify-content-center">
-                <div class="col-3 torneo1 torneo escalar">
-                    <div class="row">
-                        <div class="col-12 first_half"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 tournament-text">
-                            <p class="text-left">Copa Demacia 5vs5</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <p class="text-left">8 Places MAIG 14, 18:00 EST</p>
-                                </div>
-                                <div class="col-6">
-                                    <p class="text-right">League Of Legends</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-12 torneo2 torneo escalar">
-                    <div class="row">
-                            <div class="col-12 first_half"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 tournament-text">
-                            <p class="text-left">Street Fighter 1vs1</p>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <p class="text-left">8 Places MAIG 14, 18:00 EST</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-right">Street Fighter</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <div class="col-3 offset-1 torneo3 torneo">
-                    <div class="row">
-                            <div class="col-12 first_half"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 tournament-text">
-                            <p class="text-left">Furbo 2vs2</p>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <p class="text-left">8 Places MAIG 14, 18:00 EST</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-right">FIFA</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-=======
 <script>
         /*
         // Find all images inside "image" id
@@ -134,7 +86,6 @@
 
             if(splitClass[1] <= 20) {
             // If image class has number equal or below 20 (eg. img-1, img-2....)
->>>>>>> df172a3f969a951004aec6711b1f49e3f1916390
 
                 // Update the image source accordingly
                 $this.attr("src", "plant.jpg");
