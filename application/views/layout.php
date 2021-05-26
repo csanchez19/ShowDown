@@ -169,6 +169,15 @@
     {
         window.location.href = "/ShowDown/index.php/showdown/login";
     }
+
+    //LOGGED-IN
+    function goRegisterTourn(){
+        window.location.href = "/ShowDown/index.php/showdown/register_tourn";
+    }
+
+    function goTornejos(){
+      window.location.href = "/ShowDown/index.php/showdown/tournaments";
+    }
     </script>
     
 

@@ -90,7 +90,10 @@ echo base_url(); ?>css/register.css">
                                 'id' => 'datefield',
                                 'value' => $valueNaix,
                                 'class' => 'form-control',
-                                'type' => 'date'
+                                'type' => 'text',
+                                'onfocus' => "(this.type='date')",
+                                'onfocusout' => "(this.type='text')",
+                                'placeholder' => 'Data de naixement'
                             );
                             echo form_input($dataNaix);
                             echo form_error('naix'); ?>
@@ -204,7 +207,8 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'codipostal',
                                 'value' => $valueCP,
                                 'class' => 'form-control',
-                                'placeholder' => 'Codi Postal'
+                                'placeholder' => 'Codi Postal',
+                                'type' => 'number'
                             );
                             echo form_input($dataCP);
                             echo form_error('codipostal'); ?>

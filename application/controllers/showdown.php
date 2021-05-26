@@ -93,8 +93,34 @@ class showdown extends CI_Controller {
                                 }
 
                         }
-                }else if($_POST['register_tourn']){
+                }else if(isset($_POST['register_tourn'])){
+                        $this->load->model('tourns_model');
 
+                        $this->form_validation->run();
+                        $this->form_validation->set_rules('nom', 'Nom', 'required|is_unique[torneig.nom]',array('required' => 'Obligatori omplir el camp %s', 'is_unique' => 'Ja existeix un torneig amb aquest nom.'));
+                        $this->form_validation->set_rules('data', 'Data del torneig', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('jocs', 'Joc', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('places', 'Número de places', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('desc', 'Descripció', 'required',array('required' => 'Obligatori omplir el camp %s'));
+
+                        $dades=$this->input->post();
+
+                        if($this->form_validation->run() == FALSE){
+                                //sel jocs
+                                $dades['result'] = $this->tourns_model->sel_jocs();
+
+                                $this->template->load('layout', 'register_tourn', $dades);
+                        }else{
+                                $res['resultat'] = $this->tourns_model->inserirTourn($_POST);
+
+                                echo '<script>';
+                                echo 'alert("Usuari registrat correctament, ja pots loguejar-te")';
+                                echo '</script>';
+                                
+                                redirect(base_url()); 
+                        }
+
+                        
                 }
         }
 
@@ -113,7 +139,12 @@ class showdown extends CI_Controller {
 
         //VISTA TOTS ELS TORNEJOS
         public function tournaments(){
-                $this->template->load('layout', 'tournaments');
+                $this->load->model('tourns_model');
+
+                //sel tornejos
+                $dades['result'] = $this->tourns_model->sel_tornejos();
+
+                $this->template->load('layout', 'tournaments', $dades);
         }
 
         public function perfil()
@@ -122,14 +153,23 @@ class showdown extends CI_Controller {
         }
 
         //VISTA TORNEIG INDIVIDUAL
-        public function tournament()
-        {
-                $this->template->load('layout', 'tournament');
+        public function tournament($codiTorneig)
+        {       
+                $this->load->model('tourns_model');
+
+                $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
+
+                $this->template->load('layout', 'tournament', $dades);
         }
 
         //VISTA REGISTRE TORNEIG
         public function register_tourn(){
-                $this->template->load('layout', 'register_tourn');
+                $this->load->model('tourns_model');
+
+                //sel jocs
+                $dades['result'] = $this->tourns_model->sel_jocs();
+
+                $this->template->load('layout', 'register_tourn', $dades);
         }
 
         //LOG OUT

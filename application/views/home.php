@@ -21,10 +21,10 @@
                 <?php
                     if($this->session->userdata('username') != ''){
                         echo '<div class="col-lg-6 col-12 text-lg-right text-center mt-5 mt-lg-0">
-                                <button onclick="goLogin()" class="custom-btn btn-5"><span>CREAR TORNEIG</span></button>
+                                <button onclick="goRegisterTourn()" class="custom-btn btn-5"><span>CREAR TORNEIG</span></button>
                             </div>
                             <div class="col-lg-6 col-12 text-lg-left text-center mt-lg-0 mt-5">
-                                <button onclick="goRegister()" class="custom-btn btn-6">BUSCAR TORNEIG</button>
+                                <button onclick="goTornejos()" class="custom-btn btn-6">BUSCAR TORNEIG</button>
                             </div>';
                     }else{
                         echo '<div class="col-lg-6 col-12 text-lg-right text-center mt-5 mt-lg-0">
