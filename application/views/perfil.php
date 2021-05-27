@@ -18,8 +18,9 @@
                     <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
                 </div>
                 <div class="col-12 col-lg-2 textProfile">
-                    <p class="mt-5" style="font-size: 1.7em"><?php echo $result->usuari; ?></p>
+                    <p class="mt-5" style="font-size: 1.7em"><?php echo $result->usuari; ?></p> 
                     <p class="">Membre des de <?php echo $result->dataCreat; ?></p>
+                    <a class="btn btn-secondary" href="<?php echo base_url().'index.php/showdown/modificarPerfil'?>">Modificar perfil</a>
                 </div>
             </div>
         </div>

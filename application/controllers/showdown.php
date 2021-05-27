@@ -121,6 +121,43 @@ class showdown extends CI_Controller {
                         }
 
                         
+                }else if(isset($_POST['modifyP'])){
+                        $this->form_validation->run();
+                        $this->form_validation->set_rules('nom', 'Nom', 'required|max_length[20]',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
+                        $this->form_validation->set_rules('cognoms', 'Cognoms', 'required|max_length[40]',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
+                        $this->form_validation->set_rules('correu', 'Correu', 'required|valid_email',array('required' => 'Obligatori omplir el camp %s', 'valid_email' => 'El correu introduït ha de tenir un format vàlid.'));
+                        $this->form_validation->set_rules('naix', 'Data de naixement', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('password', 'Password', 'required',array('required' => 'Obligatori omplir el camp %s', 'max_length' => 'Mida màxima de %s és 20.'));
+                        $this->form_validation->set_rules('password2', 'Password', 'Matches[password]',array('Matches' => 'Les contrasenyes no coincideixen.'));
+                        $this->form_validation->set_rules('paypal', 'Paypal', 'required|valid_email',array('required' => 'Obligatori omplir el camp %s', 'valid_email' => 'El paypal introduït ha de tenir un format vàlid.'));
+                        $this->form_validation->set_rules('provincia', 'Provincia', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('poblacio', 'Poblacio', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('codipostal', 'Codi Postal', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('carrer', 'Carrer', 'required',array('required' => 'Obligatori omplir el camp %s'));
+
+                        $dades = $this->input->post();
+
+                        if ($this->form_validation->run() == FALSE){
+                                $this->load->model('users_model');
+                
+                                $username = $this->session->userdata('username');
+
+                                //sel usuari
+                                $dades['result'] = $this->users_model->sel_usuaris($username);
+
+                                $this->template->load('layout', 'modificarPerfil', $dades);
+
+                        }else{
+                                $this->load->model('users_model');
+
+                                $res['resultat'] = $this->users_model->updateP();
+
+                                echo '<script type="text/javascript">';
+                                echo 'alert("Usuari modificat correctament")';
+                                echo '</script>';
+                                
+                                redirect(base_url() . 'index.php/showdown/perfil'); 
+                        }
                 }
         }
 
@@ -150,16 +187,29 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'tournaments', $dades);
         }
 
+        //PERFIL
         public function perfil()
         {
                 $this->load->model('users_model');
                 
                 $username = $this->session->userdata('username');
 
-                //sel tornejos
+                //sel usuari
                 $dades['result'] = $this->users_model->sel_usuaris($username);
 
                 $this->template->load('layout', 'perfil', $dades);
+        }
+
+        //MODIFICAR PERFIL
+        public function modificarPerfil(){
+                $this->load->model('users_model');
+                
+                $username = $this->session->userdata('username');
+
+                //sel usuari
+                $dades['result'] = $this->users_model->sel_usuaris($username);
+
+                $this->template->load('layout', 'modificarPerfil', $dades);
         }
 
         public function WinnersLeague()
