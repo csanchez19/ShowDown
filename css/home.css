@@ -785,3 +785,12 @@ background: #555;
     top: 65px;
     font-weight: 600;
   }
+
+  .posicio
+{
+    border-bottom: 1px solid #f00;
+    background-color: black;
+    border-left: 2px solid #f00;
+    border-right: 2px solid #f00;
+    border-top: 1px solid #f00;
+}

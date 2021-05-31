@@ -215,8 +215,18 @@ class showdown extends CI_Controller {
         public function WinnersLeague()
         {
                 $this->load->model('users_model');
+                
+                $this->load->model('product_model');
+
+                $username = $this->session->userdata('username');
 
                 $dades['result'] = $this->users_model->sel_puntos();
+
+                $dades['product'] = $this->product_model->load_products();
+
+                $dades['pick'] = $this->users_model->sel_usuaris($username);
+
+                $dades['username'] = $this->session->userdata('username');
                 
                 $this->template->load('layout', 'winnersleague', $dades);
         }

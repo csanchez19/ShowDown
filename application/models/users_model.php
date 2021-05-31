@@ -92,6 +92,13 @@
 
             return $query->result();
         }
+
+        public function sel_usr_points($idUser)
+        {
+            $query = $this->db->query('SELECT * FROM usuaris WHERE id ='.$idUser.'');
+
+            return $query->result();
+        }
     }
 
 

@@ -2,20 +2,68 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>css/winners.css">
 
 <style>
+.posicio
+{
+    border-bottom: 2px solid black;
+    background-color: rgb(206, 50, 53);
+}
 
+.nPosicio {
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: 2rem;
+    color: black;
+}
+
+
+.nPosicio p
+{
+  color: black;
+}
+
+.ziggs {
+    position: absolute;
+    width: 35%;
+    left: 61%;
+    /* top: 22px; */
+    top: 90%;
+}
+
+.beforeRanking
+{
+  color: white;
+  font-size: 1.3em;
+}
+
+.fondo-producto
+{
+  background-color: rgba(87, 60, 60, 0.6);
+}
+
+.fondo-producto p
+{
+  color: white;
+}
+
+.fondo-producto h5
+{
+  color: white;
+}
 </style>
 
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
-            <h1 class="text-center marginado div_botones2">Winners League</h1>
+            <h1 class="text-center div_botones2">Winners League</h1>
         </div>
     </div>
 </div>
 
 <div class="container-fluid marginado">
 <div class="container marginado">
-    <p style="display:none;" class="marginado">Aquest és el Rànking de la <span>Winners League!</span></p>
+    <p class="marginado beforeRanking text-center">Aquest és el Rànking de la <span>Winners League!</span></p>
 </div>
 
 <div class="container marginado">
@@ -25,7 +73,13 @@
         $cont = 0;
         foreach($result as $row)
         {
+          if($cont < 9)
+          {
             $cont++;
+            if($row->usuari == $username)
+            {
+              $pos_user = $cont;
+            }
             echo '<div class="col-8 posicio p-3">
                     <div class="row">
                         <div class="col-1 ">
@@ -44,12 +98,70 @@
                         </div>
                     </div>
                 </div>';
-                
         }
+        else
+        {
+          break;
+        }
+      }
         
         ?>
-    </div>
+</div>
+        
+<div class="row justify-content-center text-center">
+        <?php
+            if($this->session->userdata('username') != ''){
+              
+              echo '<div class="col-12">
+              <p style="letter-spacing: 5px; color: rgb(206, 50, 53); font-weight: bold;" class="mt-3 mb-4 text-center">...</p>
+              </div>';
+
+            echo '<div class="col-8 posicio p-3">
+            <div class="row">
+                <div class="col-1 ">
+                    <div class="nPosicio mt-3">
+                        <p class="">'.$pos_user.'</p>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <img class="fotoRanking mt-2" src="'.base_url().'content/img/mario.jpg">
+                </div>
+                <div class="col">
+                    <p class="mt-4">'.$pick->usuari.'</p>
+                </div>
+                <div class="col">
+                    <p class="mt-4 punts">'.$pick->punts.'</p>
+                </div>
+            </div>
+            </div>';
+          }
+        ?>
+</div>
     
+    
+    <div class="container marginado">
+      <h2 class="text-center" style="color: white;">Productes de la Temporada - SUMMER EDITION</h2>
+      <div class="row marginado justify-content-center">
+        <?php
+        foreach($product as $row)
+        {
+          echo '<div class="col-lg-4 col-12 escalar mt-5">
+                  <div style="height: 550px" class="card fondo-producto" style="width: 18rem;">
+                    <img class="card-img-top pt-3 w-100" src="data:'.$row->tipo.';base64,'.base64_encode($row->foto) .'"
+                     alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 style="border-top: 2px solid black;" class="card-title pt-3">'.$row->Nom.'</h5>
+                      <p class="card-text">'.$row->valor.' punts</p>
+                      <button href="#" class="custom-btn btn-7 "><span>COMPRAR</span></button>
+                    </div>
+                  </div>
+                  </div>';
+        }
+        
+    ?>
+
+      </div>
+    </div>
     <!--<div class="div_productos">
         
         <div class="row">
