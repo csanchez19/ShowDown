@@ -4,7 +4,7 @@
 <style>
     body
     {
-        background-color: #e77304 !important;
+                background-color: #e77304;
     }
 </style>
 
@@ -19,7 +19,7 @@
 <div class="container-fluid div_orange">
 <div class="container marginado top_Winners">
     <h2 class="text-center">Benvingut a la <span>Winners League!</span></h2>
-    <p class="marginado">Aquest és el Rànking de la <span>Winners League!</span></p>
+    <p style="display:none;" class="marginado">Aquest és el Rànking de la <span>Winners League!</span></p>
 </div>
 
 <div class="container marginado">
@@ -52,10 +52,75 @@
         }
         
         ?>
-    </div>´
+    </div>
+    
+    <!--<div class="div_productos">
+        
+        <div class="row">
+            <div class="col-4">
+                <div class="image">
+                    <img src="https://fadzrinmadu.github.io/hosted-assets/creative-product-card-ui-design-using-html-css-and-javascript/t-shirt.png" alt="">
+                </div>
+              <div class="card-content">
+                <div class="wrapper">
+                  <div class="title">
+                    Adidas Originals
+                  </div>
+                  <p>
+                    Men's running tshirt
+                  </p>
+                  <span class="price">$29.99</span>
+                  <div class="content size">
+                    <div class="name size-name">
+                      Size
+                    </div>
+                    <div class="size-value">
+                      <span class="color">XS</span>
+                      <span class="color">S</span>
+                      <span class="active">M</span>
+                      <span class="color">L</span>
+                      <span class="color">XL</span>
+                    </div>
+                  </div>
+                  <div class="content colour">
+                    <div class="name colour-name">
+                      Colour
+                    </div>
+                    <div class="colour-value">
+                      <span class="white" data-color="lightgrey" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large2.png"></span>
+                      <span class="blue active" data-color="#456ABD" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large.png"></span>
+                      <span class="yellow" data-color="#EAA523" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large3.png"></span>
+                    </div>
+                  </div>
+                  <div class="btns">
+                    <button>Buy now</button>
+                    <button>Add to cart</button>
+                  </div>
+                </div>
+              </div>
+                </div>
+            </div>-->
+        
+    </div>
     </div>
 
-    <div class="container-fluid div_premios">
-
-    </div>
 </div>
+
+
+<script>
+
+    $(".colour-value span").click(function(){
+  $(".colour-value span").removeClass("active");
+  $(this).addClass("active");
+  $("body").css("background", $(this).attr("data-color"));
+  $(".wrapper .price").css("color", $(this).attr("data-color"));
+  $(".size-value span.color").css("color", $(this).attr("data-color"));
+  $(".size-value span.active").css("background", $(this).attr("data-color"));
+  $(".image img").attr("src", $(this).attr("data-img"));
+  $(".btns button").css({
+    "background": $(this).attr("data-color"),
+    "border-color": $(this).attr("data-color")
+  });
+});
+    
+</script>

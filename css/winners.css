@@ -17,12 +17,17 @@
 
 .posicio
 {
-    border-bottom: 2px solid #e77304;
-    background-color: white;
+    border-bottom: 2px solid #f00;
+    background-color: black;
+}
+
+    .posicio p
+{
+    color: white;
 }
 
 .nPosicio {
-    background-color: #e77304;
+    background-color: #f00;
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -69,7 +74,7 @@
 
 .div_orange
 {
-    background-color: #e77304;
+   background: linear-gradient(180deg, #e77304, #f00);
 }
 
 .div_premios
