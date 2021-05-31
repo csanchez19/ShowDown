@@ -76,10 +76,7 @@ echo base_url(); ?>css/register.css">
                     <option value="">Selecciona el numero de places...</option>
                     <option value="2">2</option>
                     <option value="4">4</option>
-                    <option value="6">6</option>
                     <option value="8">8</option>
-                    <option value="10">10</option>
-                    <option value="12">12</option>
                 </select>
                 <?php echo form_error('places'); ?>
                 </div>

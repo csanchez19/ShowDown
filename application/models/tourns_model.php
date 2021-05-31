@@ -36,13 +36,32 @@
             $desc = $_POST["desc"];
             $actiu = FALSE;
 
-            $sql = "INSERT INTO torneig(nom,descripcio,data,places,activo,codiJoc)
-                    VALUES('$nom','$desc','$data','$places','$actiu','$idJoc')";
+            $username = $this->session->userdata('username');
+
+            $creador = $username;
+
+            $sql = "INSERT INTO torneig(nom,descripcio,data,places,activo,codiJoc,creador)
+                    VALUES('$nom','$desc','$data','$places','$actiu','$idJoc','$creador')";
 
             $this->db->query($sql);
             $num_files = $this->db->affected_rows();
 
             return $num_files;
+        }
+
+        //SELECT BRACKET DEL TORNEO
+        public function bracket($codiTorneig){
+
+            $response = array();
+
+            $this->db->select('u.usuari, p.resultat');
+            $this->db->from('partida p');
+            $this->db->join('usuaris u', 'u.id = p.participant');
+            $this->db->where('idTorneo', $codiTorneig);
+            $records = $this->db->get();
+            $response = $records->result_array();
+
+            return $response;
         }
     }
 

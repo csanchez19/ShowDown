@@ -221,6 +221,7 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'winnersleague', $dades);
         }
 
+
         //VISTA TORNEIG INDIVIDUAL
         public function tournament($codiTorneig)
         {       
@@ -229,6 +230,15 @@ class showdown extends CI_Controller {
                 $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
 
                 $this->template->load('layout', 'tournament', $dades);
+        }
+
+        public function selPartida($codiTorneig){
+                // get data
+                $this->load->model('tourns_model');
+
+                $data = $this->tourns_model->bracket($codiTorneig);
+
+                echo json_encode($data);
         }
 
         //VISTA REGISTRE TORNEIG
