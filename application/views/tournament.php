@@ -40,15 +40,16 @@
                     <div class="row">
                         <div class="col infoLeft text-left">
                             <p>Data d'Inici</p>
-                            <p class="pt-lg-4 pt-5">Plataforma</p>
                             <p class="pt-lg-4 pt-5">Places</p>
-                            <p class="pt-lg-4 pt-5">Premi</p>
+                            <p class="pt-lg-4 pt-5">Format</p>
+                            <p class="pt-lg-4 pt-5">Descripció</p>
+
                         </div>
                         <div class="col infoRight text-right">
                             <p><?php echo $result->data ?></p>
-                            <p class="pt-4">PC</p>
                             <p class="pt-4"><?php echo $result->places ?></p>
-                            <p class="pt-4">No</p>
+                            <p class="pt-4">El·liminació directa</p>
+                            <p class="pt-4"><?php echo $result->descripcio ?></p>
                         </div>
                     </div>
                 </div>
@@ -56,9 +57,9 @@
         </div>  
     </div>
 
-    <h2 class="marginado text-center" style="color: white;">Recompenses Winners League</h2>
+    <h2 class="marginado text-center" style="color: white;">Bracket</h2>
 
-    <div class="row justify-content-center marginado text-center">
+    <!--<div class="row justify-content-center marginado text-center">
         <div class="col-3 escalar">
             <p class="nCup">1st</p>
             <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
@@ -76,7 +77,7 @@
             <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
             <p style="color: white"><span>1000</span> punts</p>
         </div>
-    </div>
+    </div>-->
 
 
     <div class="row justify-content-center demo">
@@ -86,4 +87,14 @@
 
 <!--Scripts nuestros-->
 <script src = "<?php echo base_url();?>js/test.js"></script>
+
+<script>
+    var baseURL= "<?php echo base_url();?>";
+
+    var usuari = "<?php echo $this->session->userdata('username');?>";
+
+    var codiTorneig = "<?php echo $result->codiTorneig?>";
+
+    var places = "<?php echo $result->places?>";
+</script>
 

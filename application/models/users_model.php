@@ -43,6 +43,35 @@
             }
         }
 
+        //UPDATE dades perfil
+        public function updateP(){
+            $nom = $_POST["nom"];
+            $cognoms = $_POST["cognoms"];
+            $correu = $_POST["correu"];
+            $naix = $_POST["naix"];
+            $pass = $_POST["password"];
+            $paypal = $_POST["paypal"];
+            $provincia = $_POST["provincia"];
+            $poblacio = $_POST["poblacio"];
+            $codipostal = $_POST["codipostal"];
+            $direccio = $_POST["carrer"];  
+
+            $username = $this->session->userdata('username');
+
+            $sql = "UPDATE usuaris SET nom = '".$nom."', cognoms = '".$cognoms."', correu = '".$correu."', data = '".$naix."', contrasenya = '".$pass."', paypal = '".$paypal."', provincia = '".$provincia."',
+                                        poblacio = '".$poblacio."', codiPostal = '".$codipostal."', direccio = '".$direccio."' WHERE usuari = '".$username."';";
+                                        
+
+            echo $sql;
+                                        
+
+            $this->db->query($sql);
+
+            $num_files = $this->db->affected_rows();
+
+            return $num_files;
+        }
+
         public function sel_usuaris($username)
         {
             $query = $this->db->query('SELECT * FROM usuaris WHERE usuari = "'.$username.'"');
