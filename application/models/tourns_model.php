@@ -52,16 +52,20 @@
         //SELECT BRACKET DEL TORNEO
         public function bracket($codiTorneig){
 
-            $response = array();
+            /*$response = array();
 
-            $this->db->select('u.usuari, p.resultat');
-            $this->db->from('partida p');
-            $this->db->join('usuaris u', 'u.id = p.participant');
+            $this->db->select('*');
+            $this->db->from('partida');
             $this->db->where('idTorneo', $codiTorneig);
             $records = $this->db->get();
             $response = $records->result_array();
 
-            return $response;
+            return $response;*/
+
+            $sql = 'SELECT * FROM partida WHERE idTorneo =' . $codiTorneig;
+            $query = $this->db->query($sql);
+            // Fetch the result array from the result object and return it
+            return $query->result();
         }
 
         //SELECT JOC DEL TORNEIG
@@ -81,16 +85,44 @@
         }
 
         //INSERIR PARTICIPANT
-        public function inserirParticipant($codiTorneig,$ingame){
+        public function inserirParticipant(){
 
-            $sql = "INSERT INTO partida(idTorneo,participant)
-                    VALUES('$codiTorneig','$ingame')";
+            $usuari = $_POST["usuari"];
+            $ingame = $_POST["ingame"];
+            $codiTorneig = $_POST["torneig"];
+
+            $sql = "INSERT INTO participant(usuari,nom_ingame,codiTorneig)
+                    VALUES('$usuari','$ingame','$codiTorneig')";
 
             $this->db->query($sql);
             $num_files = $this->db->affected_rows();
 
             return $num_files;
+        }
 
+        //INSERIR PARTICIPANT A PARTIDA
+        public function inserirPartida(){
+            $usuari = $_POST["usuari"];
+            $ingame = $_POST["ingame"];
+            $codiTorneig = $_POST["torneig"];
+
+            $sql = "INSERT INTO partida(idTorneo,participant,ingame)
+                    VALUES('$codiTorneig','$usuari','$ingame')";
+
+            $this->db->query($sql);
+            $num_files = $this->db->affected_rows();
+
+            return $num_files;
+        }
+
+        //CONTADOR PARTICIPANTS EN TORNEIG
+        public function selParticipants($codiTorneig){
+            $this->db->select('count(*) as count');
+            $this->db->from('partida');
+            $this->db->where('idTorneo', $codiTorneig);
+            $query = $this->db->get();
+
+            return $query->row();
         }
     }
 

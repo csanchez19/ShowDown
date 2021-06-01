@@ -24,11 +24,80 @@
                     <p class="tournamentTitle mt-4"><?php echo $result->nom?></p>
                 </div>
                 <div class="col-lg-3 col-12 pt-5 text-center">
-                    <!--<button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important" onclick="goApuntarse()"><span style="font-size: 1em !important">APUNTAR-SE</span></button>-->
-                    <?php echo '<a class="custom-btn btn-7 mt-lg-3 mt-0" href="'.base_url().'index.php/showdown/apuntarse/' . $result->codiTorneig.'">APUNTARSE</a>'; ?>
+                    <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important" data-toggle="modal" data-target="#exampleModal"><span style="font-size: 1em !important">APUNTAR-SE</span></button>
+                    <!--<?php echo '<a class="custom-btn btn-7 mt-lg-3 mt-0" href="'.base_url().'index.php/showdown/apuntarse/' . $result->codiTorneig.'">APUNTARSE</a>'; ?>-->
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el control de resultats.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <?php 
+            echo form_open('showdown/validation');
+
+            //NOM D'USUARI AL JOC
+            echo '<div class="form-group">';
+            echo form_label('Nom al joc', 'ingame');
+            $valueIngame = (!empty($ingame))?$ingame:'';
+            $dataIngame = array(
+                'name' => 'ingame',
+                'value' => $valueIngame,
+                'class' => 'form-control'
+            );
+            echo form_input($dataIngame);
+            echo form_error('ingame'); 
+            echo '</div>';
+
+            //NOM D'USUARI
+            echo '<div class="form-group">';
+            $valueUsuari = (!empty($usuari))?$usuari:'';
+            $dataUsuari = array(
+                'name' => 'usuari',
+                'value' => $this->session->userdata('username'),
+                'class' => 'form-control',
+                'type' => 'hidden'
+            );
+            echo form_input($dataUsuari);
+            echo '</div>';
+
+            //TORNEIG
+            echo '<div class="form-group">';
+            $valueTorneig = (!empty($torneig))?$torneig:'';
+            $dataTorneig = array(
+                'name' => 'torneig',
+                'value' => $result->codiTorneig,
+                'class' => 'form-control',
+                'type' => 'hidden'
+            );
+            echo form_input($dataTorneig);
+            echo '</div>';
+    
+
+        ?>
+
+            <div class="form-group pt-5 text-center">
+                <label for="enviar" class="sr-only"></label>
+                <?php
+
+                ?>
+                <button type="submit" name="apuntarse" class="custom-btn2 btn-7"><span>APUNTAR-SE</span></button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
     </div>
 
     <div class="row marginado">
@@ -41,7 +110,7 @@
                     <div class="row">
                         <div class="col infoLeft text-left">
                             <p>Data d'Inici</p>
-                            <p class="pt-lg-4 pt-5">Places</p>
+                            <p class="pt-lg-4 pt-5">Places <?php $participants->count ?> </p>
                             <p class="pt-lg-4 pt-5">Format</p>
                             <p class="pt-lg-4 pt-5">Descripció</p>
 
@@ -59,27 +128,6 @@
     </div>
 
     <h2 class="marginado text-center" style="color: white;">Bracket</h2>
-
-    <!--<div class="row justify-content-center marginado text-center">
-        <div class="col-3 escalar">
-            <p class="nCup">1st</p>
-            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
-            <p style="color: white"><span>1000</span> punts</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="offset-2 col-3 text-center escalar">
-            <p class="nCup">2nd</p>
-            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
-            <p style="color: white"><span>1000</span> punts</p>
-        </div>
-        <div class="col-3 offset-2 text-center escalar">
-            <p class="nCup">3rd</p>
-            <img src="<?php echo base_url(); ?>content/img/trophy.png" class="widthCopa" alt="">
-            <p style="color: white"><span>1000</span> punts</p>
-        </div>
-    </div>-->
-
 
     <div class="row justify-content-center demo">
     
@@ -103,5 +151,7 @@
     var codiTorneig = "<?php echo $result->codiTorneig?>";
 
     var places = "<?php echo $result->places?>";
+
+
 </script>
 

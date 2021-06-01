@@ -31,28 +31,10 @@ function bracket(){
         console.log(xhttp.responseText);
 
         var data = jQuery.parseJSON(xhttp.responseText);
-        
-        //JUGADOR 1
-        var jug1 = "";
 
-        if(typeof data[0] === undefined){
-          var jug1 = "";
-        }else{
-          var jug1 = data[0].usuari;
-        }
-
-        //JUGADOR 2
-        var jug2 = "";
-
-        if(typeof data[1] === undefined){
-          var jug2 = "";
-        }else{
-          var jug2 = data[1].usuari;
-        }
-
-        var twoteamsEmpty = {
+        var twoteams = {
           "teams": [             // Matchups
-            [jug1, jug2]// First match
+            [(data[0] != null ? data[0].ingame : ""), (data[1] != null ? data[1].ingame : "")]// First match
           ],
           "results": [           // List of brackets (single elimination, so only one bracket)
       
@@ -65,7 +47,7 @@ function bracket(){
         }
 
         $('.demo').bracket({
-          init: twoteamsEmpty,
+          init: twoteams,
           //skipGrandFinalComeback: true,
           //parametres
           teamWidth: 82,
@@ -73,6 +55,10 @@ function bracket(){
           matchMargin: 41,
           roundMargin: 35
         });
+
+        var pujarPartides = twoteams.teams;
+
+        console.log(pujarPartides);
       }
     }
 
@@ -89,47 +75,11 @@ function bracket(){
 
         var data = jQuery.parseJSON(xhttp.responseText);
 
-        //JUGADOR 1
-        var jug1 = "";
-
-        if(typeof data[0] === undefined){
-          var jug1 = "";
-        }else{
-          var jug1 = data[0].usuari;
-        }
-
-        //JUGADOR 2
-        var jug2 = "";
-
-        if(typeof data[1] === undefined){
-          var jug2 = "";
-        }else{
-          var jug2 = data[1].usuari;
-        }
-
-        //JUGADOR 3
-        var jug3 = "";
-
-        if(typeof data[2] === "undefined"){
-          var jug3 = "";
-        }else{
-          var jug3 = data[2].usuari;
-        }
-
-        //JUGADOR 4
-        var jug4 = "";
-
-        if(typeof data[3] === "undefined"){
-          var jug4 = "";
-        }else{
-          var jug4 = data[3].usuari;
-        }
-
-        var fourteamsEmpty = {
+        var fourteams = {
 
           "teams": [             // Matchups
-              [jug1,jug2],// First match
-              [jug3,jug4] // Second match
+            [(data[0] != null ? data[0].ingame : ""), (data[1] != null ? data[1].ingame : "")], //First match
+            [(data[2] != null ? data[2].ingame : ""), (data[3] != null ? data[3].ingame : "")]  //second match
           ],
           "results": [           // List of brackets (single elimination, so only one bracket)
       
@@ -147,7 +97,7 @@ function bracket(){
         }
 
         $('.demo').bracket({
-          init: fourteamsEmpty,
+          init: fourteams,
           //skipGrandFinalComeback: true,
           //parametres
           teamWidth: 82,
@@ -170,85 +120,13 @@ function bracket(){
         console.log(xhttp.responseText);
 
         var data = jQuery.parseJSON(xhttp.responseText);  
-        
-        //JUGADOR 1
-        var jug1 = "";
 
-        if(typeof data[0] === undefined){
-          var jug1 = "";
-        }else{
-          var jug1 = data[0].usuari;
-        }
-
-        //JUGADOR 2
-        var jug2 = "";
-
-        if(typeof data[1] === undefined){
-          var jug2 = "";
-        }else{
-          var jug2 = data[1].usuari;
-        }
-
-        //JUGADOR 3
-        var jug3 = "";
-
-        if(typeof data[2] === "undefined"){
-          var jug3 = "";
-        }else{
-          var jug3 = data[2].usuari;
-        }
-
-        //JUGADOR 4
-        var jug4 = "";
-
-        if(typeof data[3] === "undefined"){
-          var jug4 = "";
-        }else{
-          var jug4 = data[3].usuari;
-        }
-
-        //JUGADOR 5
-        var jug5 = "";
-
-        if(typeof data[4] === "undefined"){
-          var jug5 = "";
-        }else{
-          var jug5 = data[4].usuari;
-        }
-
-        //JUGADOR 6
-        var jug6 = "";
-
-        if(typeof data[5] === "undefined"){
-          var jug6 = "";
-        }else{
-          var jug6 = data[5].usuari;
-        }
-
-        //JUGADOR 7
-        var jug7 = "";
-
-        if(typeof data[6] === "undefined"){
-          var jug7 = "";
-        }else{
-          var jug7 = data[6].usuari;
-        }
-
-        //JUGADOR 8
-        var jug8 = "";
-
-        if(typeof data[7] === "undefined"){
-          var jug8 = "";
-        }else{
-          var jug8 = data[7].usuari;
-        }
-
-        var eightteamsEmpty = {
+        var eightteams = {
           teams: [
-            [jug1, jug2],
-            [jug3, jug4],
-            [jug5, jug6],
-            [jug7, jug8]
+            [(data[0] != null ? data[0].ingame : ""), (data[1] != null ? data[1].ingame : "")],
+            [(data[2] != null ? data[2].ingame : ""), (data[3] != null ? data[3].ingame : "")],
+            [(data[4] != null ? data[4].ingame : ""), (data[5] != null ? data[5].ingame : "")],
+            [(data[6] != null ? data[6].ingame : ""), (data[7] != null ? data[7].ingame : "")]
           ],
           results: [
               [
@@ -257,10 +135,10 @@ function bracket(){
                 [[, ], [, ]]
               ]
           ]
-        }
+        } 
 
         $('.demo').bracket({
-          init: eightteamsEmpty,
+          init: eightteams,
           //skipGrandFinalComeback: true,
           //parametres
           teamWidth: 82,
@@ -269,77 +147,15 @@ function bracket(){
           roundMargin: 34
         });
 
+        var pujarPartides = eightteams.teams;
+
+        console.log(pujarPartides);
+
       }
     }
   }
 
-  
-
-
 }
-
-
-
-
-
-
-
-
-
-
-/*var ttwoteams = {
-    "teams": [             // Matchups
-        ["",""]// First match
-    ],
-    "results": [           // List of brackets (single elimination, so only one bracket)
-
-        [                    // List of rounds in bracket
-        [                  // First round in this bracket
-            [, ]          // Team 1 vs Team 2
-        ]
-        ]
-    ]
-}*/
-
-/*var fourteams = {
-
-    "teams": [             // Matchups
-        ["",""],// First match
-        ["",""] // Second match
-    ],
-    "results": [           // List of brackets (single elimination, so only one bracket)
-
-        [                    // List of rounds in bracket
-        [                  // First round in this bracket
-            [, ],          // Team 1 vs Team 2
-            [, ]          // Team 3 vs Team 4
-        ],
-        [                  // Second (final) round in single elimination bracket
-            [, ],          // Match for first place
-            [, ]           // Match for 3rd place
-        ]
-        ]
-    ]
-}*/
-
-
-/*var eightteams = {
-    teams : [
-      ["jesu",  "albert" ],
-      ["carles",  "andres" ],
-      ["xavi",  "alex" ],
-      ["pablo",  null ]
-    ],
-    results : [[ /* WINNER BRACKET *//*
-      [[0,3], [2,1], [1,0], [5,3]],
-      [[1,2], [5,1]],
-      [[2,1]]
-    ], [         /* LOSER BRACKET *//*
-      [[2,1], [0,1], [5,3], [2,3]],
-      [[1,0], [2,1]],
-      [[1,3]]
-    ]]
-  }*/
 
   var bigData = {
     teams : [

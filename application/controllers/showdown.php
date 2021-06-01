@@ -158,6 +158,24 @@ class showdown extends CI_Controller {
                                 
                                 redirect(base_url() . 'index.php/showdown/perfil'); 
                         }
+                }else if(isset($_POST["apuntarse"])){
+                        $this->form_validation->run();
+
+                        $dades = $this->input->post();
+
+                        $this->load->model('tourns_model');
+
+                        $res['result'] = $this->tourns_model->inserirPartida();
+
+                        echo '
+                        <script type="text/javascript">
+
+                        alert("T"has registrat correctament.");
+
+                        </script>
+                        ';
+
+                        redirect(base_url() . 'index.php/showdown/tournament/' . $_POST["torneig"]);
                 }
         }
 
@@ -239,6 +257,8 @@ class showdown extends CI_Controller {
 
                 $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
 
+                $dades['participants'] = $this->tourns_model->selParticipants($codiTorneig);
+
                 $this->template->load('layout', 'tournament', $dades);
         }
 
@@ -263,28 +283,6 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'register_tourn', $dades);
         }
 
-        public function apuntarse($codiTorneig){
-                $this->load->model('tourns_model');
-
-                $username = $this->session->userdata('username');
-
-                //select joc del torneig
-                $dades['joc'] = $this->tourns_model->sel_joc_torneig($codiTorneig);
-
-                if($dades['joc'] == "League of legends"){
-                        //select ingame de l'usuari
-                        $ingame = $this->tourns_model->sel_joc_usuari($dades['joc'], $username);
-
-                        //insert en partida
-                        $res['resultat'] = $this->tourns_model->inserirParticipant($codiTorneig ,$ingame);
-
-                        redirect(base_url());  
-
-                }else{
-                        echo $dades['joc']->row['Nom'];
-                }
-
-        }
 
         //LOG OUT
         public function logout(){  

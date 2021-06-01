@@ -28,24 +28,6 @@
 </div>
 
 <div class="container marginado">
-    <h1 class="title">Nom d'usuari als jocs</h1>
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-3 col-12 mt-lg-0 mt-5 text-center cajaPerfil">
-            <p class="text-danger h5"><?php echo $result->usuari_lol; ?></p>
-            <p class="">League of Legends</p>
-        </div>
-        <div class="col-lg-3 offset-lg-1 mt-lg-0 col-12 mt-5 text-center cajaPerfil">
-            <p class="text-danger h5"><?php echo $result->usuari_fifa; ?></p>
-            <p class="">FIFA</p>
-        </div>
-        <div class="col-lg-3 offset-lg-1 mt-lg-0 mt-5 col-12 text-center cajaPerfil">
-            <p class="text-danger h5"><?php echo $result->usuari_sf; ?></p>
-            <p class="">Street Fighter</p>
-        </div>
-    </div>
-</div>
-
-<div class="container marginado">
     <h1 class="title">Estadístiques Generals</h1>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-3 col-12 mt-lg-0 mt-5 text-center cajaPerfil">
