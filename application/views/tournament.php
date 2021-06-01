@@ -24,7 +24,8 @@
                     <p class="tournamentTitle mt-4"><?php echo $result->nom?></p>
                 </div>
                 <div class="col-lg-3 col-12 pt-5 text-center">
-                    <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important"><span style="font-size: 1em !important">APUNTAR-SE</span></button>
+                    <!--<button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important" onclick="goApuntarse()"><span style="font-size: 1em !important">APUNTAR-SE</span></button>-->
+                    <?php echo '<a class="custom-btn btn-7 mt-lg-3 mt-0" href="'.base_url().'index.php/showdown/apuntarse/' . $result->codiTorneig.'">APUNTARSE</a>'; ?>
                 </div>
             </div>
         </div>
@@ -89,6 +90,12 @@
 <script src = "<?php echo base_url();?>js/test.js"></script>
 
 <script>
+
+    function goApuntarse()
+    {
+        window.location.href = "/ShowDown/index.php/showdown/apuntarse/" + "<?php $result->codiTorneig?>";
+    }
+
     var baseURL= "<?php echo base_url();?>";
 
     var usuari = "<?php echo $this->session->userdata('username');?>";

@@ -63,6 +63,35 @@
 
             return $response;
         }
+
+        //SELECT JOC DEL TORNEIG
+        public function sel_joc_torneig($codiTorneig){
+            $query = $this->db->query('SELECT j.Nom FROM torneig t JOIN joc j ON(j.Id = t.codiJoc) WHERE t.codiTorneig ='.$codiTorneig);
+
+            return $query->row();
+        }
+
+        //SELECT JOC DE L'USUARI
+        public function sel_joc_usuari($joc, $username){
+            if($joc == "League of legends"){
+                $query = $this->db->query('SELECT usuari_lol FROM usuaris WHERE usuari =' .$username);
+
+                return $query->result();
+            }
+        }
+
+        //INSERIR PARTICIPANT
+        public function inserirParticipant($codiTorneig,$ingame){
+
+            $sql = "INSERT INTO partida(idTorneo,participant)
+                    VALUES('$codiTorneig','$ingame')";
+
+            $this->db->query($sql);
+            $num_files = $this->db->affected_rows();
+
+            return $num_files;
+
+        }
     }
 
     //ALTER TABLE torneig ADD CONSTRAINT fk_joc FOREIGN KEY (codiJoc) REFERENCES joc(Id)

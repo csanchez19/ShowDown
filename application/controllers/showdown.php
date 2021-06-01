@@ -255,10 +255,35 @@ class showdown extends CI_Controller {
         public function register_tourn(){
                 $this->load->model('tourns_model');
 
+                $username = $this->session->userdata('username');
+
                 //sel jocs
-                $dades['result'] = $this->tourns_model->sel_jocs();
+                $dades['result'] = $this->tourns_model->sel_jocs($username);
 
                 $this->template->load('layout', 'register_tourn', $dades);
+        }
+
+        public function apuntarse($codiTorneig){
+                $this->load->model('tourns_model');
+
+                $username = $this->session->userdata('username');
+
+                //select joc del torneig
+                $dades['joc'] = $this->tourns_model->sel_joc_torneig($codiTorneig);
+
+                if($dades['joc'] == "League of legends"){
+                        //select ingame de l'usuari
+                        $ingame = $this->tourns_model->sel_joc_usuari($dades['joc'], $username);
+
+                        //insert en partida
+                        $res['resultat'] = $this->tourns_model->inserirParticipant($codiTorneig ,$ingame);
+
+                        redirect(base_url());  
+
+                }else{
+                        echo $dades['joc']->row['Nom'];
+                }
+
         }
 
         //LOG OUT

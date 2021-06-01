@@ -10,7 +10,7 @@ window.onload = function(){
     if(document.getElementById("League of legends")){
         document.getElementById("League of legends").src="http://localhost/showdown/content/img/1.png";
     }
-
+    
     bracket();
 
     //console.log(codiTorneig);
@@ -31,14 +31,28 @@ function bracket(){
         console.log(xhttp.responseText);
 
         var data = jQuery.parseJSON(xhttp.responseText);
+        
+        //JUGADOR 1
+        var jug1 = "";
 
-        //console.log(data.length);
-        
-        
+        if(typeof data[0] === undefined){
+          var jug1 = "";
+        }else{
+          var jug1 = data[0].usuari;
+        }
+
+        //JUGADOR 2
+        var jug2 = "";
+
+        if(typeof data[1] === undefined){
+          var jug2 = "";
+        }else{
+          var jug2 = data[1].usuari;
+        }
 
         var twoteamsEmpty = {
           "teams": [             // Matchups
-            ["data[0].usuari", "data[1].usuari"]// First match
+            [jug1, jug2]// First match
           ],
           "results": [           // List of brackets (single elimination, so only one bracket)
       
@@ -50,12 +64,6 @@ function bracket(){
           ]
         }
 
-        /*for(var i = 0; i < data.length; i++){
-          twoteams.teams.push( [data[0].usuari, data[1].usuari], );
-        }*/
-
-        //console.log(twoteams);
-
         $('.demo').bracket({
           init: twoteamsEmpty,
           //skipGrandFinalComeback: true,
@@ -63,7 +71,7 @@ function bracket(){
           teamWidth: 82,
           scoreWidth: 48,
           matchMargin: 41,
-          roundMargin: 77
+          roundMargin: 35
         });
       }
     }
@@ -81,19 +89,47 @@ function bracket(){
 
         var data = jQuery.parseJSON(xhttp.responseText);
 
-        //console.log(data.length);
+        //JUGADOR 1
+        var jug1 = "";
 
-        /*for(var i = 0; i < data.length; i++){
-          twoteams.teams.push( [data[0].usuari, data[1].usuari], );
-        }*/
+        if(typeof data[0] === undefined){
+          var jug1 = "";
+        }else{
+          var jug1 = data[0].usuari;
+        }
 
-        //console.log(twoteams);
+        //JUGADOR 2
+        var jug2 = "";
+
+        if(typeof data[1] === undefined){
+          var jug2 = "";
+        }else{
+          var jug2 = data[1].usuari;
+        }
+
+        //JUGADOR 3
+        var jug3 = "";
+
+        if(typeof data[2] === "undefined"){
+          var jug3 = "";
+        }else{
+          var jug3 = data[2].usuari;
+        }
+
+        //JUGADOR 4
+        var jug4 = "";
+
+        if(typeof data[3] === "undefined"){
+          var jug4 = "";
+        }else{
+          var jug4 = data[3].usuari;
+        }
 
         var fourteamsEmpty = {
 
           "teams": [             // Matchups
-              ["",""],// First match
-              ["",""] // Second match
+              [jug1,jug2],// First match
+              [jug3,jug4] // Second match
           ],
           "results": [           // List of brackets (single elimination, so only one bracket)
       
@@ -133,22 +169,86 @@ function bracket(){
       if(this.readyState == 4 && this.status == 200){
         console.log(xhttp.responseText);
 
-        var data = jQuery.parseJSON(xhttp.responseText);
+        var data = jQuery.parseJSON(xhttp.responseText);  
+        
+        //JUGADOR 1
+        var jug1 = "";
 
-        //console.log(data.length);
+        if(typeof data[0] === undefined){
+          var jug1 = "";
+        }else{
+          var jug1 = data[0].usuari;
+        }
 
-        /*for(var i = 0; i < data.length; i++){
-          twoteams.teams.push( [data[0].usuari, data[1].usuari], );
-        }*/
+        //JUGADOR 2
+        var jug2 = "";
 
-        //console.log(twoteams);
+        if(typeof data[1] === undefined){
+          var jug2 = "";
+        }else{
+          var jug2 = data[1].usuari;
+        }
+
+        //JUGADOR 3
+        var jug3 = "";
+
+        if(typeof data[2] === "undefined"){
+          var jug3 = "";
+        }else{
+          var jug3 = data[2].usuari;
+        }
+
+        //JUGADOR 4
+        var jug4 = "";
+
+        if(typeof data[3] === "undefined"){
+          var jug4 = "";
+        }else{
+          var jug4 = data[3].usuari;
+        }
+
+        //JUGADOR 5
+        var jug5 = "";
+
+        if(typeof data[4] === "undefined"){
+          var jug5 = "";
+        }else{
+          var jug5 = data[4].usuari;
+        }
+
+        //JUGADOR 6
+        var jug6 = "";
+
+        if(typeof data[5] === "undefined"){
+          var jug6 = "";
+        }else{
+          var jug6 = data[5].usuari;
+        }
+
+        //JUGADOR 7
+        var jug7 = "";
+
+        if(typeof data[6] === "undefined"){
+          var jug7 = "";
+        }else{
+          var jug7 = data[6].usuari;
+        }
+
+        //JUGADOR 8
+        var jug8 = "";
+
+        if(typeof data[7] === "undefined"){
+          var jug8 = "";
+        }else{
+          var jug8 = data[7].usuari;
+        }
 
         var eightteamsEmpty = {
           teams: [
-            ["", ""],
-            ["", ""],
-            ["", ""],
-            ["", ""]
+            [jug1, jug2],
+            [jug3, jug4],
+            [jug5, jug6],
+            [jug7, jug8]
           ],
           results: [
               [
@@ -166,8 +266,9 @@ function bracket(){
           teamWidth: 82,
           scoreWidth: 48,
           matchMargin: 41,
-          roundMargin: 77
+          roundMargin: 34
         });
+
       }
     }
   }
