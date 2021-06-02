@@ -119,6 +119,23 @@
             return $query->result();
         }
 
+        //SELECT CHECK IF ADMIN
+        public function checkAdmin($username){
+            $query = $this->db->query("SELECT( CASE WHEN EXISTS
+                                                (
+                                                    SELECT * FROM usuaris
+                                                    WHERE usuari = '".$username."'
+                                                    AND rol = 'administrador'
+                                                )
+                                                    THEN 1
+                                                    ELSE 0
+                                                    END
+
+                                                ) AS isAdmin");
+
+            return $query->row();
+        }
+
         //CONTADORS
 
         //CONTADOR TORNEJOS CREATS

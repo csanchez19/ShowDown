@@ -12,15 +12,30 @@
 
 <div class="container mb-5">
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             <div class="row">
                 <div class="col-lg-2 col-6">
                     <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
                 </div>
-                <div class="col-12 col-lg-2 textProfile">
+                <div class="col-8 col-lg-2 textProfile">
                     <p class="mt-5" style="font-size: 1.7em"><?php echo $result->usuari; ?></p> 
                     <p class="">Membre des de <?php echo $result->dataCreat; ?></p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-2 mt-5">
+            <div class="row">
+                <div class="col">
                     <a class="btn btn-secondary" href="<?php echo base_url().'index.php/showdown/modificarPerfil'?>">Modificar perfil</a>
+                    <?php
+                        if($admin->isAdmin != FALSE){
+                            ?>
+                                <a class="mt-2 btn btn-secondary" href="<?php echo base_url().'index.php/showdown/admin'?>">Plana administrador</a>
+                            <?php
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>

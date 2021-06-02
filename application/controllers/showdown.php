@@ -231,6 +231,9 @@ class showdown extends CI_Controller {
                 //sel usuari
                 $dades['result'] = $this->users_model->sel_usuaris($username);
 
+                //check if admin
+                $dades['admin'] = $this->users_model->checkAdmin($username);
+
                 //CONTADORS
 
                 $dades['tornejos'] = $this->users_model->contTornejos();
