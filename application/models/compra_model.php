@@ -8,16 +8,19 @@
 
         public function comprar($codiUsuari)
         {
-            $query = $this->db->query('INSERT INTO compres ("codiCompra","codiUsuari") VALUES ("0","'.$codiUsuari.'")');
 
-            return $query -> result();
+            $data = array(
+                'codiUsuari'=> $codiUsuari
+            );
+         
+            $this->db->insert('compres',$data);
         }
 
         public function sel_usr_compra($codiUsuari)
         {
-            $query = $this->db->query('SELECT codiCompra FROM compres WHERE codiUsuari = "'.$codiUsuari.'"');
+            $query = $this->db->query('SELECT codiCompra FROM compres WHERE codiUsuari = "'.$codiUsuari.'" ORDER BY codiCompra DESC');
 
-            return $query -> result();
+            return $query -> result_array();
         }
 
         public function product_id($codiPremi)

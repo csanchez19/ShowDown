@@ -273,6 +273,14 @@ class showdown extends CI_Controller {
                 $dades['pick'] = $this->users_model->sel_usuaris($username);
 
                 $dades['username'] = $this->session->userdata('username');
+
+                $puntos = $this->users_model->sel_punts_user($username);
+
+                echo $puntos[0]['punts'];
+
+                $gastat = ($puntos[0]['punts']) - ($this->cart->total());
+
+                echo $gastat;
                 
                 $this->template->load('layout', 'winnersleague', $dades);
         }
@@ -298,7 +306,7 @@ class showdown extends CI_Controller {
                 
                 $this->cart->insert($data);
 
-                $this->WinnersLeague();
+                redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
         }
 
         public function pay()
@@ -311,20 +319,54 @@ class showdown extends CI_Controller {
 
                 $username = $this->session->userdata('username');
 
-                $idUser = $this->users_model->sel_usuaris($username);
+                $puntos = $this->users_model->sel_punts_user($username);
 
-                $this->compra_model->comprar($username);
-
-                foreach ($this->cart->contents() as $items)
+                if($puntos[0]['punts'] < $this->cart->format_number($this->cart->total()))
                 {
-                        $codiProducte = $items['id'];
+                     echo '<script language="javascript">alert("Punts insuficients!");</script>';
 
-                        $compra = $this->compra_model->sel_usr_compra($username);
+                     redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');   
+                }
+                else
+                {
+                        $idUser = $this->users_model->sel_usuaris($username);
 
-                        $this->comanda_model->comandar($compra,$username);
-                }             
-                
-                $this->WinnersLeague();
+                        $this->compra_model->comprar($username);
+
+                        $cont = 0;
+                        
+                        foreach ($this->cart->contents() as $items)
+                        {
+                                $cont++;
+
+                                $codiProducte = $items['id'];
+
+                                $compra = $this->compra_model->sel_usr_compra($username);
+
+                                $this->comanda_model->comandar($compra[0]['codiCompra'],$codiProducte);
+                        }             
+
+                        $gastat = ($puntos[0]['punts']) - ($this->cart->total());
+
+                        echo $gastat;
+
+                        $this->users_model->restarPunts($username,$gastat);
+
+                        $this->cart->destroy();
+
+                        echo $cont;
+
+                        redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
+                }    
+
+                redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
+        }
+
+        public function destruirCarro()
+        {
+                $this->cart->destroy();
+
+                redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
         }
 
 

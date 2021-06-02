@@ -183,8 +183,10 @@
         <?php
         foreach($product as $row)
         {
-          $idProducte = $row->codiPremi;
-          echo '<div class="col-lg-3 col-12 escalar mt-5">
+          if($this->session->userdata('username') != '')
+          {
+            $idProducte = $row->codiPremi;
+            echo '<div class="col-lg-3 col-12 escalar mt-5">
                   <div style="height: 350px" class="card fondo-producto" style="width: 18rem;">
                     <img style="margin-left: 4rem;" class="card-img-top pt-3 w-50" src="data:'.$row->tipo.';base64,'.base64_encode($row->foto) .'"
                      alt="Card image cap">
@@ -195,6 +197,22 @@
                     </div>
                   </div>
                   </div>';
+          }
+          else
+          {
+            $idProducte = $row->codiPremi;
+            echo '<div class="col-lg-3 col-12 escalar mt-5">
+                  <div style="height: 350px" class="card fondo-producto" style="width: 18rem;">
+                    <img style="margin-left: 4rem;" class="card-img-top pt-3 w-50" src="data:'.$row->tipo.';base64,'.base64_encode($row->foto) .'"
+                     alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 style="border-top: 2px solid black;" class="card-title pt-3">'.$row->Nom.'</h5>
+                      <p class="card-text">'.$row->valor.' punts</p>
+                    </div>
+                  </div>
+                  </div>';
+          }
+          
 
 
         }
@@ -210,9 +228,16 @@
 
 </div>
 
-<button type="button" class="fondoCarrito escalar" data-toggle="modal" data-target="#exampleModal">
+<?php 
+
+if($this->session->userdata('username') != '')
+{
+  echo '<button type="button" class="fondoCarrito escalar" data-toggle="modal" data-target="#exampleModal">
   <i class="fas fa-shopping-cart carrito"></i>
-</button>
+  </button>';
+}
+
+?>
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -250,6 +275,7 @@
         ?>
       </div>
       <div class="modal-footer">
+        <a href="<?php echo base_url(); ?>index.php/showdown/destruirCarro" type="button" class="btn btn-danger">Eliminar Carro</a>
         <p class="btn btn-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
         <a href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="btn btn-primary">Save changes</a>
       </div>
