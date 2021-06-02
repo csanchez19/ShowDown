@@ -140,8 +140,12 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div> 
     </div>
+
+    <div class="mt-4 text-center text-secondary">
+        <p><i>(Tenir en compte que fins que no s'omplin totes les places, no es podrà veure el bracket ni jugar)</i></p>
+    </div> 
 
     <h2 class="marginado text-center" style="color: white;">Bracket</h2>
 

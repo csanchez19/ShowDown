@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class=" marco">
-                    <h3>Llista de tornejos oberts</h3>
+                    <h3>Llista de tornejos per validar</h3>
 
                     <!--<?php echo form_open_multipart('Controlador_Final/Gestio');?>
                         <div class="form-group">

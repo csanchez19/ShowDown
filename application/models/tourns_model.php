@@ -30,7 +30,7 @@
         //INSERT TORNEIG
         public function inserirTourn(){
             $nom = $_POST["nom"];
-            $data = $_POST["data"];
+            $data = $_POST["data"] . " " . $_POST["hora"];
             $idJoc = $_POST["jocs"];
             $places = $_POST["places"];
             $desc = $_POST["desc"];
