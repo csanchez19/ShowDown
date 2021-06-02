@@ -119,7 +119,7 @@
                     <div class="row">
                         <div class="col infoLeft text-left">
                             <p>Data d'Inici</p>
-                            <p class="pt-lg-4 pt-5">Places <?php echo $participants->contador ?> </p>
+                            <p class="pt-lg-4 pt-5">Places </p>
                             <p class="pt-lg-4 pt-5">Format</p>
                             <p class="pt-lg-4 pt-5">Descripció</p>
 

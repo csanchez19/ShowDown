@@ -171,14 +171,6 @@ class showdown extends CI_Controller {
 
                         $res['result'] = $this->tourns_model->inserirPartida();
 
-                        echo '
-                        <script type="text/javascript">
-
-                        alert("T"has registrat correctament.");
-
-                        </script>
-                        ';
-
                         redirect(base_url() . 'index.php/showdown/tournament/' . $_POST["torneig"]);
                 }
         }
