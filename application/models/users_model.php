@@ -100,6 +100,13 @@
             return $query->result();
         }
 
+        public function sel_punts_user($idUser)
+        {
+            $query = $this->db->query('SELECT * FROM usuaris WHERE usuari = "'.$idUser.'"');
+
+            return $query->result_array();
+        }
+
         public function sel_usr_id($idUser)
         {
             //$query = $this->db->query('SELECT username')
@@ -154,6 +161,11 @@
             $query = $this->db->query('SELECT COUNT(*) AS contador FROM partida WHERE participant = "'.$usuari.'"');
 
             return $query->row();
+        }
+
+        public function restarPunts($idUser)
+        {
+            
         }
 
     }

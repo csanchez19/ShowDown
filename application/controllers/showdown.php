@@ -324,8 +324,6 @@ class showdown extends CI_Controller {
                 }
                 else
                 {
-                        
-
                         $idUser = $this->users_model->sel_usuaris($username);
 
                         $this->compra_model->comprar($username);
@@ -348,7 +346,8 @@ class showdown extends CI_Controller {
                         echo $cont;
 
                         redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
-                }     
+                }    
+                 
                 redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
         }
 
