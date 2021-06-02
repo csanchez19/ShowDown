@@ -85,34 +85,31 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-4 col-12 mt-5 mt-lg-0 game-card-fortnite">
-            <a class="fondoFortnite fondo-game" href="">
+            <div class="fondoFortnite fondo-game" href="">
                 <div class="text-game">
-                    <p>Fifa 21</p>
                     <br>
-                    <span>Num torneos</span>
+                    <span>Num torneos: <?php echo $fifa->contador ?></span>
                 </div>
                 <img class="fortniteguy escalar" src="<?php echo base_url(); ?>content/img/bicho.png" alt="">
-            </a>
+            </div>
         </div>
         <div class="col-lg-4 col-12 mt-5 mt-lg-0 game-card-cod">
-            <a class="fondoCod fondo-game" href="">
+            <div class="fondoCod fondo-game" href="">
             <div class="text-game">
-                    <p>Street Fighter</p>
                     <br>
-                    <span>Num torneos</span>
+                    <span>Num torneos: <?php echo $sf->contador ?></span>
                 </div>
                 <img class="codGuy escalar" src="<?php echo base_url(); ?>content/img/sfchar.png" alt="">
-            </a>
+            </div>
         </div>
         <div class="col-lg-4 col-12 mt-5 mt-lg-0 game-card-lol">
-            <a class="fondoLol fondo-game" href="">
+            <div class="fondoLol fondo-game" href="">
             <div class="text-game">
-                    <p>League of Legends</p>
                     <br>
-                    <span>Num torneos</span>
+                    <span>Num torneos: <?php echo $lol->contador ?></span>
                 </div>
                 <img class="gnar escalar" src="<?php echo base_url(); ?>content/img/gnar.png" alt="">
-            </a>
+            </div>
         </div>
     </div>
 </div>

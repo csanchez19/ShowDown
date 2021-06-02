@@ -102,16 +102,33 @@
 
         public function sel_usr_id($idUser)
         {
-            $query = $this->db->query('SELECT usuari FROM usuaris WHERE usuari = "'.$idUser.'"');
+            //$query = $this->db->query('SELECT username')
+        }
+
+        public function sel_torneig_user($username){
+            $query = $this->db->query('SELECT * FROM torneig t JOIN joc j ON(j.Id = t.codiJoc) WHERE t.creador = "'.$username.'"');
 
             return $query->result();
         }
 
-        public function sel_punts_user($idUser)
-        {
-            $query = $this->db->query('SELECT punts FROM usuaris WHERE usuari = "'.$idUser.'"');
+        //CONTADORS
 
-            return $query->result_array();
+        //CONTADOR TORNEJOS CREATS
+        public function contTornejos(){
+            $usuari = $this->session->userdata('username');
+
+            $query = $this->db->query('SELECT COUNT(*) AS contador FROM torneig WHERE creador = "'.$usuari.'"');
+
+            return $query->row();
+        }
+
+        //CONTADOR PARTICIPACIONS EN TORNEJOS
+        public function contParticipacions(){
+            $usuari = $this->session->userdata('username');
+
+            $query = $this->db->query('SELECT COUNT(*) AS contador FROM partida WHERE participant = "'.$usuari.'"');
+
+            return $query->row();
         }
 
     }

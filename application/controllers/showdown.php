@@ -11,6 +11,7 @@ class showdown extends CI_Controller {
                 $this->load->library('form_validation');
                 $this->load->library('session');
                 $this->load->library('cart');
+                $this->load->library('upload');
                 $this->load->database();
         }
 
@@ -22,6 +23,12 @@ class showdown extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'ShowDown! - Competeix i Guanya!';
+
+                $this->load->model('tourns_model');
+
+                $data['fifa'] = $this->tourns_model->contFifa();
+                $data['sf'] = $this->tourns_model->contSf();
+                $data['lol'] = $this->tourns_model->contLol();
 
                 $this->template->load('layout', 'home', $data);
 	}
@@ -171,14 +178,6 @@ class showdown extends CI_Controller {
 
                         $res['result'] = $this->tourns_model->inserirPartida();
 
-                        echo '
-                        <script type="text/javascript">
-
-                        alert("T"has registrat correctament.");
-
-                        </script>
-                        ';
-
                         redirect(base_url() . 'index.php/showdown/tournament/' . $_POST["torneig"]);
                 }
         }
@@ -213,11 +212,22 @@ class showdown extends CI_Controller {
         public function perfil()
         {
                 $this->load->model('users_model');
-                
+
+                $this->load->model('tourns_model');
+
                 $username = $this->session->userdata('username');
+
+                //sel tornejos propis
+                $dades['tourns'] = $this->users_model->sel_torneig_user($username);
 
                 //sel usuari
                 $dades['result'] = $this->users_model->sel_usuaris($username);
+
+                //CONTADORS
+
+                $dades['tornejos'] = $this->users_model->contTornejos();
+
+                $dades['participacions'] = $this->users_model->contParticipacions();
 
                 $this->template->load('layout', 'perfil', $dades);
         }
@@ -340,6 +350,8 @@ class showdown extends CI_Controller {
                 $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
 
                 $dades['participants'] = $this->tourns_model->selParticipants($codiTorneig);
+
+                $dades['check'] = $this->tourns_model->checkPart($codiTorneig);
 
                 $dades['model'] = $this->tourns_model;
 
