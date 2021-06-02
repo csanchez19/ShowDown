@@ -8,7 +8,8 @@
     background-color: rgb(206, 50, 53);
 }
 
-.nPosicio {
+.nPosicio
+{
     background-color: white;
     border-radius: 50%;
     width: 30px;
@@ -50,6 +51,42 @@
 .fondo-producto h5
 {
   color: white;
+}
+
+.carrito
+{
+    left: 16%;
+    position: absolute;
+    top: 21%;
+    color: black;
+    font-size: 1.6em;
+    outline: none !important;
+}
+
+.fondoCarrito
+{
+  height: 50px;
+    width: 50px;
+    background-color: rgb(206, 50, 53);
+    border-radius: 100%;
+    position: fixed;
+    left: 93%;
+    top: 85%;
+    outline: none !important;
+    
+}
+
+.modalCarrito
+{
+    border-radius: 0px !important;
+    background: rgba(87, 60, 60); 
+    border: 2px solid rgb(206, 50, 53);
+    color: white;
+}
+
+.fondo-producto2
+{
+  background: black;
 }
 </style>
 
@@ -145,90 +182,82 @@
         <?php
         foreach($product as $row)
         {
-          echo '<div class="col-lg-4 col-12 escalar mt-5">
-                  <div style="height: 550px" class="card fondo-producto" style="width: 18rem;">
-                    <img class="card-img-top pt-3 w-100" src="data:'.$row->tipo.';base64,'.base64_encode($row->foto) .'"
+          $idProducte = $row->codiPremi;
+          echo '<div class="col-lg-3 col-12 escalar mt-5">
+                  <div style="height: 350px" class="card fondo-producto" style="width: 18rem;">
+                    <img style="margin-left: 4rem;" class="card-img-top pt-3 w-50" src="data:'.$row->tipo.';base64,'.base64_encode($row->foto) .'"
                      alt="Card image cap">
                     <div class="card-body text-center">
                       <h5 style="border-top: 2px solid black;" class="card-title pt-3">'.$row->Nom.'</h5>
                       <p class="card-text">'.$row->valor.' punts</p>
-                      <button href="#" class="custom-btn btn-7 "><span>COMPRAR</span></button>
+                      <a href="'.base_url().'index.php/showdown/carrito/'.$row->codiPremi.'/" class="custom-btn btn-7 "><span>COMPRAR</span></a>
                     </div>
                   </div>
                   </div>';
+
+
         }
         
+
     ?>
 
       </div>
     </div>
-    <!--<div class="div_productos">
-        
-        <div class="row">
-            <div class="col-4">
-                <div class="image">
-                    <img src="https://fadzrinmadu.github.io/hosted-assets/creative-product-card-ui-design-using-html-css-and-javascript/t-shirt.png" alt="">
-                </div>
-              <div class="card-content">
-                <div class="wrapper">
-                  <div class="title">
-                    Adidas Originals
-                  </div>
-                  <p>
-                    Men's running tshirt
-                  </p>
-                  <span class="price">$29.99</span>
-                  <div class="content size">
-                    <div class="name size-name">
-                      Size
-                    </div>
-                    <div class="size-value">
-                      <span class="color">XS</span>
-                      <span class="color">S</span>
-                      <span class="active">M</span>
-                      <span class="color">L</span>
-                      <span class="color">XL</span>
-                    </div>
-                  </div>
-                  <div class="content colour">
-                    <div class="name colour-name">
-                      Colour
-                    </div>
-                    <div class="colour-value">
-                      <span class="white" data-color="lightgrey" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large2.png"></span>
-                      <span class="blue active" data-color="#456ABD" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large.png"></span>
-                      <span class="yellow" data-color="#EAA523" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large3.png"></span>
-                    </div>
-                  </div>
-                  <div class="btns">
-                    <button>Buy now</button>
-                    <button>Add to cart</button>
-                  </div>
-                </div>
-              </div>
-                </div>
-            </div>-->
         
     </div>
     </div>
 
 </div>
 
+<button type="button" class="fondoCarrito escalar" data-toggle="modal" data-target="#exampleModal">
+  <i class="fas fa-shopping-cart carrito"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg " role="document">
+    <div class="modal-content modalCarrito">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php
+
+          foreach ($this->cart->contents() as $items)
+          {
+
+            $type = $items['options']['tipus'];
+            $img = base64_encode($items['options']['foto']);
+
+            echo '<div class="col-12 mt-5">
+                  <div class="card fondo-producto2">
+                    <img class="card-img-top pt-3 w-25 text-center" style="margin-left: 17rem;" src="data:'.$type.';base64,'.$img.'"
+                     alt="Card image cap">
+                    <div class="card-body text-center">
+                      <h5 style="border-top: 2px solid black;" class="card-title pt-3">'.$items['name'].'</h5>
+                      <p class="card-text">'.$items['price'].' punts</p>
+                    </div>
+                  </div>
+                  </div>';
+
+            echo $this->cart->total_items();
+          }
+
+        ?>
+      </div>
+      <div class="modal-footer">
+        <p class="btn btn-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 
-    $(".colour-value span").click(function(){
-  $(".colour-value span").removeClass("active");
-  $(this).addClass("active");
-  $("body").css("background", $(this).attr("data-color"));
-  $(".wrapper .price").css("color", $(this).attr("data-color"));
-  $(".size-value span.color").css("color", $(this).attr("data-color"));
-  $(".size-value span.active").css("background", $(this).attr("data-color"));
-  $(".image img").attr("src", $(this).attr("data-img"));
-  $(".btns button").css({
-    "background": $(this).attr("data-color"),
-    "border-color": $(this).attr("data-color")
-  });
-});
-    
+
+
 </script>

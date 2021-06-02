@@ -13,6 +13,12 @@
             return $query -> result();
         }
 
+        public function product_id($codiPremi)
+        {
+            $query = $this->db->query('SELECT * FROM premios WHERE codiPremi = '.$codiPremi);
+
+            return $query -> result_array();
+        }
     }
 
 

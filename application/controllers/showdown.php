@@ -10,6 +10,7 @@ class showdown extends CI_Controller {
                 $this->load->library('template');
                 $this->load->library('form_validation');
                 $this->load->library('session');
+                $this->load->library('cart');
                 $this->load->database();
         }
 
@@ -220,6 +221,8 @@ class showdown extends CI_Controller {
 
                 $username = $this->session->userdata('username');
 
+                $this->load->library('cart');
+
                 $dades['result'] = $this->users_model->sel_puntos();
 
                 $dades['product'] = $this->product_model->load_products();
@@ -229,6 +232,30 @@ class showdown extends CI_Controller {
                 $dades['username'] = $this->session->userdata('username');
                 
                 $this->template->load('layout', 'winnersleague', $dades);
+        }
+
+        public function carrito($codiProducte)
+        {
+                $this->load->model('product_model');
+
+                $premi = $this->product_model->product_id($codiProducte);
+
+                $preu = $premi[0]['valor'];
+                $nom = $premi[0]['Nom'];
+                $tipo = $premi[0]['tipo'];
+                $foto = $premi[0]['foto'];
+
+                $data = array(
+                        'id'      => $codiProducte,
+                        'qty'     => 1,
+                        'price'   => $preu,
+                        'name'    => $nom,
+                        'options' => array('tipus' => $tipo, 'foto' => $foto)
+                );
+                
+                $this->cart->insert($data);
+
+                $this->WinnersLeague();
         }
 
 
