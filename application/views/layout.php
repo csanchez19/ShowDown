@@ -9,9 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <!--SWEET ALERT-->
     <!--<script src="sweetalert2.all.min.js"></script>-->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">-->
     <!--<script src="sweetalert2.min.js"></script>-->
     <!--CSS-->
     <!--<link rel="stylesheet" type="text/css" href="https://cdn.tutorialjinni.com/jquery-bracket/0.11.1/jquery.bracket.min.css" />-->

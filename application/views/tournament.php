@@ -24,8 +24,18 @@
                     <p class="tournamentTitle mt-4"><?php echo $result->nom?></p>
                 </div>
                 <div class="col-lg-3 col-12 pt-5 text-center">
-                    <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important" data-toggle="modal" data-target="#exampleModal"><span style="font-size: 1em !important">APUNTAR-SE</span></button>
-                    <!--<?php echo '<a class="custom-btn btn-7 mt-lg-3 mt-0" href="'.base_url().'index.php/showdown/apuntarse/' . $result->codiTorneig.'">APUNTARSE</a>'; ?>-->
+                <?php
+                    if($participants->contador == $result->places){
+                        ?>
+                            <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important"><span style="font-size: 1em !important">JUGAR</span></button>
+                        <?php
+                    }else{
+                        ?>
+                            <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important" data-toggle="modal" data-target="#exampleModal"><span style="font-size: 1em !important">APUNTAR-SE</span></button>
+                        <?php
+                    }
+                ?>
+                    
                 </div>
             </div>
         </div>
@@ -68,6 +78,7 @@
                 'type' => 'hidden'
             );
             echo form_input($dataUsuari);
+            echo form_error('usuari'); 
             echo '</div>';
 
             //TORNEIG
@@ -87,10 +98,8 @@
 
             <div class="form-group pt-5 text-center">
                 <label for="enviar" class="sr-only"></label>
-                <?php
-
-                ?>
                 <button type="submit" name="apuntarse" class="custom-btn2 btn-7"><span>APUNTAR-SE</span></button>
+                <p class="mt-3"><i>Recorda que no t'afegirà si ja estas apuntat.</i></p>
             </div>
         </div>
         <div class="modal-footer">
@@ -110,7 +119,7 @@
                     <div class="row">
                         <div class="col infoLeft text-left">
                             <p>Data d'Inici</p>
-                            <p class="pt-lg-4 pt-5">Places <?php $participants->count ?> </p>
+                            <p class="pt-lg-4 pt-5">Places <?php echo $participants->contador ?> </p>
                             <p class="pt-lg-4 pt-5">Format</p>
                             <p class="pt-lg-4 pt-5">Descripció</p>
 
@@ -151,7 +160,6 @@
     var codiTorneig = "<?php echo $result->codiTorneig?>";
 
     var places = "<?php echo $result->places?>";
-
 
 </script>
 
