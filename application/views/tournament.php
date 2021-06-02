@@ -26,13 +26,20 @@
                 <div class="col-lg-3 col-12 pt-5 text-center">
                 <?php
                     if($participants->contador == $result->places){
+                        if($check->contador2 == 1){
                         ?>
                             <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important"><span style="font-size: 1em !important">JUGAR</span></button>
                         <?php
+                        }
+                        
                     }else{
+                        if( $check->contador2 < 1){
+
                         ?>
                             <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important" data-toggle="modal" data-target="#exampleModal"><span style="font-size: 1em !important">APUNTAR-SE</span></button>
                         <?php
+                        }
+                        
                     }
                 ?>
                     
@@ -119,14 +126,14 @@
                     <div class="row">
                         <div class="col infoLeft text-left">
                             <p>Data d'Inici</p>
-                            <p class="pt-lg-4 pt-5">Places </p>
+                            <p class="pt-lg-4 pt-5">Places restants </p>
                             <p class="pt-lg-4 pt-5">Format</p>
                             <p class="pt-lg-4 pt-5">Descripció</p>
 
                         </div>
                         <div class="col infoRight text-right">
                             <p><?php echo $result->data ?></p>
-                            <p class="pt-4"><?php echo $result->places ?></p>
+                            <p class="pt-4"><?php $count = $result->places - $participants->contador;  echo $count ?></p>
                             <p class="pt-4">El·liminació directa</p>
                             <p class="pt-4"><?php echo $result->descripcio ?></p>
                         </div>
@@ -151,6 +158,10 @@
     function goApuntarse()
     {
         window.location.href = "/ShowDown/index.php/showdown/apuntarse/" + "<?php $result->codiTorneig?>";
+    }
+
+    function goJugar(){
+        window.location.href = "/ShowDown/index.php/showdown/jugar/" + "<?php $result->codiTorneig?>";
     }
 
     var baseURL= "<?php echo base_url();?>";

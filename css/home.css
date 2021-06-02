@@ -505,7 +505,9 @@ background: #555;
 
     .text-game span
     {
-      font-size: 12px;
+      font-size: 14px;
+      font-style:italic ;
+      font-weight: bold;
     }
 
   .fondo-game
@@ -613,7 +615,7 @@ background: #555;
 .cajaPerfil
 {
   border: 2px solid rgb(206, 50, 53);
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
   .cajaPerfil span

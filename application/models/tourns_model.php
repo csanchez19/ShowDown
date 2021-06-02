@@ -101,6 +101,34 @@
             return $query->row();
         }
 
+        //CHECK SI L'USUARI JA HA PARTICIPAT
+        public function checkPart($codiTorneig){
+            $usuari = $this->session->userdata('username');
+
+            $query = $this->db->query('SELECT COUNT(*) AS contador2 FROM partida WHERE participant = "'.$usuari.'" AND idTorneo ='.$codiTorneig);
+
+            return $query->row();
+        }
+
+        //CONTADORS
+        public function contFifa(){
+            $query = $this->db->query('SELECT COUNT(*) AS contador FROM torneig t JOIN joc j ON(j.Id = t.codiJoc) WHERE j.Nom = "Fifa"');
+
+            return $query->row();
+        }
+        
+        public function contSf(){
+            $query = $this->db->query('SELECT COUNT(*) AS contador FROM torneig t JOIN joc j ON(j.Id = t.codiJoc) WHERE j.Nom = "Street fighter"');
+
+            return $query->row();
+        }
+
+        public function contLol(){
+            $query = $this->db->query('SELECT COUNT(*) AS contador FROM torneig t JOIN joc j ON(j.Id = t.codiJoc) WHERE j.Nom = "League of legends"');
+
+            return $query->row();
+        }
+
 
     }
 
