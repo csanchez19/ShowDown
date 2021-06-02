@@ -102,7 +102,16 @@
 
         public function sel_usr_id($idUser)
         {
-            $query = $this->db->query('SELECT username')
+            $query = $this->db->query('SELECT usuari FROM usuaris WHERE usuari = "'.$idUser.'"');
+
+            return $query->result();
+        }
+
+        public function sel_punts_user($idUser)
+        {
+            $query = $this->db->query('SELECT punts FROM usuaris WHERE usuari = "'.$idUser.'"');
+
+            return $query->result_array();
         }
 
     }
