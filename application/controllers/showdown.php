@@ -281,6 +281,27 @@ class showdown extends CI_Controller {
 
         public function pay()
         {
+                $this->load->model('users_model');
+
+                $this->load->model('compra_model');
+
+                $this->load->model('comanda_model');
+
+                $username = $this->session->userdata('username');
+
+                $idUser = $this->users_model->sel_usuaris($username);
+
+                $this->compra_model->comprar($username);
+
+                foreach ($this->cart->contents() as $items)
+                {
+                        $codiProducte = $items['id'];
+
+                        $compra = $this->compra_model->sel_usr_compra($username);
+
+                        $this->comanda_model->comandar($compra,$username);
+                }             
+                
                 $this->WinnersLeague();
         }
 

@@ -251,7 +251,7 @@
       </div>
       <div class="modal-footer">
         <p class="btn btn-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <a href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="btn btn-primary">Save changes</a>
       </div>
     </div>
   </div>
