@@ -1,14 +1,14 @@
 <?php
 
-    class compra_model extends CI_Model{
+    class comanda_model extends CI_Model{
         public function __construct()
         {
             $this->load->database();
         }
 
-        public function comprar($codiUsuari)
+        public function comandar($codiCompra,$codiUsuari)
         {
-            $query = $this->db->query('INSERT INTO compres ("codiCompra","codiUsuari") VALUES ("0","'.$codiUsuari.'")');
+            $query = $this->db->query('INSERT INTO comandes ("codiCompra","codiUsuari") VALUES ("'.$codiCompra.'","'.$codiCompra.'")');
 
             return $query -> result();
         }

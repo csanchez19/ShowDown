@@ -99,6 +99,12 @@
 
             return $query->result();
         }
+
+        public function sel_usr_id($idUser)
+        {
+            $query = $this->db->query('SELECT username')
+        }
+
     }
 
 
