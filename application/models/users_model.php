@@ -163,9 +163,15 @@
             return $query->row();
         }
 
-        public function restarPunts($idUser)
+        public function restarPunts($idUser, $preuCarrito)
         {
-            
+            $query = $this->db->query('UPDATE usuaris SET punts = '.$preuCarrito.' WHERE usuari = "'.$idUser.'"');
+
+            $this->db->query($query);
+
+            $num_files = $this->db->affected_rows();
+
+            return $num_files;
         }
 
     }

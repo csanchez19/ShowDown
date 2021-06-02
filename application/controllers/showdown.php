@@ -276,6 +276,10 @@ class showdown extends CI_Controller {
                 $puntos = $this->users_model->sel_punts_user($username);
 
                 echo $puntos[0]['punts'];
+
+                $gastat = ($puntos[0]['punts']) - ($this->cart->total());
+
+                echo $gastat;
                 
                 $this->template->load('layout', 'winnersleague', $dades);
         }
@@ -341,13 +345,26 @@ class showdown extends CI_Controller {
                                 $this->comanda_model->comandar($compra[0]['codiCompra'],$codiProducte);
                         }             
 
+                        $gastat = ($puntos[0]['punts']) - ($this->cart->total());
+
+                        echo $gastat;
+
+                        $this->users_model->restarPunts($username,$gastat);
+
                         $this->cart->destroy();
 
                         echo $cont;
 
                         redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
                 }    
-                 
+
+                redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
+        }
+
+        public function destruirCarro()
+        {
+                $this->cart->destroy();
+
                 redirect('http://localhost/showdown/index.php/showdown/WinnersLeague');
         }
 

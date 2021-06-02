@@ -275,6 +275,7 @@ if($this->session->userdata('username') != '')
         ?>
       </div>
       <div class="modal-footer">
+        <a href="<?php echo base_url(); ?>index.php/showdown/destruirCarro" type="button" class="btn btn-danger">Eliminar Carro</a>
         <p class="btn btn-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
         <a href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="btn btn-primary">Save changes</a>
       </div>
