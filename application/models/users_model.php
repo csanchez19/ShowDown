@@ -105,6 +105,14 @@
             //$query = $this->db->query('SELECT username')
         }
 
+        //SELECT TORNEJOS ALS QUE ESTA APUNTAT
+        public function joined($username){
+            $query = $this->db->query('SELECT * FROM torneig t JOIN partida p ON(p.idTorneo = t.codiTorneig) WHERE t.activo = 1 AND p.participant = "'.$username.'"');
+
+            return $query->result();
+        }
+
+        //SELECT TORNEJOS CREATS PER L'USUARI
         public function sel_torneig_user($username){
             $query = $this->db->query('SELECT * FROM torneig t JOIN joc j ON(j.Id = t.codiJoc) WHERE t.creador = "'.$username.'"');
 

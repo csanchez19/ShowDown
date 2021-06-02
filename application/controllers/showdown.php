@@ -225,6 +225,9 @@ class showdown extends CI_Controller {
                 //sel tornejos propis
                 $dades['tourns'] = $this->users_model->sel_torneig_user($username);
 
+                //sel tornejos apuntat
+                $dades['joined'] = $this->users_model->joined($username);
+
                 //sel usuari
                 $dades['result'] = $this->users_model->sel_usuaris($username);
 

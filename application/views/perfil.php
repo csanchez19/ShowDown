@@ -56,7 +56,44 @@
         <div class="col-12 cajaMiTourn">
             <div class="row">
                 <div class="col-12 text-center miTournTop">
-                    <p class="pt-3 pb-1">Els meus Tornejos</p>
+                    <p class="pt-3 pb-1">Tornejos als que estic apuntat</p>
+                </div>
+                <div class="p-5 col-12">
+                    <?php
+
+                    foreach($joined as $row){
+
+                        $estat;
+                        if($row->activo == 0){
+                            $estat = "Tancat";
+                        }else{
+                            $estat = "Obert";
+                        }
+
+                        echo '<div class="mb-4 bg-dark card text-center text-white">';
+                        echo '<div class="card-header">';
+                        echo $row->nom;
+                        echo '</div>';
+                        echo '<div class="card-body">';
+                        echo '<p class="card-text">'.$row->descripcio.' | '.$estat.'</p>';
+                        echo '<a class="btn btn-danger" href="'.base_url().'index.php/showdown/tournament/'.$row->codiTorneig.'">+info</a>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+
+                        
+
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row marginado">
+        <div class="col-12 cajaMiTourn">
+            <div class="row">
+                <div class="col-12 text-center miTournTop">
+                    <p class="pt-3 pb-1">Tornejos creats per mi</p>
                 </div>
                 <div class="p-5 col-12">
                     <?php
