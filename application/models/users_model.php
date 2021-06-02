@@ -114,7 +114,7 @@
 
         //SELECT TORNEJOS ALS QUE ESTA APUNTAT
         public function joined($username){
-            $query = $this->db->query('SELECT * FROM torneig t JOIN partida p ON(p.idTorneo = t.codiTorneig) WHERE t.activo = 1 AND p.participant = "'.$username.'"');
+            $query = $this->db->query('SELECT * FROM torneig t JOIN partida p ON(p.idTorneo = t.codiTorneig) JOIN joc j ON(t.codiJoc = j.Id) WHERE t.activo = 1 AND p.participant = "'.$username.'"');
 
             return $query->result();
         }

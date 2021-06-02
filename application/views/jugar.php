@@ -33,7 +33,7 @@
     </div>
 
     <div class="mt-3 text-center text-white">
-        <p><i>Introdueix una captura de la partida que acabes de jugar per poder validar els resultats.</i></p>
+        <p><i>Introdueix captures de les partides que acabes de jugar per poder validar els resultats adecuadament.</i></p>
     </div>
     
     <div class="row m-1 marginado text-center">
@@ -47,18 +47,29 @@
                             </div>
                             <div class="col-12 mt-5 p-3">
 
-                                <?php echo form_open_multipart('showdown/jugar/'.$result->codiTorneig);?>
-                                    <div class="form-group">
-                                        <input type="file" class="form-control" name="ronda1" size="20" />
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="custom-btn btn-7" type="submit" name="pujar"> PUJAR </button>
-                                    </div>
-                                    <div style="color:red">
-                                        <?php echo validation_errors(); ?>
-                                        <?php if(isset($error)){print $error;}?>
-                                    </div>
-                                </form>
+                                <?php
+                                    if($partida->foto1 == null){
+                                        ?>
+                                            <?php echo form_open_multipart('showdown/jugar/'.$result->codiTorneig);?>
+                                                <div class="form-group">
+                                                    <input type="file" class="form-control" name="ronda1" size="20" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="custom-btn btn-7" type="submit" name="pujar"> PUJAR </button>
+                                                </div>
+                                                <div style="color:red">
+                                                    <?php echo validation_errors(); ?>
+                                                    <?php if(isset($error)){print $error;}?>
+                                                </div>
+                                            </form>
+                                        <?php
+                                    }else{
+                                        echo '<img class="card-img-top w-50" src="data:'.$partida->tipus1.';base64,'.base64_encode($partida->foto1) .'"
+                                        alt="Card image cap">';
+                                    }
+                                ?>
+
+                                
 
                             </div>
                         </div>

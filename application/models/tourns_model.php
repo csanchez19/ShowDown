@@ -52,10 +52,18 @@
 
         //SELECT BRACKET DEL TORNEO
         public function bracket($codiTorneig){
-            $sql = 'SELECT * FROM partida WHERE idTorneo ='. $codiTorneig;            
+            $sql = 'SELECT id, idTorneo, participant, ingame, guanyador, ronda_1, ronda_2, ronda_3 FROM partida WHERE idTorneo ='. $codiTorneig;            
             $query = $this->db->query($sql);
             // Fetch the result array from the result object and return it
             return $query->result();
+        }
+
+        //SELECT PARTICIPANT
+        public function participants($codiTorneig, $username){
+            $sql = 'SELECT * FROM partida WHERE participant = "'.$username.'" AND idTorneo ='. $codiTorneig;            
+            $query = $this->db->query($sql);
+            // Fetch the result array from the result object and return it
+            return $query->row();
         }
 
         //SELECT JOC DEL TORNEIG

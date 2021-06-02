@@ -393,6 +393,8 @@ class showdown extends CI_Controller {
 
                 $username = $this->session->userdata('username');
 
+                $dades['partida'] = $this->tourns_model->participants($codiTorneig, $username);
+
 
                 $this->template->load('layout', 'jugar', $dades);
 
@@ -412,10 +414,10 @@ class showdown extends CI_Controller {
                                 $error = array('error' => $this->upload->display_errors());
 
                                 echo '<script language="javascript">';
-                                echo 'console.log('.$error.')';
+                                echo 'alert('.$error.')';
                                 echo '</script>';
 
-                                //header("Refresh:0");
+                                header("Refresh:0");
                         }
                         else
                         {
@@ -425,7 +427,7 @@ class showdown extends CI_Controller {
                                 echo 'alert("Arxiu pujat correctament")';
                                 echo '</script>';
 
-                                //header("Refresh:0");
+                                header("Refresh:0");
                         }
                 }
         }
