@@ -270,6 +270,7 @@ body
     line-height: 42px;
     padding: 0;
     border: none;
+    outline: none !important;
   }
   .btn-7 span {
     position: relative;
@@ -788,9 +789,5 @@ background: #555;
 
   .posicio
 {
-    border-bottom: 1px solid #f00;
-    background-color: black;
-    border-left: 2px solid #f00;
-    border-right: 2px solid #f00;
-    border-top: 1px solid #f00;
+  background-color: black;
 }

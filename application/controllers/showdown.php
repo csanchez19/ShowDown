@@ -279,6 +279,11 @@ class showdown extends CI_Controller {
                 $this->WinnersLeague();
         }
 
+        public function pay()
+        {
+                $this->WinnersLeague();
+        }
+
 
         //VISTA TORNEIG INDIVIDUAL
         public function tournament($codiTorneig)

@@ -86,7 +86,8 @@
 
 .fondo-producto2
 {
-  background: black;
+  background: rgba(87, 60, 60);
+  border-radius: 1px solid rgba(87, 60, 60);
 }
 </style>
 
@@ -233,7 +234,7 @@
             $img = base64_encode($items['options']['foto']);
 
             echo '<div class="col-12 mt-5">
-                  <div class="card fondo-producto2">
+                  <div style="border: 1px solid rgba(87, 60, 60, 0.6)" class="card fondo-producto2">
                     <img class="card-img-top pt-3 w-25 text-center" style="margin-left: 17rem;" src="data:'.$type.';base64,'.$img.'"
                      alt="Card image cap">
                     <div class="card-body text-center">
