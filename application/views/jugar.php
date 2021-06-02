@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-12 mt-5 p-3">
 
-                                <?php echo form_open_multipart('showdown/jugar/'. $result->codiTorneig);?>
+                                <?php echo form_open_multipart('showdown/jugar/'.$result->codiTorneig);?>
                                     <div class="form-group">
                                         <input type="file" class="form-control" name="ronda1" size="20" />
                                     </div>
