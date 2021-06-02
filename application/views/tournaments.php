@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div class="container">
+<!--<div class="container">
     <div class="main_tournament">
         <div class="row d-block">
             <div class="col-12 first_half"></div>
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <form method="post">
     <div class="container text-center marginado">

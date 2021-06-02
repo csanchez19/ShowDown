@@ -114,8 +114,10 @@ class showdown extends CI_Controller {
                         }else{
                                 $res['resultat'] = $this->tourns_model->inserirTourn($_POST);
 
+                                $res['resultat2'] = $this->tourns_model->inserirRondes($_POST);
+
                                 echo '<script>';
-                                echo 'alert("Usuari registrat correctament, ja pots loguejar-te")';
+                                echo 'alert("Torneig registrat correctament")';
                                 echo '</script>';
                                 
                                 redirect(base_url()); 
@@ -159,6 +161,25 @@ class showdown extends CI_Controller {
                                 
                                 redirect(base_url() . 'index.php/showdown/perfil'); 
                         }
+                }else if(isset($_POST["apuntarse"])){
+                        $this->form_validation->run();
+                        $this->form_validation->set_rules('ingame', 'Nom ingame', 'required|is_unique[partida.ingame]',array('required' => 'Obligatori omplir el camp %s', 'is_unique' => 'Ja existeix un participant amb aquest nom.'));
+                        
+                        $dades = $this->input->post();
+
+                        $this->load->model('tourns_model');
+
+                        $res['result'] = $this->tourns_model->inserirPartida();
+
+                        echo '
+                        <script type="text/javascript">
+
+                        alert("T"has registrat correctament.");
+
+                        </script>
+                        ';
+
+                        redirect(base_url() . 'index.php/showdown/tournament/' . $_POST["torneig"]);
                 }
         }
 
@@ -266,6 +287,10 @@ class showdown extends CI_Controller {
 
                 $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
 
+                $dades['participants'] = $this->tourns_model->selParticipants($codiTorneig);
+
+                $dades['model'] = $this->tourns_model;
+
                 $this->template->load('layout', 'tournament', $dades);
         }
 
@@ -282,11 +307,14 @@ class showdown extends CI_Controller {
         public function register_tourn(){
                 $this->load->model('tourns_model');
 
+                $username = $this->session->userdata('username');
+
                 //sel jocs
-                $dades['result'] = $this->tourns_model->sel_jocs();
+                $dades['result'] = $this->tourns_model->sel_jocs($username);
 
                 $this->template->load('layout', 'register_tourn', $dades);
         }
+
 
         //LOG OUT
         public function logout(){  
