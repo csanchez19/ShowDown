@@ -40,7 +40,7 @@ if(places == 2){
     
             [                    // List of rounds in bracket
             [                  // First round in this bracket
-                [, ]          // Team 1 vs Team 2
+                [(data[0] != null ? parseInt(data[0].ronda_1) : null), (data[1] != null ? parseInt(data[1].ronda_1) : null)]          // Team 1 vs Team 2
             ]
             ]
         ]
@@ -85,12 +85,12 @@ if(places == 2){
     
             [                    // List of rounds in bracket
             [                  // First round in this bracket
-                [1, 2],          // Team 1 vs Team 2
-                [3, 4]          // Team 3 vs Team 4
+                [(data[0] != null ? parseInt(data[0].ronda_1) : null), (data[1] != null ? parseInt(data[1].ronda_1) : null)],          // Team 1 vs Team 2
+                [(data[2] != null ? parseInt(data[2].ronda_1) : null), (data[3] != null ? parseInt(data[3].ronda_1) : null)]          // Team 3 vs Team 4
             ],
             [                  // Second (final) round in single elimination bracket
                 [3, 2],          // Match for first place
-                [, ]           // Match for 3rd place
+                [0, 0]           // Match for 3rd place
             ]
             ]
         ]
@@ -127,14 +127,14 @@ if(places == 2){
 
       var eightteams = {
         teams: [
-          [(data[0] != null ? data[0].ingame : null), (data[1] != null ? data[1].ingame : null)],
-          [(data[2] != null ? data[2].ingame : null), (data[3] != null ? data[3].ingame : null)],
-          [(data[4] != null ? data[4].ingame : null), (data[5] != null ? data[5].ingame : null)],
-          [(data[6] != null ? data[6].ingame : null), (data[7] != null ? data[7].ingame : null)]
+          [(data[0] != null ? data[0].ingame : ""), (data[1] != null ? data[1].ingame : "")],
+          [(data[2] != null ? data[2].ingame : ""), (data[3] != null ? data[3].ingame : "")],
+          [(data[4] != null ? data[4].ingame : ""), (data[5] != null ? data[5].ingame : "")],
+          [(data[6] != null ? data[6].ingame : ""), (data[7] != null ? data[7].ingame : "")]
         ],
         results: [
             [
-              [[, ], [, ], [, ], [, ]], //primeres 4 rondes
+              [[(data[0] != null ? parseInt(data[0].ronda_1) : null), (data[1] != null ? parseInt(data[1].ronda_1) : null)], [(data[2] != null ? parseInt(data[2].ronda_1) : null), (data[3] != null ? parseInt(data[3].ronda_1) : null)], [(data[4] != null ? parseInt(data[4].ronda_1) : null), (data[5] != null ? parseInt(data[5].ronda_1) : null)], [(data[6] != null ? parseInt(data[6].ronda_1) : null), (data[7] != null ? parseInt(data[7].ronda_1) : null)]], //primeres 4 rondes
               [[, ], [, ]], //semis 
               [[, ], [, ]] //final. tercer lloc
             ]
@@ -151,9 +151,9 @@ if(places == 2){
         roundMargin: 34
       });
 
-      var pujarPartides = eightteams.teams;
+      //var pujarPartides = eightteams.teams;
 
-      console.log(pujarPartides);
+      //console.log(pujarPartides);
 
     }
   }

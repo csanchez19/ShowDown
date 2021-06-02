@@ -113,7 +113,7 @@ class showdown extends CI_Controller {
                         }else{
                                 $res['resultat'] = $this->tourns_model->inserirTourn($_POST);
 
-                                $res['resultat2'] = $this->tourns_model->inserirRondes($_POST);
+                                //$res['resultat2'] = $this->tourns_model->inserirRondes($_POST);
 
                                 echo '<script>';
                                 echo 'alert("Torneig registrat correctament")';

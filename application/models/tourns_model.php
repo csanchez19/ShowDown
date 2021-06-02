@@ -141,12 +141,13 @@
 
             return $response;*/
 
-            $sql = 'SELECT *
+            /*$sql = 'SELECT *
                         FROM partida p
                         JOIN torneig t ON(t.codiTorneig = p.idTorneo)
                         JOIN rondas_partida r ON(r.Torneo = t.nom) 
                         WHERE p.idTorneo =' . $codiTorneig. '
-                        GROUP BY p.ingame';
+                        GROUP BY p.ingame';*/
+            $sql = 'SELECT * FROM partida WHERE idTorneo ='. $codiTorneig;            
             $query = $this->db->query($sql);
             // Fetch the result array from the result object and return it
             return $query->result();
