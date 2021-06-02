@@ -88,7 +88,7 @@
             <div class="fondoFortnite fondo-game" href="">
                 <div class="text-game">
                     <br>
-                    <span>Num torneos: <?php echo $fifa->contador ?></span>
+                    <span>Num tornejos: <?php echo $fifa->contador ?></span>
                 </div>
                 <img class="fortniteguy escalar" src="<?php echo base_url(); ?>content/img/bicho.png" alt="">
             </div>
@@ -97,7 +97,7 @@
             <div class="fondoCod fondo-game" href="">
             <div class="text-game">
                     <br>
-                    <span>Num torneos: <?php echo $sf->contador ?></span>
+                    <span>Num tornejos: <?php echo $sf->contador ?></span>
                 </div>
                 <img class="codGuy escalar" src="<?php echo base_url(); ?>content/img/sfchar.png" alt="">
             </div>
@@ -106,7 +106,7 @@
             <div class="fondoLol fondo-game" href="">
             <div class="text-game">
                     <br>
-                    <span>Num torneos: <?php echo $lol->contador ?></span>
+                    <span>Num tornejos: <?php echo $lol->contador ?></span>
                 </div>
                 <img class="gnar escalar" src="<?php echo base_url(); ?>content/img/gnar.png" alt="">
             </div>

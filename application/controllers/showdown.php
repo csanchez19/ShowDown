@@ -33,6 +33,11 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'home', $data);
 	}
 
+        //VISTA ADMIN
+        public function admin(){
+                $this->load->view('admin_home');
+        }
+
         //VISTA REGISTRE PERSONA
         public function register_user(){
 
@@ -220,8 +225,14 @@ class showdown extends CI_Controller {
                 //sel tornejos propis
                 $dades['tourns'] = $this->users_model->sel_torneig_user($username);
 
+                //sel tornejos apuntat
+                $dades['joined'] = $this->users_model->joined($username);
+
                 //sel usuari
                 $dades['result'] = $this->users_model->sel_usuaris($username);
+
+                //check if admin
+                $dades['admin'] = $this->users_model->checkAdmin($username);
 
                 //CONTADORS
 

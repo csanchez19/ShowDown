@@ -47,8 +47,8 @@
 		if($this->session->userdata('username') != '')  
 		{  
 			echo '<div class="user">';
-			echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b> <img class="fotoPerfil" src="'.base_url().'content/img/mario.jpg"></p>'; 
-			echo '<a class="btn btn-dark" href="'.base_url().'index.php/showdown/logout">Logout</a>'; 
+			echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b></p>'; 
+      //echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b> <img class="fotoPerfil" src="'.base_url().'content/img/mario.jpg"></p>'; 
 			echo '</div>';
 		}  
 	?>
@@ -70,6 +70,10 @@
         echo '<li>
          <a href="'.base_url().'index.php/showdown/perfil">Perfil</a>
         </li>';
+
+        echo '<li>
+                <a href="'.base_url().'index.php/showdown/logout">Logout</a>
+              </li>';
       }
       ?>
 		</ul>

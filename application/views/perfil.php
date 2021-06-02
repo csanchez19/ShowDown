@@ -12,15 +12,30 @@
 
 <div class="container mb-5">
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             <div class="row">
                 <div class="col-lg-2 col-6">
                     <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
                 </div>
-                <div class="col-12 col-lg-2 textProfile">
+                <div class="col-8 col-lg-2 textProfile">
                     <p class="mt-5" style="font-size: 1.7em"><?php echo $result->usuari; ?></p> 
                     <p class="">Membre des de <?php echo $result->dataCreat; ?></p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-2 mt-5">
+            <div class="row">
+                <div class="col">
                     <a class="btn btn-secondary" href="<?php echo base_url().'index.php/showdown/modificarPerfil'?>">Modificar perfil</a>
+                    <?php
+                        if($admin->isAdmin != FALSE){
+                            ?>
+                                <a class="mt-2 btn btn-secondary" href="<?php echo base_url().'index.php/showdown/admin'?>">Plana administrador</a>
+                            <?php
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>
@@ -56,7 +71,44 @@
         <div class="col-12 cajaMiTourn">
             <div class="row">
                 <div class="col-12 text-center miTournTop">
-                    <p class="pt-3 pb-1">Els meus Tornejos</p>
+                    <p class="pt-3 pb-1">Tornejos als que estic apuntat</p>
+                </div>
+                <div class="p-5 col-12">
+                    <?php
+
+                    foreach($joined as $row){
+
+                        $estat;
+                        if($row->activo == 0){
+                            $estat = "Tancat";
+                        }else{
+                            $estat = "Obert";
+                        }
+
+                        echo '<div class="mb-4 bg-dark card text-center text-white">';
+                        echo '<div class="card-header">';
+                        echo $row->nom;
+                        echo '</div>';
+                        echo '<div class="card-body">';
+                        echo '<p class="card-text">'.$row->descripcio.' | '.$estat.'</p>';
+                        echo '<a class="btn btn-danger" href="'.base_url().'index.php/showdown/tournament/'.$row->codiTorneig.'">+info</a>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+
+                        
+
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row marginado">
+        <div class="col-12 cajaMiTourn">
+            <div class="row">
+                <div class="col-12 text-center miTournTop">
+                    <p class="pt-3 pb-1">Tornejos creats per mi</p>
                 </div>
                 <div class="p-5 col-12">
                     <?php
