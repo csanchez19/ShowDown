@@ -37,7 +37,7 @@
 }
 </style>
 
-<body class="bg-secondary">
+<body>
 <div id="wrapper">
 
 <!-- Sidebar -->
@@ -50,10 +50,13 @@
             if($this->session->userdata('username') != '')  
             {  
                  echo '<li class="sidebar-brand"><p style="color: #999999;"><b>Benvingut, '.$this->session->userdata('username').'</b></p></li>';  
-                 echo '<li><a href="'.base_url().'index.php/showdown/perfil">Sortir</a></li>';  
+                 echo '<li><a href="'.base_url().'index.php/showdown/perfil">Tornar</a></li>';  
             }  
         ?>
     </ul>
+    <div class="text-center">
+        <a href="<?php echo base_url(); ?>"><img class="logo text-center" src="<?php echo base_url(); ?>content/img/logo.png" alt=""></a>
+    </div>
 </div>
 <!-- /#sidebar-wrapper -->
 
@@ -62,14 +65,14 @@
     <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
     <div class="container-fluid">
         <header class="container text-center p-2">
-            <h2>Gestió d'arxius</h2>
+            <h2>Administració de resultats</h2>
         </header>
         <div class="row">
             <div class="col-lg-12">
-                <div class="marco">
-                    <h3>Pujar arxius</h3>
+                <div class=" marco">
+                    <h3>Llista de tornejos oberts</h3>
 
-                    <?php echo form_open_multipart('Controlador_Final/Gestio');?>
+                    <!--<?php echo form_open_multipart('Controlador_Final/Gestio');?>
                         <div class="form-group">
                             <input type="file" class="form-control" name="userfile" size="20" />
                         </div>
@@ -80,7 +83,7 @@
                             <?php echo validation_errors(); ?>
                             <?php if(isset($error)){print $error;}?>
                         </div>
-                    </form>
+                    </form>-->
                 </div>
                 
             </div>

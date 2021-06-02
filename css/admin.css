@@ -1,5 +1,9 @@
 /*Content*/
 
+body{
+    background-color: #161616;;
+}
+
 .btn-primary{
     background-color: black !important;
     border: black;
@@ -29,6 +33,12 @@ h3{
     margin-bottom: 20px;
 }
 
+.logo{
+    width: 47%;
+    position: absolute;
+    bottom: 0px;
+    left: 25%;
+}
 
 
 /*Sidebar*/
