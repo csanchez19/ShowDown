@@ -2,7 +2,7 @@
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
-            <h1 class="text-center div_botones2">Tornejos</h1>
+            <h1 class="text-center div_botones2">Escull un dels tornejos que més <br> t'agradi i comença a competir!</h1>
         </div>
     </div>
 </div>

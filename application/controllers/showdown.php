@@ -33,6 +33,11 @@ class showdown extends CI_Controller {
                 $this->template->load('layout', 'home', $data);
 	}
 
+        //VISTA ADMIN
+        public function admin(){
+                $this->load->view('admin_home');
+        }
+
         //VISTA REGISTRE PERSONA
         public function register_user(){
 
