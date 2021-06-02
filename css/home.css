@@ -58,8 +58,8 @@ body
     position: absolute;
     text-align: left !important;
     color: white;
-    left: 10%;
-    top: 5%;
+    right: -5%;
+    top: 4%;
 }
 
 .btnLogin
