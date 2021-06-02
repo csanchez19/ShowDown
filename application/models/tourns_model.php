@@ -89,6 +89,23 @@
             return $num_files;
         }
 
+        //PUJAR IMATGE RESULTAT
+        function store_pic_data($data, $username, $codiTorneig){
+
+            $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
+            $imgname = $this->upload->data('file_name');
+            $imgtype = $this->upload->data('file_type');
+            $data = array(
+                'tipus1' => $imgtype,
+                'foto1' => $imgdata
+            );
+
+            $where = array('participant' => $username, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($where);
+            $this->db->db_update('partida', $data);
+        }
+
         //CONTADOR PARTICIPANTS EN TORNEIG
         public function selParticipants($codiTorneig){
             /*$this->db->select('count(*) as count');

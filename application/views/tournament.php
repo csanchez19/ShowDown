@@ -28,7 +28,7 @@
                     if($participants->contador == $result->places){
                         if($check->contador2 == 1){
                         ?>
-                            <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important"><span style="font-size: 1em !important">JUGAR</span></button>
+                            <button class="custom-btn btn-7 mt-lg-3 mt-0"  onclick="goJugar()" style="font-size: 1em !important"><span style="font-size: 1em !important">JUGAR</span></button>
                         <?php
                         }
                         
@@ -165,7 +165,7 @@
     }
 
     function goJugar(){
-        window.location.href = "/ShowDown/index.php/showdown/jugar/" + "<?php $result->codiTorneig?>";
+        window.location.href = "/ShowDown/index.php/showdown/jugar/" + "<?php echo $result->codiTorneig?>";
     }
 
     var baseURL= "<?php echo base_url();?>";

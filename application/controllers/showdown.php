@@ -11,7 +11,6 @@ class showdown extends CI_Controller {
                 $this->load->library('form_validation');
                 $this->load->library('session');
                 $this->load->library('cart');
-                $this->load->library('upload');
                 $this->load->database();
         }
 
@@ -384,6 +383,51 @@ class showdown extends CI_Controller {
                 $dades['model'] = $this->tourns_model;
 
                 $this->template->load('layout', 'tournament', $dades);
+        }
+
+        //JUGAR PARTIDA
+        public function jugar($codiTorneig){
+                $this->load->model('tourns_model');
+
+                $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
+
+                $username = $this->session->userdata('username');
+
+
+                $this->template->load('layout', 'jugar', $dades);
+
+                //PUJAR ARXIU
+                if(isset($_POST['pujar'])){
+                                
+                        $config['upload_path']          = './uploads/';
+                        $config['allowed_types']        = 'gif|jpg|png';
+                        $config['max_size']             = 100;
+                        $config['max_width']            = 1024;
+                        $config['max_height']           = 768;
+
+                        $this->load->library('upload', $config);
+
+                        if ( ! $this->upload->do_upload('ronda1'))
+                        {
+                                $error = array('error' => $this->upload->display_errors());
+
+                                echo '<script language="javascript">';
+                                echo 'console.log('.$error.')';
+                                echo '</script>';
+
+                                //header("Refresh:0");
+                        }
+                        else
+                        {
+                                $this->tourns_model->store_pic_data($this->upload->data(), $username, $codiTorneig);
+
+                                echo '<script language="javascript">';
+                                echo 'alert("Arxiu pujat correctament")';
+                                echo '</script>';
+
+                                //header("Refresh:0");
+                        }
+                }
         }
 
         public function selPartida($codiTorneig){
