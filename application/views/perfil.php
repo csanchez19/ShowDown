@@ -12,7 +12,7 @@
 
 <div class="container mb-5">
     <div class="row">
-        <div class="col-10">
+        <div class="col-xl-10 col-12">
             <div class="row">
                 <div class="col-lg-2 col-6">
                     <?php 
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-2 mt-5">
+        <div class="col-xl-2 col-12 mt-5">
             <div class="row">
                 <div class="col">
                     <a class="btn btn-danger" href="<?php echo base_url().'index.php/showdown/modificarPerfil'?>">Modificar perfil</a>
