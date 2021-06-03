@@ -79,15 +79,15 @@
 .modalCarrito
 {
     border-radius: 0px !important;
-    background: rgba(87, 60, 60); 
+    background: black; 
     border: 2px solid rgb(206, 50, 53);
     color: white;
 }
 
 .fondo-producto2
 {
-  background: rgba(87, 60, 60);
-  border-radius: 1px solid rgba(87, 60, 60);
+  background: black;
+  border-bottom: 2px solid white;
 }
 </style>
 
@@ -193,7 +193,7 @@
                     <div class="card-body text-center">
                       <h5 style="border-top: 2px solid black;" class="card-title pt-3">'.$row->Nom.'</h5>
                       <p class="card-text">'.$row->valor.' punts</p>
-                      <a href="'.base_url().'index.php/showdown/carrito/'.$row->codiPremi.'/" class="custom-btn btn-7 "><span>COMPRAR</span></a>
+                      <button onclick="addCarrito('.$idProducte.')" href="'.base_url().'index.php/showdown/carrito/'.$row->codiPremi.'/" class="custom-btn btn-7 "><span>COMPRAR</span></button>
                     </div>
                   </div>
                   </div>';
@@ -259,32 +259,42 @@ if($this->session->userdata('username') != '')
             $img = base64_encode($items['options']['foto']);
 
             echo '<div class="col-12 mt-5">
-                  <div style="border: 1px solid rgba(87, 60, 60, 0.6)" class="card fondo-producto2">
+                  <div class="card fondo-producto2">
                     <img class="card-img-top pt-3 w-25 text-center" style="margin-left: 17rem;" src="data:'.$type.';base64,'.$img.'"
                      alt="Card image cap">
                     <div class="card-body text-center">
                       <h5 style="border-top: 2px solid black;" class="card-title pt-3">'.$items['name'].'</h5>
                       <p class="card-text">'.$items['price'].' punts</p>
+                      <p>Quantitat: '.$items['qty'].'</p>
                     </div>
                   </div>
                   </div>';
-
-            echo $this->cart->total_items();
           }
 
         ?>
       </div>
       <div class="modal-footer">
-        <a href="<?php echo base_url(); ?>index.php/showdown/destruirCarro" type="button" class="btn btn-danger">Eliminar Carro</a>
-        <p class="btn btn-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
-        <a href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="btn btn-primary">Save changes</a>
+        <button onclick="removeCarrito()" href="<?php echo base_url(); ?>index.php/showdown/destruirCarro" type="button" class="btn btn-danger">Esborrar Articles</button>
+        <p style="color: white" class="btn btn-outline-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
+        <button href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="custom-btn btn-7"><span>COMPRAR</span></button>
       </div>
     </div>
   </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 
+function addCarrito(idProducte)
+{
+  $.get("http://localhost/showdown/index.php/showdown/carrito/" + idProducte);
+  location.reload();
+}
 
-
+function removeCarrito()
+{
+  $.get("http://localhost/showdown/index.php/showdown/destruirCarro");
+  location.reload("#exampleModal");
+  window.location.href = "#exampleModal";
+}
 </script>
