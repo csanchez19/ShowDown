@@ -92,34 +92,48 @@
                     
                     </div>
                     <div class="container col-6">
-                    <h3 class="mt-5">Escollir guanyador</h3>
+
                     <?php
-                        echo form_open('showdown/admin_partida/'.$result->codiTorneig);
+                        if($result->guanyador == null){
+                            ?>
+                                <h3 class="mt-5">Escollir guanyador</h3>
+                                <?php
+                                    echo form_open('showdown/admin_partida/'.$result->codiTorneig);
 
-                            //GUANYADOR
-                            echo '<div class="form-group">';
-                            //echo form_label('', 'guanyador');
-                            $valueGuanyador = (!empty($guanyador))?$guanyador:'';
-                            $dataGuanyador = array(
-                                'name' => 'guanyador',
-                                'value' => $valueGuanyador,
-                                'class' => 'form-control',
-                                'placeholder' => 'Participant'
-                            );
-                            echo form_input($dataGuanyador);
-                            echo form_error('guanyador'); 
-                            echo '</div>';
+                                        //GUANYADOR
+                                        echo '<div class="form-group">';
+                                        //echo form_label('', 'guanyador');
+                                        $valueGuanyador = (!empty($guanyador))?$guanyador:'';
+                                        $dataGuanyador = array(
+                                            'name' => 'guanyador',
+                                            'value' => $valueGuanyador,
+                                            'class' => 'form-control',
+                                            'placeholder' => 'Participant',
+                                            'required'
+                                        );
+                                        echo form_input($dataGuanyador);
+                                        echo form_error('guanyador'); 
+                                        echo '</div>';
 
-                        ?>
+                                    ?>
 
-                        <div class="form-group text-center">
-                            <label for="enviar" class="sr-only"></label>
-                            <button type="submit" name="decideWin" class="btn btn-primary"><span>Guardar</span></button>
-                        </div>
+                                    <div class="form-group text-center">
+                                        <label for="enviar" class="sr-only"></label>
+                                        <button type="submit" name="decideWin" class="btn btn-primary"><span>Guardar</span></button>
+                                    </div>
 
-                    <?php        
-                        echo form_close()
+                                <?php        
+                                    echo form_close()
+                                ?>
+                            <?php
+                        }else{
+                            ?>
+
+                            <?php
+                        }
                     ?>
+
+                    
                     </div>
                 </div>
                 

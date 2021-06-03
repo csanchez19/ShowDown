@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class showdown extends CI_Controller {
 
     public function __construct()
@@ -44,6 +45,8 @@ class showdown extends CI_Controller {
         public function admin_partida($codiTorneig){
 
                 $this->load->model('tourns_model');
+
+                $this->load->model('users_model');
 
                 $dades['tornejos'] = $this->tourns_model->sel_tornejos();
 
@@ -132,7 +135,7 @@ class showdown extends CI_Controller {
                                 echo 'alert("Resultat guardat.")';
                                 echo '</script>';
 
-                                header("Refresh:0");
+                                $this->load->view('admin', $dades);
                         }
                 }else if(isset($_POST['decideWin'])){
                         $this->form_validation->run();
@@ -148,11 +151,13 @@ class showdown extends CI_Controller {
 
                                 $dades['participants'] = $this->tourns_model->participants_torneig($codiTorneig);
 
-                                $this->template->load('layout', 'admin_partida', $dades);
+                                $this->load->view('admin_partida', $dades);
                                 //header("Refresh:0");
 
                         }else{
                                 $res['resultat'] = $this->tourns_model->inserirGuanyador($codiTorneig);
+
+                                $res['mespunts'] = $this->users_model->augmentarPunts($_POST);
 
                                 echo '<script language="javascript">';
                                 echo 'alert("Guanyador guardat.")';
@@ -200,8 +205,8 @@ class showdown extends CI_Controller {
                                 $this->load->model('users_model');
                                 $res['resultat'] = $this->users_model->inserirUsuari($_POST);
 
-                                echo '<script type="text/javascript">';
-                                echo 'alert("Usuari registrat correctament, ja pots loguejar-te")';
+                                echo '<script language="javascript">';
+                                echo 'alert("Compte creat. Ja pots loguejar-te.")';
                                 echo '</script>';
                                 
                                 redirect(base_url()); 
@@ -256,8 +261,8 @@ class showdown extends CI_Controller {
 
                                 //$res['resultat2'] = $this->tourns_model->inserirRondes($_POST);
 
-                                echo '<script>';
-                                echo 'alert("Torneig registrat correctament")';
+                                echo '<script language="javascript">';
+                                echo 'alert("Torneig registrat correctament.")';
                                 echo '</script>';
                                 
                                 redirect(base_url()); 
@@ -295,8 +300,8 @@ class showdown extends CI_Controller {
 
                                 $res['resultat'] = $this->users_model->updateP();
 
-                                echo '<script type="text/javascript">';
-                                echo 'alert("Usuari modificat correctament")';
+                                echo '<script language="javascript">';
+                                echo 'alert("Usuari modificat correctament.")';
                                 echo '</script>';
                                 
                                 redirect(base_url() . 'index.php/showdown/perfil'); 
