@@ -52,7 +52,7 @@
 
         //SELECT BRACKET DEL TORNEO
         public function bracket($codiTorneig){
-            $sql = 'SELECT id, idTorneo, participant, ingame, guanyador, ronda_1, ronda_2, ronda_3 FROM partida WHERE idTorneo ='. $codiTorneig;            
+            $sql = 'SELECT id, idTorneo, participant, ingame, ronda_1, ronda_2, ronda_3 FROM partida WHERE idTorneo ='. $codiTorneig;            
             $query = $this->db->query($sql);
             // Fetch the result array from the result object and return it
             return $query->result();
@@ -152,6 +152,35 @@
             );
 
             $on = array('participant' => $username, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        //INSERTAR RESULTAT UNITARI
+        public function inserirRonda1($codiTorneig){
+            $part = $_POST['participant'];
+            $res = $_POST['resultat'];
+            
+            $data = array(
+                'ronda_1' => $res
+            );
+
+            $on = array('ingame' => $part, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        public function inserirRonda2($codiTorneig){
+            $part = $_POST['participant'];
+            $res = $_POST['resultat'];
+            
+            $data = array(
+                'ronda_2' => $res
+            );
+
+            $on = array('ingame' => $part, 'idTorneo' => $codiTorneig);
 
             $this->db->where($on);
             $this->db->update('partida', $data);

@@ -40,6 +40,18 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+.zoom {
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  width: 65%;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 </style>
 
 <body>
@@ -73,24 +85,344 @@
             <h2>Administració de resultats</h2>
         </header>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 text-center">
                 <div class="marco">
                     <h3>Bracket</h3>
                     <div class="demo row justify-content-center">
                     
+                    </div>
+                    <div class="container col-6">
+                    <h3 class="mt-5">Escollir guanyador</h3>
+                    <?php
+                        echo form_open('showdown/validation');
+
+                            //GUANYADOR
+                            echo '<div class="form-group">';
+                            //echo form_label('', 'guanyador');
+                            $valueGuanyador = (!empty($guanyador))?$guanyador:'';
+                            $dataGuanyador = array(
+                                'name' => 'guanyador',
+                                'value' => $valueGuanyador,
+                                'class' => 'form-control'
+                            );
+                            echo form_input($dataGuanyador);
+                            echo form_error('guanyador'); 
+                            echo '</div>';
+
+                        ?>
+
+                        <div class="form-group text-center">
+                            <label for="enviar" class="sr-only"></label>
+                            <button type="submit" name="decideWin" class="btn btn-primary"><span>Guardar</span></button>
+                        </div>
+
+                    <?php        
+                        echo form_close()
+                    ?>
                     </div>
                 </div>
                 
             </div>
             <div class="col-lg-6">
                 <div class="marco">
-                    <h3>Bracket</h3>
+                    <?php 
+                        if($result->places == 2){
+                            ?>
+                            <h3>Primera ronda</h3>
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">ID Torneig</th>
+                                    <th scope="col">Participant</th>
+                                    <th class="text-center" scope="col">Ronda 1</th>
+                                    <th class="text-center" scope="col">Imatge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach($participants as $row){
+                                    //echo $row->nomF.": ".$row->tipusF."<br>";
+                                    echo '<tr>';
+                                    echo '<td scope="row">'.$row->idTorneo.'</td>';
+                                    echo '<td scope="row">'.$row->participant.'</td>';
+                                    echo '<td scope="row">'.$row->ronda_1.'</td>';
+                                    if($row->foto1 == null){
+                                        echo '<td class="text-center" scope="row">Imatge no pujada</td>';
+                                    }else{
+                                        echo '<td class="text-center zoom" scope="row"><img class="w-50" src="data:'.$row->tipus1.';base64,'.base64_encode($row->foto1) .'" alt="Card image cap"></td>';
+                                    }
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                                </table>
+                            <?php
+                        }else if($result->places == 4){
+                            ?>
+                                <h3>Primera ronda</h3>
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">ID Torneig</th>
+                                    <th scope="col">Participant</th>
+                                    <th class="text-center" scope="col">Ronda 1</th>
+                                    <th class="text-center" scope="col">Imatge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach($participants as $row){
+                                    //echo $row->nomF.": ".$row->tipusF."<br>";
+                                    echo '<tr>';
+                                    echo '<td scope="row">'.$row->idTorneo.'</td>';
+                                    echo '<td scope="row">'.$row->participant.'</td>';
+                                    echo '<td scope="row">'.$row->ronda_1.'</td>';
+                                    if($row->foto1 == null){
+                                        echo '<td class="text-center zoom" scope="row">Imatge no pujada</td>';
+                                    }else{
+                                        echo '<td class="text-center zoom" scope="row"><img class="w-50" src="data:'.$row->tipus1.';base64,'.base64_encode($row->foto1) .'" alt="Card image cap"></td>';
+                                    }
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                                </table>
+                                <h3>Segona ronda</h3>
+
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">ID Torneig</th>
+                                    <th scope="col">Participant</th>
+                                    <th class="text-center" scope="col">Ronda 2</th>
+                                    <th class="text-center" scope="col">Imatge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach($participants as $row){
+                                    //echo $row->nomF.": ".$row->tipusF."<br>";
+                                    echo '<tr>';
+                                    echo '<td scope="row">'.$row->idTorneo.'</td>';
+                                    echo '<td scope="row">'.$row->participant.'</td>';
+                                    echo '<td scope="row">'.$row->ronda_2.'</td>';
+                                    if($row->foto2 == null){
+                                        echo '<td class="text-center zoom" scope="row">Imatge no pujada</td>';
+                                    }else{
+                                        echo '<td class="text-center zoom" scope="row"><img class="w-50" src="data:'.$row->tipus2.';base64,'.base64_encode($row->foto2) .'" alt="Card image cap"></td>';
+                                    }
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                                </table>
+                            <?php
+                        }else if($result->places == 8){
+                            ?>
+                                <h3>Primera ronda</h3>
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">ID Torneig</th>
+                                    <th scope="col">Participant</th>
+                                    <th class="text-center" scope="col">Ronda 1</th>
+                                    <th class="text-center" scope="col">Imatge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach($participants as $row){
+                                    //echo $row->nomF.": ".$row->tipusF."<br>";
+                                    echo '<tr>';
+                                    echo '<td scope="row">'.$row->idTorneo.'</td>';
+                                    echo '<td scope="row">'.$row->participant.'</td>';
+                                    echo '<td scope="row">'.$row->ronda_1.'</td>';
+                                    if($row->foto1 == null){
+                                        echo '<td class="text-center zoom" scope="row">Imatge no pujada</td>';
+                                    }else{
+                                        echo '<td class="text-center zoom" scope="row"><img class="w-50" src="data:'.$row->tipus1.';base64,'.base64_encode($row->foto1) .'" alt="Card image cap"></td>';
+                                    }
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                                </table>
+                                <h3>Segona ronda</h3>
+
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">ID Torneig</th>
+                                    <th scope="col">Participant</th>
+                                    <th class="text-center" scope="col">Ronda 2</th>
+                                    <th class="text-center" scope="col">Imatge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach($participants as $row){
+                                    //echo $row->nomF.": ".$row->tipusF."<br>";
+                                    echo '<tr>';
+                                    echo '<td scope="row">'.$row->idTorneo.'</td>';
+                                    echo '<td scope="row">'.$row->participant.'</td>';
+                                    echo '<td scope="row">'.$row->ronda_2.'</td>';
+                                    if($row->foto2 == null){
+                                        echo '<td class="text-center zoom" scope="row">Imatge no pujada</td>';
+                                    }else{
+                                        echo '<td class="text-center zoom" scope="row"><img class="w-50" src="data:'.$row->tipus2.';base64,'.base64_encode($row->foto2) .'" alt="Card image cap"></td>';
+                                    }
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                                </table>
+
+                                <h3>Tercera ronda</h3>
+
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">ID Torneig</th>
+                                    <th scope="col">Participant</th>
+                                    <th class="text-center" scope="col">Ronda 3</th>
+                                    <th class="text-center" scope="col">Imatge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach($participants as $row){
+                                    //echo $row->nomF.": ".$row->tipusF."<br>";
+                                    echo '<tr>';
+                                    echo '<td scope="row">'.$row->idTorneo.'</td>';
+                                    echo '<td scope="row">'.$row->participant.'</td>';
+                                    echo '<td scope="row">'.$row->ronda_3.'</td>';
+                                    if($row->foto3 == null){
+                                        echo '<td class="text-center zoom" scope="row">Imatge no pujada</td>';
+                                    }else{
+                                        echo '<td class="text-center zoom" scope="row"><img class="w-50" src="data:'.$row->tipus3.';base64,'.base64_encode($row->foto3) .'" alt="Card image cap"></td>';
+                                    }
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                                </table>
+                            <?php
+                        }
+                    ?>
                 </div>
                 
             </div>
             <div class="col-lg-6">
                 <div class="marco">
-                    <h3>Bracket</h3>
+                    <h3>Inserció de resultats</h3>
+                        <?php
+                            if($result->places == 2){
+                                ?>  
+                                    <h4>Primera ronda</h4>
+                                    <?php echo form_open('showdown/admin_partida/'.$result->codiTorneig); ?>
+                                    <div class="mt-4 col">
+                                        <select class="form-control" name="participant">
+                                            <option value="">Selecciona el concursant...</option>
+                                            <?php 
+                                            foreach($participants as $row)
+                                            { 
+                                                echo '<option value="'.$row->ingame.'">'.$row->ingame.'</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                        <?php echo form_error('participant'); ?>
+                                    </div>
+                                    <div class="mt-2 col">
+                                        <label for="resultat" class="sr-only">Resultat</label>
+                                        <?php 
+                                        $valueRes=(!empty($res))?$res:'';
+                                        $dataRes = array(
+                                            'name' => 'resultat',
+                                            'value' => $valueRes,
+                                            'class' => 'form-control',
+                                            'type' => 'number',
+                                            'placeholder' => 'Resultat'
+                                        );
+                                        echo form_input($dataRes);
+                                        echo form_error('resultat'); ?>
+                                    </div>
+                                    <div class="form-group pt-5 text-center">
+                                        <button name="ingressar1" type="submit" class="btn btn-primary"><span>GUARDAR</span></button>
+                                    </div>
+                                    <?php echo form_close(); ?>
+                                <?php
+                            }else if($result->places == 4){
+                                ?>  
+                                    <h4>Primera ronda</h4>
+                                    <?php echo form_open('showdown/admin_partida/'.$result->codiTorneig); ?>
+                                    <div class="mt-4 col">
+                                        <select class="form-control" name="participant">
+                                            <option value="">Selecciona el concursant...</option>
+                                            <?php 
+                                            foreach($participants as $row)
+                                            { 
+                                                echo '<option value="'.$row->ingame.'">'.$row->ingame.'</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                        <?php echo form_error('participant'); ?>
+                                    </div>
+                                    <div class="mt-2 col">
+                                        <label for="resultat" class="sr-only">Resultat</label>
+                                        <?php 
+                                        $valueRes=(!empty($res))?$res:'';
+                                        $dataRes = array(
+                                            'name' => 'resultat',
+                                            'value' => $valueRes,
+                                            'class' => 'form-control',
+                                            'type' => 'number',
+                                            'placeholder' => 'Resultat'
+                                        );
+                                        echo form_input($dataRes);
+                                        echo form_error('resultat'); ?>
+                                    </div>
+                                    <div class="form-group pt-5 text-center">
+                                        <button name="ingressar1" type="submit" class="btn btn-primary"><span>GUARDAR</span></button>
+                                    </div>
+                                    <?php echo form_close(); ?>
+
+                                    <h4>Segona ronda</h4>
+                                    <?php echo form_open('showdown/admin_partida/'.$result->codiTorneig); ?>
+                                    <div class="mt-4 col">
+                                        <select class="form-control" name="participant">
+                                            <option value="">Selecciona el concursant...</option>
+                                            <?php 
+                                            foreach($participants as $row)
+                                            { 
+                                                echo '<option value="'.$row->ingame.'">'.$row->ingame.'</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                        <?php echo form_error('participant'); ?>
+                                    </div>
+                                    <div class="mt-2 col">
+                                        <label for="resultat" class="sr-only">Resultat</label>
+                                        <?php 
+                                        $valueRes=(!empty($res))?$res:'';
+                                        $dataRes = array(
+                                            'name' => 'resultat',
+                                            'value' => $valueRes,
+                                            'class' => 'form-control',
+                                            'type' => 'number',
+                                            'placeholder' => 'Resultat'
+                                        );
+                                        echo form_input($dataRes);
+                                        echo form_error('resultat'); ?>
+                                    </div>
+                                    <div class="form-group pt-5 text-center">
+                                        <button name="ingressar2" type="submit" class="btn btn-primary"><span>GUARDAR</span></button>
+                                    </div>
+                                    <?php echo form_close(); ?>
+                                <?php
+                            }
+                        ?>
+
+
                 </div>
                 
             </div>
