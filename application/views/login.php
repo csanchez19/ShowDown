@@ -58,4 +58,13 @@
         </div>
 </div>
 
+<script>
+
+    function login()
+    {
+        $.get("http://localhost/showdown/index.php/showdown/login")
+    }
+    
+</script>
+
 <!--http://[::1]/showdown/index.php/showdown/login-->
