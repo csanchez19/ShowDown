@@ -51,6 +51,22 @@ echo base_url(); ?>css/register.css">
                     echo form_input($dataData);
                     echo form_error('data'); ?>
                 </div>
+                <div class="col">
+                    <label for="hora" class="sr-only">Hora del torneig</label>
+                    <?php 
+                    $valueHora=(!empty($hora))?$hora:'';
+                    $dataHora = array(
+                        'name' => 'hora',
+                        'value' => $valueHora,
+                        'class' => 'form-control',
+                        'type' => 'text',
+                        'onfocus' => "(this.type='time')",
+                        'onfocusout' => "(this.type='text')",
+                        'placeholder' => 'Hora del torneig'
+                    );
+                    echo form_input($dataHora);
+                    echo form_error('hora'); ?>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -85,7 +101,7 @@ echo base_url(); ?>css/register.css">
         <div class="form-group">
             <div class="row">
                 <div class="col">
-                    <label for="desc" class="sr-only">Descripció</label>
+                    <label for="desc" class="">Descripció</label>
                     <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"></textarea>
                     <?php echo form_error('desc'); ?>
                 </div>

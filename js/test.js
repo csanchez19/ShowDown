@@ -11,7 +11,7 @@ window.onload = function(){
       document.getElementById("League of legends").src="http://localhost/showdown/content/img/1.png";
   }
   
-  bracket();
+  bracket()
 
   //console.log(codiTorneig);
 
@@ -121,6 +121,24 @@ if(places == 2){
 
       var data = jQuery.parseJSON(xhttp.responseText);
 
+      var eightteams = {
+        teams: [
+          [(data[0] != null ? data[0].ingame : ""), (data[1] != null ? data[1].ingame : "")],
+          [(data[2] != null ? data[2].ingame : ""), (data[3] != null ? data[3].ingame : "")],
+          [(data[4] != null ? data[4].ingame : ""), (data[5] != null ? data[5].ingame : "")],
+          [(data[6] != null ? data[6].ingame : ""), (data[7] != null ? data[7].ingame : "")]
+        ],
+        results: [
+            [
+              [[(data[0] != null ? parseInt(data[0].ronda_1) : null), (data[1] != null ? parseInt(data[1].ronda_1) : null)], [(data[2] != null ? parseInt(data[2].ronda_1) : null), (data[3] != null ? parseInt(data[3].ronda_1) : null)], [(data[4] != null ? parseInt(data[4].ronda_1) : null), (data[5] != null ? parseInt(data[5].ronda_1) : null)], [(data[6] != null ? parseInt(data[6].ronda_1) : null), (data[7] != null ? parseInt(data[7].ronda_1) : null)]], //primeres 4 rondes
+              [[(parseInt(data[0].ronda_1) > parseInt(data[1].ronda_1) ? parseInt(data[0].ronda_2) : parseInt(data[1].ronda_2)), (parseInt(data[2].ronda_1) > parseInt(data[3].ronda_1) ? parseInt(data[2].ronda_2) : parseInt(data[3].ronda_2))], [(parseInt(data[4].ronda_1) > parseInt(data[5].ronda_1) ? parseInt(data[4].ronda_2) : parseInt(data[5].ronda_2)), (parseInt(data[6].ronda_1) > parseInt(data[7].ronda_1) ? parseInt(data[6].ronda_2) : parseInt(data[7].ronda_2))]], //semis 
+              [[final1(data), final2(data)], [final3(data), final4(data)]] //final. tercer lloc
+            ]
+        ]
+      }
+
+      console.log(final1(data))
+
       function final1(data){
 
         var find = [];
@@ -128,11 +146,13 @@ if(places == 2){
         for(var i = 0; i < data.length; i++){
           if(data[i].ronda_2 != null){
             find.push(data[i]);
+          }else{
+            return null
           }
-          
         }
+        
 
-        //console.log(find[0].ronda_2 + find[1].ronda_2 + find[2].ronda_2 + find[3].ronda_2);
+        console.log(find);
 
         if(parseInt(find[0].ronda_2) > parseInt(find[1].ronda_2)){
           return parseInt(find[0].ronda_3)
@@ -149,9 +169,12 @@ if(places == 2){
         for(var i = 0; i < data.length; i++){
           if(data[i].ronda_2 != null){
             find.push(data[i]);
+          }else{
+            return null
           }
-          
         }
+        
+        
 
         if(parseInt(find[2].ronda_2) > parseInt(find[3].ronda_2)){
           return parseInt(find[2].ronda_3)
@@ -167,9 +190,11 @@ if(places == 2){
         for(var i = 0; i < data.length; i++){
           if(data[i].ronda_2 != null){
             find.push(data[i]);
+          }else{
+            return null
           }
-          
         }
+        
 
         //console.log(find[0].ronda_2 + find[1].ronda_2 + find[2].ronda_2 + find[3].ronda_2);
 
@@ -186,31 +211,17 @@ if(places == 2){
         for(var i = 0; i < data.length; i++){
           if(data[i].ronda_2 != null){
             find.push(data[i]);
+          }else{
+            return null
           }
-          
         }
+        
 
         if(parseInt(find[2].ronda_2) < parseInt(find[3].ronda_2)){
           return parseInt(find[2].ronda_3)
         }else{
           return parseInt(find[3].ronda_3)
         }
-      }
-
-      var eightteams = {
-        teams: [
-          [(data[0] != null ? data[0].ingame : ""), (data[1] != null ? data[1].ingame : "")],
-          [(data[2] != null ? data[2].ingame : ""), (data[3] != null ? data[3].ingame : "")],
-          [(data[4] != null ? data[4].ingame : ""), (data[5] != null ? data[5].ingame : "")],
-          [(data[6] != null ? data[6].ingame : ""), (data[7] != null ? data[7].ingame : "")]
-        ],
-        results: [
-            [
-              [[(data[0] != null ? parseInt(data[0].ronda_1) : null), (data[1] != null ? parseInt(data[1].ronda_1) : null)], [(data[2] != null ? parseInt(data[2].ronda_1) : null), (data[3] != null ? parseInt(data[3].ronda_1) : null)], [(data[4] != null ? parseInt(data[4].ronda_1) : null), (data[5] != null ? parseInt(data[5].ronda_1) : null)], [(data[6] != null ? parseInt(data[6].ronda_1) : null), (data[7] != null ? parseInt(data[7].ronda_1) : null)]], //primeres 4 rondes
-              [[(parseInt(data[0].ronda_1) > parseInt(data[1].ronda_1) ? parseInt(data[0].ronda_2) : parseInt(data[1].ronda_2)), (parseInt(data[2].ronda_1) > parseInt(data[3].ronda_1) ? parseInt(data[2].ronda_2) : parseInt(data[3].ronda_2))], [(parseInt(data[4].ronda_1) > parseInt(data[5].ronda_1) ? parseInt(data[4].ronda_2) : parseInt(data[5].ronda_2)), (parseInt(data[6].ronda_1) > parseInt(data[7].ronda_1) ? parseInt(data[6].ronda_2) : parseInt(data[7].ronda_2))]], //semis 
-              [[final1(data), final2(data)], [final3(data), final4(data)]] //final. tercer lloc
-            ]
-        ]
       }
 
       $('.demo').bracket({

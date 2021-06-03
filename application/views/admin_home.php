@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/admin.css">
     <!--SCRIPT JBRACKET-->
     <script src="<?php echo base_url(); ?>jquery-bracket-master/dist/jquery.bracket.min.js"></script>
 
     <link type="text/css" href="<?php echo base_url(); ?>jquery-bracket-master/dist/jquery.bracket.min.css" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/admin.css">
+    
 
     <title>Showdown - Administració</title>
 </head>
@@ -70,20 +71,39 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class=" marco">
-                    <h3>Llista de tornejos oberts</h3>
-
-                    <!--<?php echo form_open_multipart('Controlador_Final/Gestio');?>
-                        <div class="form-group">
-                            <input type="file" class="form-control" name="userfile" size="20" />
+                    <h3>Llista de tornejos per validar</h3>
+                    <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">Codi del torneig</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Joc</th>
+                                    <th scope="col">Places</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Creador</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                foreach($tornejos as $row){
+                                    //echo $row->nomF.": ".$row->tipusF."<br>";
+                                    echo '<tr>';
+                                    echo '<td scope="row">'.$row->codiTorneig.'</td>';
+                                    echo '<td scope="row">'.$row->nom.'</td>';
+                                    echo '<td scope="row">'.$row->Nom.'</td>';
+                                    echo '<td scope="row">'.$row->places.'</td>';
+                                    echo '<td scope="row">'.$row->data.'</td>';
+                                    echo '<td scope="row">'.$row->creador.'</td>';
+                                    echo '<td><a class="btn btn-danger" href="'.base_url().'index.php/showdown/admin_partida/'.$row->codiTorneig.'">Moderar</a</td>';  
+                                    //echo '<td><button class="btn btn-danger" onclick="esborrar()">Esborrar</button></td>';
+                                    //echo '<td><a class="btn btn-danger" href="'.base_url().'index.php/Controlador_Final/esborrar/'.$row->codiF.'">Esborrar</a</td>';  
+                                    echo '</tr>';
+                                }
+                                ?>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="form-group">
-                            <input class="btn btn-primary" type="submit" value="Pujar" name="pujar" />
-                        </div>
-                        <div style="color:red">
-                            <?php echo validation_errors(); ?>
-                            <?php if(isset($error)){print $error;}?>
-                        </div>
-                    </form>-->
                 </div>
                 
             </div>

@@ -47,7 +47,7 @@
 		if($this->session->userdata('username') != '')  
 		{  
 			echo '<div class="user">';
-			echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b></p>'; 
+			echo '<p>Benvingut, <b> '.$this->session->userdata('username').'</b></p>'; 
       //echo '<p>Benvingut, <b>'.$this->session->userdata('username').'</b> <img class="fotoPerfil" src="'.base_url().'content/img/mario.jpg"></p>'; 
 			echo '</div>';
 		}  

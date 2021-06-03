@@ -28,7 +28,7 @@
                     if($participants->contador == $result->places){
                         if($check->contador2 == 1){
                         ?>
-                            <button class="custom-btn btn-7 mt-lg-3 mt-0" style="font-size: 1em !important"><span style="font-size: 1em !important">JUGAR</span></button>
+                            <button class="custom-btn btn-7 mt-lg-3 mt-0"  onclick="goJugar()" style="font-size: 1em !important"><span style="font-size: 1em !important">JUGAR</span></button>
                         <?php
                         }
                         
@@ -53,7 +53,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el control de resultats.</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el control de resultats. <br> Si no concorda amb les imatges de comprovació, no es donaràn per vàlids els resultats.</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -106,7 +106,6 @@
             <div class="form-group pt-5 text-center">
                 <label for="enviar" class="sr-only"></label>
                 <button type="submit" name="apuntarse" class="custom-btn2 btn-7"><span>APUNTAR-SE</span></button>
-                <p class="mt-3"><i>Recorda que no t'afegirà si ja estas apuntat.</i></p>
             </div>
         </div>
         <div class="modal-footer">
@@ -140,7 +139,26 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div> 
+    </div>
+
+    <div class="mt-4 text-center text-secondary">
+        <p><i>(Tenir en compte que fins que no s'omplin totes les places, no es podrà veure el bracket ni jugar)</i></p>
+    </div> 
+
+    <div class="text-center text-white">
+            <h2>
+                <i><?php  
+                    if($result->guanyador != null && $result->places == 8){
+
+                         echo 'GUANYADOR: <span class="text-danger"> ' . $result->guanyador. '</span>';
+                        
+                        } 
+                    
+                    ?> </span>
+                
+                </i>
+            </h2>
     </div>
 
     <h2 class="marginado text-center" style="color: white;">Bracket</h2>
@@ -161,7 +179,7 @@
     }
 
     function goJugar(){
-        window.location.href = "/ShowDown/index.php/showdown/jugar/" + "<?php $result->codiTorneig?>";
+        window.location.href = "/ShowDown/index.php/showdown/jugar/" + "<?php echo $result->codiTorneig?>";
     }
 
     var baseURL= "<?php echo base_url();?>";

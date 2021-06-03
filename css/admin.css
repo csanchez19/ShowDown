@@ -7,6 +7,8 @@ body{
 .btn-primary{
     background-color: black !important;
     border: black;
+
+    outline: none !important;
 }
 
 header{
@@ -17,7 +19,7 @@ header{
     border-radius: 10px;
 }
 .marco{
-    background-color: #ffffff;
+    background-color: #e2e2e2 !important;
     border: 2px solid none;
     border-radius: 5px;
     box-shadow: -1px 1px 10px 0px;

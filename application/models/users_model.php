@@ -114,7 +114,7 @@
 
         //SELECT TORNEJOS ALS QUE ESTA APUNTAT
         public function joined($username){
-            $query = $this->db->query('SELECT * FROM torneig t JOIN partida p ON(p.idTorneo = t.codiTorneig) WHERE t.activo = 1 AND p.participant = "'.$username.'"');
+            $query = $this->db->query('SELECT * FROM torneig t JOIN partida p ON(p.idTorneo = t.codiTorneig) JOIN joc j ON(t.codiJoc = j.Id) WHERE p.participant = "'.$username.'"');
 
             return $query->result();
         }
@@ -143,6 +143,23 @@
             return $query->row();
         }
 
+        //PUJAR IMATGE DE PERFIL
+        public function store_pic_data_profile($data, $username){
+
+            $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
+            //$imgname = $this->upload->data('file_name');
+            $imgtype = $this->upload->data('file_type');
+            $data = array(
+                'tipus' => $imgtype,
+                'imatge' => $imgdata
+            );
+
+            $on = array('usuari' => $username);
+
+            $this->db->where($on);
+            $this->db->update('usuaris', $data);
+        }
+
         //CONTADORS
 
         //CONTADOR TORNEJOS CREATS
@@ -159,6 +176,15 @@
             $usuari = $this->session->userdata('username');
 
             $query = $this->db->query('SELECT COUNT(*) AS contador FROM partida WHERE participant = "'.$usuari.'"');
+
+            return $query->row();
+        }
+
+        //CONTADOR WINS
+        public function contWins(){
+            $usuari = $this->session->userdata('username');
+
+            $query = $this->db->query('SELECT COUNT(*) AS contador FROM torneig WHERE guanyador = "'.$usuari.'"');
 
             return $query->row();
         }

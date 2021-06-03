@@ -30,7 +30,7 @@
         //INSERT TORNEIG
         public function inserirTourn(){
             $nom = $_POST["nom"];
-            $data = $_POST["data"];
+            $data = $_POST["data"] . " " . $_POST["hora"];
             $idJoc = $_POST["jocs"];
             $places = $_POST["places"];
             $desc = $_POST["desc"];
@@ -50,12 +50,29 @@
         }
 
 
+
         //SELECT BRACKET DEL TORNEO
         public function bracket($codiTorneig){
-            $sql = 'SELECT * FROM partida WHERE idTorneo ='. $codiTorneig;            
+            $sql = 'SELECT id, idTorneo, participant, ingame, ronda_1, ronda_2, ronda_3 FROM partida WHERE idTorneo ='. $codiTorneig;            
             $query = $this->db->query($sql);
             // Fetch the result array from the result object and return it
             return $query->result();
+        }
+
+        //SELECT PARTICIPANTS DEL TORNEIG
+        public function participants_torneig($codiTorneig){
+            $sql = 'SELECT * FROM partida WHERE idTorneo ='. $codiTorneig;            
+            $query = $this->db->query($sql);
+            
+            return $query->result();
+        }
+
+        //SELECT PARTICIPANT
+        public function participants($codiTorneig, $username){
+            $sql = 'SELECT * FROM partida WHERE participant = "'.$username.'" AND idTorneo ='. $codiTorneig;            
+            $query = $this->db->query($sql);
+            // Fetch the result array from the result object and return it
+            return $query->row();
         }
 
         //SELECT JOC DEL TORNEIG
@@ -87,6 +104,116 @@
             $num_files = $this->db->affected_rows();
 
             return $num_files;
+        }
+
+        //PUJAR IMATGE RESULTAT
+        public function store_pic_data($data, $username, $codiTorneig){
+
+            $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
+            $imgname = $this->upload->data('file_name');
+            $imgtype = $this->upload->data('file_type');
+            $data = array(
+                'tipus1' => $imgtype,
+                'foto1' => $imgdata,
+                'nomFitxer1' => $imgname
+            );
+
+            $on = array('participant' => $username, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        public function store_pic_data2($data, $username, $codiTorneig){
+
+            $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
+            $imgname = $this->upload->data('file_name');
+            $imgtype = $this->upload->data('file_type');
+            $data = array(
+                'tipus2' => $imgtype,
+                'foto2' => $imgdata,
+                'nomFitxer2' => $imgname
+            );
+
+            $on = array('participant' => $username, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        public function store_pic_data3($data, $username, $codiTorneig){
+
+            $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
+            $imgname = $this->upload->data('file_name');
+            $imgtype = $this->upload->data('file_type');
+            $data = array(
+                'tipus3' => $imgtype,
+                'foto3' => $imgdata,
+                'nomFitxer3' => $imgname
+            );
+
+            $on = array('participant' => $username, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        //INSERTAR RESULTAT UNITARI
+        public function inserirRonda1($codiTorneig){
+            $part = $_POST['participant'];
+            $res = $_POST['resultat'];
+            
+            $data = array(
+                'ronda_1' => $res
+            );
+
+            $on = array('ingame' => $part, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        public function inserirRonda2($codiTorneig){
+            $part = $_POST['participant'];
+            $res = $_POST['resultat'];
+            
+            $data = array(
+                'ronda_2' => $res
+            );
+
+            $on = array('ingame' => $part, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        public function inserirRonda3($codiTorneig){
+            $part = $_POST['participant'];
+            $res = $_POST['resultat'];
+            
+            $data = array(
+                'ronda_3' => $res
+            );
+
+            $on = array('ingame' => $part, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        //INSERT GUANYADOR
+        public function inserirGuanyador($codiTorneig){
+            $winner = $_POST['guanyador'];
+
+            $data = array(
+                'guanyador' => $winner,
+                'activo' => 0
+            );
+
+            $on = array('codiTorneig' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('torneig', $data);
         }
 
         //CONTADOR PARTICIPANTS EN TORNEIG
