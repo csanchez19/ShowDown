@@ -21,7 +21,7 @@
                                 <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
                             <?php
                         }else{
-                            echo '<img class="w-100" style="border-radius: 100%" src="data:'.$result->tipus.';base64,'.base64_encode($result->imatge) .'" alt="Card image cap">'; 
+                            echo '<img class="w-100 h-75" style="border-radius: 100%" src="data:'.$result->tipus.';base64,'.base64_encode($result->imatge) .'" alt="Card image cap">'; 
                         }
                     ?>
                 </div>
@@ -35,7 +35,7 @@
         <div class="col-2 mt-5">
             <div class="row">
                 <div class="col">
-                    <a class="btn btn-secondary" href="<?php echo base_url().'index.php/showdown/modificarPerfil'?>">Modificar perfil</a>
+                    <a class="btn btn-danger" href="<?php echo base_url().'index.php/showdown/modificarPerfil'?>">Modificar perfil</a>
                     <?php
                         if($admin->isAdmin != FALSE){
                             ?>

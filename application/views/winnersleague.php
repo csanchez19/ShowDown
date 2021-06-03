@@ -118,7 +118,9 @@
             {
               $pos_user = $cont;
             }
-            echo '<div class="col-8 posicio p-3">
+            if($row->tipus == null && $row->imatge == null)
+            {
+              echo '<div class="col-8 posicio p-3">
                     <div class="row">
                         <div class="col-1 ">
                             <div class="nPosicio mt-3">
@@ -136,6 +138,29 @@
                         </div>
                     </div>
                 </div>';
+            }
+            else
+            {
+                echo '<div class="col-8 posicio p-3">
+                <div class="row">
+                    <div class="col-1 ">
+                        <div class="nPosicio mt-3">
+                            <p class="">'.$cont.'</p>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <img class="fotoRanking mt-2" src="data:'.$row->tipus.';base64,'.base64_encode($row->imatge) .'">
+                    </div>
+                    <div class="col">
+                        <p class="mt-4">'.$row->usuari.'</p>
+                    </div>
+                    <div class="col">
+                        <p class="mt-4 punts">'.$row->punts.'</p>
+                    </div>
+                </div>
+            </div>';
+            }
+            
         }
         else
         {
@@ -275,7 +300,7 @@ if($this->session->userdata('username') != '')
       </div>
       <div class="modal-footer">
         <button onclick="removeCarrito()" href="<?php echo base_url(); ?>index.php/showdown/destruirCarro" type="button" class="btn btn-danger">Esborrar Articles</button>
-        <p style="color: white" class="btn btn-outline-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
+        <p style="color: white" class="btn btn-outline-secondary mt-3" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
         <button onclick="comprar(<?php echo $this->cart->total()?>, <?php echo $puntsUser[0]['punts']?>)" href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="custom-btn btn-7"><span>COMPRAR</span></button>
       </div>
     </div>
@@ -298,7 +323,7 @@ function addCarrito(idProducte)
   setTimeout(function(){
     location.reload();
   }, 1500);
-  
+
 }
 
 function removeCarrito()
@@ -314,9 +339,9 @@ function comprar(punts, puntsUser)
   {
     Swal.fire({
     icon: 'error',
-    title: 'Oops...',
-    text: 'No tens suficients punts!',
-  })
+    title: 'No tens suficients punts',
+    timer: 2000,
+    })
   }
   else if(puntsUser <= 0)
   {
@@ -326,12 +351,21 @@ function comprar(punts, puntsUser)
     text: 'No tens punts!',
     color: 'white',
     style: 'color: white',
-  })
+    })
   }
   else
   {
-    $.get("http://localhost/showdown/index.php/showdown/pay");
-    location.reload();
+    Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Compra Realitzada!',
+    showConfirmButton: false,
+    })
+    setTimeout(function() {
+      $.get("http://localhost/showdown/index.php/showdown/pay");
+      location.reload();
+    }, 2000);
+    
   }
 }
 </script>
