@@ -115,6 +115,23 @@
             $this->db->update('partida', $data);
         }
 
+        public function store_pic_data2($data, $username, $codiTorneig){
+
+            $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
+            $imgname = $this->upload->data('file_name');
+            $imgtype = $this->upload->data('file_type');
+            $data = array(
+                'tipus2' => $imgtype,
+                'foto2' => $imgdata,
+                'nomFitxer2' => $imgname
+            );
+
+            $on = array('participant' => $username, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
         //CONTADOR PARTICIPANTS EN TORNEIG
         public function selParticipants($codiTorneig){
             /*$this->db->select('count(*) as count');

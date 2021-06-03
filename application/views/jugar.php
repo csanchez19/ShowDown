@@ -82,7 +82,31 @@
                             <div class="offset-1 cajaInfoTop pt-4 pb-3 col-10">
                                 <h1>Imatge del resultat de la Ronda 1</h1>
                             </div>
-                            <div>
+                            <div class="col-12 mt-5 p-3">
+
+                                <?php
+                                    if($partida->foto1 == null){
+                                        ?>
+                                            <?php echo form_open_multipart('showdown/jugar/'.$result->codiTorneig);?>
+                                                <div class="form-group">
+                                                    <input type="file" class="form-control" name="ronda1" size="20" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="custom-btn btn-7" type="submit" name="pujar"> PUJAR </button>
+                                                </div>
+                                                <div style="color:red">
+                                                    <?php echo validation_errors(); ?>
+                                                    <?php if(isset($error)){print $error;}?>
+                                                </div>
+                                            </form>
+                                        <?php
+                                    }else{
+                                        echo '<img class="card-img-top w-50" src="data:'.$partida->tipus1.';base64,'.base64_encode($partida->foto1) .'"
+                                        alt="Card image cap">';
+                                    }
+                                ?>
+
+                                
 
                             </div>
                         </div>
@@ -92,7 +116,31 @@
                             <div class="offset-1 cajaInfoTop pt-4 pb-3 col-10">
                                 <h1>Imatge del resultat de la Ronda 2</h1>
                             </div>
-                            <div>
+                            <div class="col-12 mt-5 p-3">
+
+                                <?php
+                                    if($partida->foto2 == null){
+                                        ?>
+                                            <?php echo form_open_multipart('showdown/jugar/'.$result->codiTorneig);?>
+                                                <div class="form-group">
+                                                    <input type="file" class="form-control" name="ronda2" size="20" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="custom-btn btn-7" type="submit" name="pujar2"> PUJAR </button>
+                                                </div>
+                                                <div style="color:red">
+                                                    <?php echo validation_errors(); ?>
+                                                    <?php if(isset($error)){print $error;}?>
+                                                </div>
+                                            </form>
+                                        <?php
+                                    }else{
+                                        echo '<img class="card-img-top w-50" src="data:'.$partida->tipus2.';base64,'.base64_encode($partida->foto2) .'"
+                                        alt="Card image cap">';
+                                    }
+                                ?>
+
+                                
 
                             </div>
                         </div>
