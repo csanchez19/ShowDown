@@ -21,6 +21,7 @@ echo base_url(); ?>css/register.css">
             <p class="dadesCobrament">Dades del torneig</p>
         </div>
         <div class="form-group mt-5 pt-5">
+        <p class="text-center"><i>(Tingues en compte que la data i ha de ser accessible per que l'administrador pugui estar al tant)</i></p>
             <div class="row">
                 <div class="col">
                     <label for="nom" class="sr-only">Nom</label>
