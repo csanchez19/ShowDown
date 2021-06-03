@@ -403,6 +403,8 @@ class showdown extends CI_Controller {
 
                 $dades['participacions'] = $this->users_model->contParticipacions();
 
+                $dades['wins'] = $this->users_model->contWins();
+
                 $this->template->load('layout', 'perfil', $dades);
         }
 

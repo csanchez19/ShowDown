@@ -146,6 +146,21 @@
         <p><i>(Tenir en compte que fins que no s'omplin totes les places, no es podrà veure el bracket ni jugar)</i></p>
     </div> 
 
+    <div class="text-center text-white">
+            <h2>
+                <i><?php  
+                    if($result->guanyador != null && $result->places == 8){
+
+                         echo 'GUANYADOR: <span class="text-danger"> ' . $result->guanyador. '</span>';
+                        
+                        } 
+                    
+                    ?> </span>
+                
+                </i>
+            </h2>
+    </div>
+
     <h2 class="marginado text-center" style="color: white;">Bracket</h2>
 
     <div class="row justify-content-center demo">

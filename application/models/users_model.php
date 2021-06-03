@@ -180,6 +180,15 @@
             return $query->row();
         }
 
+        //CONTADOR WINS
+        public function contWins(){
+            $usuari = $this->session->userdata('username');
+
+            $query = $this->db->query('SELECT COUNT(*) AS contador FROM torneig WHERE guanyador = "'.$usuari.'"');
+
+            return $query->row();
+        }
+
         public function restarPunts($idUser, $preuCarrito)
         {
             $query = $this->db->query('UPDATE usuaris SET punts = '.$preuCarrito.' WHERE usuari = "'.$idUser.'"');

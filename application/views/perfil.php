@@ -68,7 +68,7 @@
                     <p class="position mt-4">1ST</p>
                 </div>
                 <div class="col-8">
-                    <span class="">0</span>
+                    <span class=""><?php echo $wins->contador ?></span>
                     <p class="mt-5">Tornejos Guanyats</p>
                 </div>
             </div>
@@ -79,7 +79,7 @@
         <div class="col-12 cajaMiTourn">
             <div class="row">
                 <div class="col-12 text-center miTournTop">
-                    <p class="pt-3 pb-1">Tornejos als que estic apuntat</p>
+                    <p class="pt-3 pb-1">Historial de participacions en tornejos</p>
                 </div>
                 <div class="p-5 col-12">
                     <?php
