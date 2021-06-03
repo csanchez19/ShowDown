@@ -160,6 +160,19 @@
             $this->db->update('usuaris', $data);
         }
 
+        //AUGMENTAR PUNTS
+        public function augmentarPunts(){
+            $winner = $_POST['guanyador'];
+
+            $query = $this->db->query('UPDATE usuaris SET punts = punts + 3500 WHERE usuari = "'.$winner.'"');
+
+            $this->db->query($query);
+
+            $num_files = $this->db->affected_rows();
+
+            return $num_files;;
+        }
+
         //CONTADORS
 
         //CONTADOR TORNEJOS CREATS

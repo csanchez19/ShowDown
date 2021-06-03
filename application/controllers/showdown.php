@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class showdown extends CI_Controller {
 
     public function __construct()
@@ -17,7 +18,7 @@ class showdown extends CI_Controller {
         public function _output($dades){
                 echo $dades;
         }
-
+        
         //VISTA HOME
 	public function index()
 	{
@@ -44,6 +45,8 @@ class showdown extends CI_Controller {
         public function admin_partida($codiTorneig){
 
                 $this->load->model('tourns_model');
+
+                $this->load->model('users_model');
 
                 $dades['tornejos'] = $this->tourns_model->sel_tornejos();
 
@@ -153,6 +156,8 @@ class showdown extends CI_Controller {
 
                         }else{
                                 $res['resultat'] = $this->tourns_model->inserirGuanyador($codiTorneig);
+
+                                $res['mespunts'] = $this->users_model->augmentarPunts($_POST);
 
                                 echo '<script language="javascript">';
                                 echo 'alert("Guanyador guardat.")';
