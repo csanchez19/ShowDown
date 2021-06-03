@@ -108,7 +108,8 @@
                                             'name' => 'guanyador',
                                             'value' => $valueGuanyador,
                                             'class' => 'form-control',
-                                            'placeholder' => 'Participant'
+                                            'placeholder' => 'Participant',
+                                            'required'
                                         );
                                         echo form_input($dataGuanyador);
                                         echo form_error('guanyador'); 
@@ -127,7 +128,7 @@
                             <?php
                         }else{
                             ?>
-                                
+
                             <?php
                         }
                     ?>

@@ -18,7 +18,7 @@ class showdown extends CI_Controller {
         public function _output($dades){
                 echo $dades;
         }
-        
+
         //VISTA HOME
 	public function index()
 	{
@@ -151,7 +151,7 @@ class showdown extends CI_Controller {
 
                                 $dades['participants'] = $this->tourns_model->participants_torneig($codiTorneig);
 
-                                $this->template->load('layout', 'admin_partida', $dades);
+                                $this->load->view('admin_partida', $dades);
                                 //header("Refresh:0");
 
                         }else{
@@ -205,8 +205,8 @@ class showdown extends CI_Controller {
                                 $this->load->model('users_model');
                                 $res['resultat'] = $this->users_model->inserirUsuari($_POST);
 
-                                echo '<script type="text/javascript">';
-                                echo 'alert("Usuari registrat correctament, ja pots loguejar-te")';
+                                echo '<script language="javascript">';
+                                echo 'alert("Compte creat. Ja pots loguejar-te.")';
                                 echo '</script>';
                                 
                                 redirect(base_url()); 
@@ -261,8 +261,8 @@ class showdown extends CI_Controller {
 
                                 //$res['resultat2'] = $this->tourns_model->inserirRondes($_POST);
 
-                                echo '<script>';
-                                echo 'alert("Torneig registrat correctament")';
+                                echo '<script language="javascript">';
+                                echo 'alert("Torneig registrat correctament.")';
                                 echo '</script>';
                                 
                                 redirect(base_url()); 
@@ -300,8 +300,8 @@ class showdown extends CI_Controller {
 
                                 $res['resultat'] = $this->users_model->updateP();
 
-                                echo '<script type="text/javascript">';
-                                echo 'alert("Usuari modificat correctament")';
+                                echo '<script language="javascript">';
+                                echo 'alert("Usuari modificat correctament.")';
                                 echo '</script>';
                                 
                                 redirect(base_url() . 'index.php/showdown/perfil'); 
