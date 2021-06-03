@@ -90,7 +90,7 @@
                         echo $row->nom;
                         echo '</div>';
                         echo '<div class="card-body">';
-                        echo '<p class="card-text">'.$row->descripcio.' | '.$row->Nom.' | '.$estat.'</p>';
+                        echo '<p class="card-text">'.$row->descripcio.' | '.$row->Nom.' | '.$estat.' | Places: ' .$row->places. '</p>';
                         echo '<a class="btn btn-danger" href="'.base_url().'index.php/showdown/tournament/'.$row->codiTorneig.'">+info</a>';
                         echo '</div>';
                         echo '</div>';
