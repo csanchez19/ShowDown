@@ -34,7 +34,24 @@ class showdown extends CI_Controller {
 
         //VISTA ADMIN
         public function admin(){
-                $this->load->view('admin_home');
+                $this->load->model('tourns_model');
+
+                $dades['tornejos'] = $this->tourns_model->sel_tornejos();
+
+                $this->load->view('admin_home', $dades);
+        }
+
+        public function admin_partida($codiTorneig){
+
+                $this->load->model('tourns_model');
+
+                $dades['tornejos'] = $this->tourns_model->sel_tornejos();
+
+                $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
+
+                $dades['participants'] = $this->tourns_model->participants_torneig($codiTorneig);
+
+                $this->load->view('admin_partida', $dades);
         }
 
         //VISTA REGISTRE PERSONA

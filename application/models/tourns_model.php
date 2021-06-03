@@ -58,6 +58,14 @@
             return $query->result();
         }
 
+        //SELECT PARTICIPANTS DEL TORNEIG
+        public function participants_torneig($codiTorneig){
+            $sql = 'SELECT * FROM partida WHERE idTorneo ='. $codiTorneig;            
+            $query = $this->db->query($sql);
+            
+            return $query->result();
+        }
+
         //SELECT PARTICIPANT
         public function participants($codiTorneig, $username){
             $sql = 'SELECT * FROM partida WHERE participant = "'.$username.'" AND idTorneo ='. $codiTorneig;            
