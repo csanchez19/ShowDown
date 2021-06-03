@@ -793,3 +793,11 @@ background: #555;
 {
   background-color: black;
 }
+
+.modalCarrito
+{
+    border-radius: 0px !important;
+    background: black; 
+    border: 2px solid rgb(206, 50, 53);
+    color: white;
+}

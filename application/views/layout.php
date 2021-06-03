@@ -23,7 +23,9 @@
     <!--<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom.css">-->
     <script src="<?php echo base_url(); ?>hamburger/script.js"></script>
 
-    
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
     <!--SCRIPT BRACKET-->    
     <script src="https://cdn.tutorialjinni.com/jquery-bracket/0.11.1/jquery.bracket.min.js"></script>
 	<!--SCRIPTS GENERALES-->
@@ -101,7 +103,7 @@
         <div class="col-lg-4 col-md-4 col-12  mb-4 mb-md-0">
           <h5 class="text-uppercase">Navega</h5>
 
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0 mt-3">
             <li>
               <a href="#!" class="text-white">Perfil</a>
             </li>
@@ -117,7 +119,7 @@
         <div class="col-lg-4 col-md-4 col-12 mb-4 mb-md-0">
           <h5 class="text-uppercase">Xarxes Socials</h5>
 
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0 mt-3">
             <li>
               <a href="#!" class="text-white">Facebook</a>
             </li>
@@ -133,7 +135,7 @@
         <div class="col-lg-4 col-md-4 col-12 mb-4 mb-md-0">
           <h5 class="text-uppercase">Contacte</h5>
 
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0 mt-3">
             <li>
               <p>Tel: 661643232</p>
             </li>

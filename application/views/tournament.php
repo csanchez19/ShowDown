@@ -5,6 +5,16 @@
 
 <title>Torneig</title>
 
+<style>
+.modalCarrito
+{
+    border-radius: 0px !important;
+    background: black; 
+    border: 2px solid rgb(206, 50, 53);
+    color: white;
+}
+</style>
+
 <div class="container-fluid top_div">
     <div class="row">
         <div class="text-center col-12 div_botones">
@@ -51,7 +61,7 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content modalCarrito">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el control de resultats. <br> Si no concorda amb les imatges de comprovació, no es donaràn per vàlids els resultats.</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
