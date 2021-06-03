@@ -459,6 +459,36 @@ class showdown extends CI_Controller {
 
                                 header("Refresh:0");
                         }
+                }else if(isset($_POST['pujar3'])){
+
+                        $config['upload_path']          = './uploads/';
+                        $config['allowed_types']        = 'gif|jpg|png';
+                        $config['max_size']             = 100;
+                        $config['max_width']            = 1024;
+                        $config['max_height']           = 768;
+
+                        $this->load->library('upload', $config);
+
+                        if ( ! $this->upload->do_upload('ronda3'))
+                        {
+                                $error = array('error' => $this->upload->display_errors());
+
+                                echo '<script language="javascript">';
+                                echo 'alert('.$error.')';
+                                echo '</script>';
+
+                                header("Refresh:0");
+                        }
+                        else
+                        {
+                                $this->tourns_model->store_pic_data3($this->upload->data(), $username, $codiTorneig);
+
+                                echo '<script language="javascript">';
+                                echo 'alert("Arxiu pujat correctament")';
+                                echo '</script>';
+
+                                header("Refresh:0");
+                        }
                 }
         }
 
