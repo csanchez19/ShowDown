@@ -114,7 +114,7 @@
                     }
                     
                     </style>';
-                    echo '<div id="'.$row->Nom.'" class="col-lg-3 col-12 mt-lg-0 mt-5 m-lg-5 m-0 torneo1 fondoTorneo'.$cont.' torneo escalar">';
+                    echo '<div id="'.$row->Nom.'" class="col-lg-3 col-sm-6 col-12 mt-lg-0 mt-5 m-lg-5 m-0 torneo1 fondoTorneo'.$cont.' torneo escalar">';
                     echo '<div class="row">';
                     echo '<div class="col-12 first_half"></div>';
                     echo '</div>';

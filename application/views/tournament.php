@@ -53,7 +53,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el control de resultats.</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el control de resultats. <br> Si no concorda amb les imatges de comprovació, no es donaràn per vàlids els resultats.</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -106,7 +106,6 @@
             <div class="form-group pt-5 text-center">
                 <label for="enviar" class="sr-only"></label>
                 <button type="submit" name="apuntarse" class="custom-btn2 btn-7"><span>APUNTAR-SE</span></button>
-                <p class="mt-3"><i>Recorda que no t'afegirà si ja estas apuntat.</i></p>
             </div>
         </div>
         <div class="modal-footer">

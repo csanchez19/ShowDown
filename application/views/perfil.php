@@ -15,7 +15,15 @@
         <div class="col-10">
             <div class="row">
                 <div class="col-lg-2 col-6">
-                    <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
+                    <?php 
+                        if($result->imatge == null){
+                            ?>
+                                <img class="w-100" style="border-radius: 100%" src="<?php echo base_url(); ?>content/img/mario.jpg">
+                            <?php
+                        }else{
+                            echo '<img class="w-100" style="border-radius: 100%" src="data:'.$result->tipus.';base64,'.base64_encode($result->imatge) .'" alt="Card image cap">'; 
+                        }
+                    ?>
                 </div>
                 <div class="col-8 col-lg-2 textProfile">
                     <p class="mt-5" style="font-size: 1.7em"><?php echo $result->usuari; ?></p> 
@@ -127,7 +135,7 @@
                         echo $row->nom;
                         echo '</div>';
                         echo '<div class="card-body">';
-                        echo '<p class="card-text">'.$row->descripcio.' | '.$row->Nom.' | '.$estat.'</p>';
+                        echo '<p class="card-text">'.$row->descripcio.' | '.$row->Nom.' | '.$estat.' | Places: '.$row->places.'</p>';
                         echo '<a class="btn btn-danger" href="'.base_url().'index.php/showdown/tournament/'.$row->codiTorneig.'">+info</a>';
                         echo '</div>';
                         echo '</div>';

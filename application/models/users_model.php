@@ -143,6 +143,23 @@
             return $query->row();
         }
 
+        //PUJAR IMATGE DE PERFIL
+        public function store_pic_data_profile($data, $username){
+
+            $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
+            //$imgname = $this->upload->data('file_name');
+            $imgtype = $this->upload->data('file_type');
+            $data = array(
+                'tipus' => $imgtype,
+                'imatge' => $imgdata
+            );
+
+            $on = array('usuari' => $username);
+
+            $this->db->where($on);
+            $this->db->update('usuaris', $data);
+        }
+
         //CONTADORS
 
         //CONTADOR TORNEJOS CREATS

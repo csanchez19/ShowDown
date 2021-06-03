@@ -12,8 +12,24 @@
 
 <div class="container form">
         <div class="marco offset-2 col-xl-8">
+                <div class="pt-1 mb-5 text-center divCobrament">
+                    <p class="dadesCobrament">Imatge de<br> perfil</p>
+                </div>
 
-            <?php echo form_open('showdown/validation'); ?>
+                <?php echo form_open_multipart('showdown/validation');?>
+                    <div class="form-group">
+                        <input type="file" class="form-control" name="imatge" size="20" />
+                    </div>
+                    <div class="form-group text-center">
+                        <button name="imgPerfil" type="submit" class="custom-btn2 btn-7"><span>MODIFICAR</span></button>
+                    </div>
+                    <div style="color:red">
+                        <?php echo validation_errors(); ?>
+                        <?php if(isset($error)){print $error;}?>
+                    </div>
+                </form>
+
+            <?php echo form_open_multipart('showdown/validation'); ?>
 
                 <div class="pt-1  text-center divCobrament">
                     <p class="dadesCobrament">Dades Personals</p>
@@ -119,23 +135,6 @@
                                 'placeholder' => 'Torna a introduïr la Contrasenya'
                             );
                             echo form_input($dataPass2);
-                            echo form_error('password2'); ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col">
-                            <label for="imatge" class="">Imatge de perfil</label>
-                            <?php 
-                            //$valuePass2=(!empty($password2))?$password2:$result->contrasenya;
-                            $dataImg = array(
-                                'name' => 'imatge',
-                                'class' => 'form-control',
-                                'type' => 'file',
-                                'placeholder' => 'Torna a introduïr la Contrasenya'
-                            );
-                            echo form_input($dataImg);
                             echo form_error('password2'); ?>
                         </div>
                     </div>

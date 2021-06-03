@@ -173,6 +173,41 @@ class showdown extends CI_Controller {
                                 
                                 redirect(base_url() . 'index.php/showdown/perfil'); 
                         }
+                }else if(isset($_POST['imgPerfil'])){
+
+                        $config['upload_path']          = './uploads/';
+                        $config['allowed_types']        = 'gif|jpg|png';
+                        $config['max_size']             = 100;
+                        $config['max_width']            = 1024;
+                        $config['max_height']           = 768;
+
+                        $username = $this->session->userdata('username');
+
+                        $this->load->library('upload', $config);
+
+                        $this->load->model('users_model');
+
+                        if ( ! $this->upload->do_upload('imatge'))
+                        {
+                                $error = array('error' => $this->upload->display_errors());
+
+                                echo '<script language="javascript">';
+                                echo 'alert('.$error.')';
+                                echo '</script>';
+
+                                header("Refresh:0");
+                        }
+                        else
+                        {
+                                $this->users_model->store_pic_data_profile($this->upload->data(), $username);
+
+                                echo '<script language="javascript">';
+                                echo 'alert("Arxiu pujat correctament")';
+                                echo '</script>';
+
+                                redirect(base_url() . 'index.php/showdown/perfil');
+                        }
+                
                 }else if(isset($_POST["apuntarse"])){
                         $this->form_validation->run();
                         $this->form_validation->set_rules('ingame', 'Nom ingame', 'required|is_unique[partida.ingame]',array('required' => 'Obligatori omplir el camp %s', 'is_unique' => 'Ja existeix un participant amb aquest nom.'));
