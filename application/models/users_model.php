@@ -164,7 +164,7 @@
         public function augmentarPunts(){
             $winner = $_POST['guanyador'];
 
-            $query = $this->db->query('UPDATE usuaris SET punts = punts + 3500 WHERE usuari = "'.$winner.'"');
+            $query = $this->db->query('UPDATE usuaris SET punts = punts + 450 WHERE usuari = "'.$winner.'"');
 
             $this->db->query($query);
 

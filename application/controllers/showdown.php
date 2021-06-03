@@ -135,7 +135,7 @@ class showdown extends CI_Controller {
                                 echo 'alert("Resultat guardat.")';
                                 echo '</script>';
 
-                                header("Refresh:0");
+                                $this->load->view('admin', $dades);
                         }
                 }else if(isset($_POST['decideWin'])){
                         $this->form_validation->run();
