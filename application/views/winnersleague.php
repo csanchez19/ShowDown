@@ -283,14 +283,13 @@ if($this->session->userdata('username') != '')
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 
 function addCarrito(idProducte)
 {
   $.get("http://localhost/showdown/index.php/showdown/carrito/" + idProducte);
   Swal.fire({
-  position: 'top-end',
+  position: 'center',
   icon: 'success',
   title: 'Article afegit!',
   showConfirmButton: false,
@@ -317,6 +316,16 @@ function comprar(punts, puntsUser)
     icon: 'error',
     title: 'Oops...',
     text: 'No tens suficients punts!',
+  })
+  }
+  else if(puntsUser <= 0)
+  {
+    Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'No tens punts!',
+    color: 'white',
+    style: 'color: white',
   })
   }
   else

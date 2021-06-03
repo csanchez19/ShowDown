@@ -56,7 +56,7 @@
       data-parent="#accordionEx">
       <div class="card-body text_card">
       La <span>Winners League</span> és un esdeveniment temàtic trimestral que consisteix en un sistema d’acumulació de punts que s’obtenen al llarg del trimestre segons els resultats obtinguts en els diferents tornejos als que participa l’usuari. <br> 
-      Quan queda una setmana de trimestre, comença el període de bescanviament, o el període de <span>Points2Prizes</span>, durant aquest temps, els usuaris podran, amb la quantitat de punts que hagin obtingut, aconseguir premis que oferiran els administradors. <br>
+      Amb la quantitat de punts que hagin obtingut, aconseguir premis que oferiran els administradors. <br>
       Gràcies a la situació actual epidemiològica, al moviment revolucionari que hi ha actualment envers al mon dels videojocs, i també, amb l’ajuda de la idea de la <span>Winners League</span>, creiem que és el moment més òptim per a llançar aquesta proposta. 
       </div>
     </div>

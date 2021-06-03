@@ -67,7 +67,7 @@
                 <div class="col-12 escalar banner banner2 pb-lg-5 pt-lg-5 pt-0 pb-0">
                 <div class="row">
                         <div class="col-8">
-                            <a class="escalar" href=""><p class="text text3 escalar ml-lg-5 ml-0">Intercanvia els punts a la nostra Winners League! <span class="badge bg-danger ml-5 mr-3"> New </span></p></a>
+                            <a class="escalar" href=""><p class="text text3 escalar ml-lg-5 ml-0">Intercanvia els punts a la nostra Winners League! <span class="badge bg-danger mr-3"> New </span></p></a>
                         </div>
                         <div class="col-4">
                             <img src="<?php echo base_url(); ?>content/img/kratos.png" class="mr-lg-5 mr-0 escalar dariusHome" alt="">
