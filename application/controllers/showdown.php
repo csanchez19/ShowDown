@@ -107,6 +107,59 @@ class showdown extends CI_Controller {
 
                                 header("Refresh:0");
                         }
+                }else if(isset($_POST['ingressar3'])){
+                        $this->form_validation->run();
+                        $this->form_validation->set_rules('participant', 'Participant', 'required',array('required' => 'Obligatori omplir el camp %s'));
+                        $this->form_validation->set_rules('resultat', 'Resultat', 'required',array('required' => 'Obligatori omplir el camp %s'));
+
+                        $dades = $this->input->post();
+
+                        if ($this->form_validation->run() == FALSE){
+
+                                $dades['tornejos'] = $this->tourns_model->sel_tornejos();
+
+                                $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
+
+                                $dades['participants'] = $this->tourns_model->participants_torneig($codiTorneig);
+
+                                //$this->template->load('layout', 'admin_partida', $dades);
+                                header("Refresh:0");
+
+                        }else{
+                                $res['resultat'] = $this->tourns_model->inserirRonda3($codiTorneig);
+
+                                echo '<script language="javascript">';
+                                echo 'alert("Resultat guardat.")';
+                                echo '</script>';
+
+                                header("Refresh:0");
+                        }
+                }else if(isset($_POST['decideWin'])){
+                        $this->form_validation->run();
+                        $this->form_validation->set_rules('guanyador', 'Guanyador', 'required',array('required' => 'Obligatori omplir el camp %s'));
+
+                        $dades = $this->input->post();
+
+                        if ($this->form_validation->run() == FALSE){
+
+                                $dades['tornejos'] = $this->tourns_model->sel_tornejos();
+
+                                $dades['result'] = $this->tourns_model->selTorneig($codiTorneig);
+
+                                $dades['participants'] = $this->tourns_model->participants_torneig($codiTorneig);
+
+                                $this->template->load('layout', 'admin_partida', $dades);
+                                //header("Refresh:0");
+
+                        }else{
+                                $res['resultat'] = $this->tourns_model->inserirGuanyador($codiTorneig);
+
+                                echo '<script language="javascript">';
+                                echo 'alert("Guanyador guardat.")';
+                                echo '</script>';
+
+                                header("Refresh:0");
+                        }
                 }
 
                 

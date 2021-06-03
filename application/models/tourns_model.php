@@ -50,6 +50,7 @@
         }
 
 
+
         //SELECT BRACKET DEL TORNEO
         public function bracket($codiTorneig){
             $sql = 'SELECT id, idTorneo, participant, ingame, ronda_1, ronda_2, ronda_3 FROM partida WHERE idTorneo ='. $codiTorneig;            
@@ -184,6 +185,34 @@
 
             $this->db->where($on);
             $this->db->update('partida', $data);
+        }
+
+        public function inserirRonda3($codiTorneig){
+            $part = $_POST['participant'];
+            $res = $_POST['resultat'];
+            
+            $data = array(
+                'ronda_3' => $res
+            );
+
+            $on = array('ingame' => $part, 'idTorneo' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('partida', $data);
+        }
+
+        //INSERT GUANYADOR
+        public function inserirGuanyador($codiTorneig){
+            $winner = $_POST['guanyador'];
+
+            $data = array(
+                'guanyador' => $winner
+            );
+
+            $on = array('codiTorneig' => $codiTorneig);
+
+            $this->db->where($on);
+            $this->db->update('torneig', $data);
         }
 
         //CONTADOR PARTICIPANTS EN TORNEIG
