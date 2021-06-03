@@ -23,7 +23,9 @@
     <!--<link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom.css">-->
     <script src="<?php echo base_url(); ?>hamburger/script.js"></script>
 
-    
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
     <!--SCRIPT BRACKET-->    
     <script src="https://cdn.tutorialjinni.com/jquery-bracket/0.11.1/jquery.bracket.min.js"></script>
 	<!--SCRIPTS GENERALES-->

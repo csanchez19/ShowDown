@@ -276,19 +276,30 @@ if($this->session->userdata('username') != '')
       <div class="modal-footer">
         <button onclick="removeCarrito()" href="<?php echo base_url(); ?>index.php/showdown/destruirCarro" type="button" class="btn btn-danger">Esborrar Articles</button>
         <p style="color: white" class="btn btn-outline-secondary" data-dismiss="modal">Preu: <?php echo $this->cart->format_number($this->cart->total()); ?> punts</p>
-        <button href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="custom-btn btn-7"><span>COMPRAR</span></button>
+        <button onclick="comprar(<?php echo $this->cart->total()?>, <?php echo $puntsUser[0]['punts']?>)" href="<?php echo base_url(); ?>index.php/showdown/pay" type="button" class="custom-btn btn-7"><span>COMPRAR</span></button>
       </div>
     </div>
   </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 
 function addCarrito(idProducte)
 {
   $.get("http://localhost/showdown/index.php/showdown/carrito/" + idProducte);
-  location.reload();
+  Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Article afegit!',
+  showConfirmButton: false,
+  timer: 1500
+  })
+  setTimeout(function(){
+    location.reload();
+  }, 1500);
+  
 }
 
 function removeCarrito()
@@ -296,5 +307,22 @@ function removeCarrito()
   $.get("http://localhost/showdown/index.php/showdown/destruirCarro");
   location.reload("#exampleModal");
   window.location.href = "#exampleModal";
+}
+
+function comprar(punts, puntsUser)
+{
+  if(puntsUser < punts)
+  {
+    Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'No tens suficients punts!',
+  })
+  }
+  else
+  {
+    $.get("http://localhost/showdown/index.php/showdown/pay");
+    location.reload();
+  }
 }
 </script>
