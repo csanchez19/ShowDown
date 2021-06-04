@@ -21,7 +21,7 @@
       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
         aria-controls="collapseOne1">
         <h5 class="mb-0">
-          En que consisteix ShowDown!&nbsp;<i class="fas fa-angle-down rotate-icon"></i>
+          En què consisteix ShowDown!&nbsp;<i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
