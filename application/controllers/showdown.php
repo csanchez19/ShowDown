@@ -679,8 +679,8 @@ class showdown extends CI_Controller {
         * Valid DNI
         *
         * @access	public
-        * @param	string
-        * @return	bool
+        * @param	string $str el dni que recibe por parametro
+        * @return	bool true si el dni es valido
         */
         public function valid_dni($str)
         {

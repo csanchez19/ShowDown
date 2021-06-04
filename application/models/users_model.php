@@ -5,7 +5,11 @@
         {
             $this->load->database();
         }
-
+        /**
+        * Insercio de les dades d'un nou usuari per mètode POST
+        *
+        * @access	public
+        */
         public function inserirUsuari(){
             
             $nom = $_POST["nom"];
@@ -31,6 +35,14 @@
             return $num_files;
         }
 
+        /**
+        * Comprova si existeix l'usuari amb les dades introduïdes
+        *
+        * @access	public
+        * @param	string $username usuari del client registrat
+        * @param    string $password contrasenya del client registrat
+        * @return	bool true si l'usuari existeix
+        */
         public function can_login($username, $password){
             $this->db->where('usuari', $username);
             $this->db->where('contrasenya', $password);
@@ -44,6 +56,11 @@
         }
 
         //UPDATE dades perfil
+        /**
+        * Actualització de les dades d'un usuari per mètode POST
+        *
+        * @access	public
+        */
         public function updateP(){
             $nom = $_POST["nom"];
             $cognoms = $_POST["cognoms"];
@@ -72,6 +89,13 @@
             return $num_files;
         }
 
+        /**
+        * Selecció d'usuari en concret 
+        *
+        * @access	public
+        * @param	string $username usuari guardat la session
+        * @return	array $query amb les dades de l'usuari trobat
+        */
         public function sel_usuaris($username)
         {
             $query = $this->db->query('SELECT * FROM usuaris WHERE usuari = "'.$username.'"');
@@ -79,6 +103,12 @@
             return $query->row();
         }
 
+        /**
+        * Selecció de tots els usuaris
+        *
+        * @access	public
+        * @return	array $query amb les dades de tots els usuaris la base de dades
+        */
         public function sel_usuarisAll()
         {
             $query = $this->db->query('SELECT * FROM usuaris');
@@ -86,6 +116,12 @@
             return $query->row();
         }
 
+        /**
+        * Selecció d'usuaris segons els seus punts
+        *
+        * @access	public
+        * @return	array $query amb les dades de tots els usuaris la base de dades per punts descendents
+        */
         public function sel_puntos()
         {
             $query = $this->db->query('SELECT * FROM usuaris ORDER BY punts DESC');
@@ -93,6 +129,13 @@
             return $query->result();
         }
 
+        /**
+        * Selecció de dades d'un usuari en concret
+        *
+        * @access	public
+        * @param	int $idUser usuari guardat la session
+        * @return	array $query amb les dades trobades
+        */
         public function sel_usr_points($idUser)
         {
             $query = $this->db->query('SELECT * FROM usuaris WHERE id ='.$idUser.'');
@@ -126,7 +169,14 @@
             return $query->result();
         }
 
-        //SELECT CHECK IF ADMIN
+        
+        /**
+        * Comprovació si l'usuari passat per paràmetres es administrador o no
+        *
+        * @access	public
+        * @param	string $username usuari a comprovar
+        * @return	array $query amb el resultat TRUE o FALSE
+        */
         public function checkAdmin($username){
             $query = $this->db->query("SELECT( CASE WHEN EXISTS
                                                 (
@@ -143,7 +193,13 @@
             return $query->row();
         }
 
-        //PUJAR IMATGE DE PERFIL
+        /**
+        * Pujada d'imatge de perfil de l'usuari passat per paràmetre
+        *
+        * @access	public
+        * @param	string $data totes les dades de la imatge pujada per l'usuari
+        * @param	string $username usuari a comprovar
+        */
         public function store_pic_data_profile($data, $username){
 
             $imgdata = file_get_contents($data['full_path']); //pillar la ruta de la imagen completa
