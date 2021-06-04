@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -105,13 +105,19 @@
 
           <ul class="list-unstyled mb-0 mt-3">
             <li>
-              <a href="#!" class="text-white">Perfil</a>
+            <?php if(isset($_SESSION['username']))
+              {
+                echo '<li>
+                        <a href="'.base_url().'index.php/showdown/perfil">Perfil</a>
+                      </li>';
+                  }
+              ?>
             </li>
             <li>
-              <a href="#!" class="text-white">Winners League</a>
+              <?php echo '<a href="'.base_url().'index.php/showdown/WinnersLeague">Winners League</a>' ?>
             </li>
             <li>
-              <a href="#!" class="text-white">Termes i condicions</a>
+              <?php echo '<a href="'.base_url().'index.php/showdown/termes">Termes i Condicions</a>' ?>
             </li>
           </ul>
         </div>
@@ -121,13 +127,13 @@
 
           <ul class="list-unstyled mb-0 mt-3">
             <li>
-              <a href="#!" class="text-white">Facebook</a>
+              <a href="https://www.facebook.com/" class="text-white">Facebook</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Twitter</a>
+              <a href="https://twitter.com/" class="text-white">Twitter</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Instagram</a>
+              <a href="https://instagram.com/" class="text-white">Instagram</a>
             </li>
           </ul>
         </div>
