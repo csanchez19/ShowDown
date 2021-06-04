@@ -47,7 +47,7 @@
                 <div class="col-12 escalar banner pb-lg-2 pb-0 mb-5 pt-lg-2 pt-0">
                     <div class="row">
                         <div class="col">
-                            <p class="text escalar mt-lg-2 mt-0 ml-lg-3 ml-0">Crea o Apuntat a tornejos!</p>
+                            <p class="text escalar mt-lg-2 mt-0 ml-lg-3 ml-0">Crea o Apunta't a tornejos!</p>
                         </div>
                         <div class="col text-right">
                             <img src="<?php echo base_url(); ?>content/img/marioCopa.png" class="mr-lg-5 mr-0 escalar marioHome" alt="">
