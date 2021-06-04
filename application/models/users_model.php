@@ -67,7 +67,7 @@
             $cognoms = $_POST["cognoms"];
             $correu = $_POST["correu"];
             $naix = $_POST["naix"];
-            $pass = $_POST["password"];
+            $pass = md5($_POST["password"]);
             $paypal = $_POST["paypal"];
             $provincia = $_POST["provincia"];
             $poblacio = $_POST["poblacio"];
