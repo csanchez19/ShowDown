@@ -222,7 +222,7 @@ class showdown extends CI_Controller {
                                 $this->template->load('layout', 'login', $dades);
                         }else{
                                 $username = $this->input->post('usuari');
-                                $password = $this->input->post('password3');
+                                $password = md5($this->input->post('password3'));
 
                                 //modelo can login
                                 $this->load->model('users_model');
