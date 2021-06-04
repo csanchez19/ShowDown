@@ -25,9 +25,10 @@
             $codipostal = $_POST["codipostal"];
             $direccio = $_POST["carrer"]." ".$_POST["numero"]." ".$_POST["pis"];  
             $rol = "usuari";
+            $punts = 0;
 
-            $sql = "INSERT INTO usuaris(nom,cognoms,usuari,dni,correu,data,contrasenya,paypal,provincia,poblacio,codiPostal,direccio,rol)
-                    VALUES('$nom','$cognoms','$usuari','$dni','$correu','$naix','$pass','$paypal','$provincia','$poblacio','$codipostal','$direccio','$rol') ";
+            $sql = "INSERT INTO usuaris(nom,cognoms,usuari,dni,correu,data,contrasenya,paypal,provincia,poblacio,codiPostal,direccio,rol,punts)
+                    VALUES('$nom','$cognoms','$usuari','$dni','$correu','$naix','$pass','$paypal','$provincia','$poblacio','$codipostal','$direccio','$rol',$punts) ";
             
             $this->db->query($sql);
             $num_files = $this->db->affected_rows();

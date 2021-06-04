@@ -575,6 +575,10 @@
         $("#wrapper").toggleClass("toggled");
         });
 
+        setInterval(function() {
+                  window.location.reload();
+                }, 300000); 
+
         var baseURL= "<?php echo base_url();?>";
 
         var usuari = "<?php echo $this->session->userdata('username');?>";

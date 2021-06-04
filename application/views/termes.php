@@ -32,6 +32,7 @@
       <div class="card-body text_card">
       Així doncs, <span>ShowDown!</span>, consisteix en una pàgina web en la que un cop registrats, podem accedir a diferents tornejos de diferents videojocs en línia i de diferents modalitats. <br>
       El funcionament d’aquesta plataforma online es basa en la participació constant a tornejos de diferents videojocs per a poder aspirar a aconseguir premis que sempre decideix el creador del torneig.  
+
       </div>
     </div>
 
@@ -55,9 +56,13 @@
     <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
       data-parent="#accordionEx">
       <div class="card-body text_card">
-      La <span>Winners League</span> és un esdeveniment temàtic trimestral que consisteix en un sistema d’acumulació de punts que s’obtenen al llarg del trimestre segons els resultats obtinguts en els diferents tornejos als que participa l’usuari. <br> 
+      La <span>Winners League</span> és un esdeveniment temàtic trimestral que consisteix en un sistema d’acumulació de punts que s’obtenen al llarg del trimestre segons els resultats obtinguts en els diferents tornejos als que participa l’usuari. Per cada top 1 als tornejos, els usuaris guanyaran 450 punts que se'ls afegirà automàticament. <br><br> 
       Amb la quantitat de punts que hagin obtingut, aconseguir premis que oferiran els administradors. <br>
-      Gràcies a la situació actual epidemiològica, al moviment revolucionari que hi ha actualment envers al mon dels videojocs, i també, amb l’ajuda de la idea de la <span>Winners League</span>, creiem que és el moment més òptim per a llançar aquesta proposta. 
+      Gràcies a la situació actual epidemiològica, al moviment revolucionari que hi ha actualment envers al mon dels videojocs, i també, amb l’ajuda de la idea de la <span>Winners League</span>, creiem que és el moment més òptim per a llançar aquesta proposta.
+
+      <br><br>
+      Aquesta pàgina funciona mitjançant una validació dels resultats per part dels administradors. Per cada ronda a la que l'usuari estigui apuntat, haurà de pujar una
+      captura de pantalla amb els resultats de la partida al joc. Aquestes captures son les que agafaran com a referència els administradors per vàlidar els vostres resultats. <br> I, d'aquesta manera, escullir el just guanyador. 
       </div>
     </div>
 

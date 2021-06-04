@@ -45,7 +45,7 @@
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            <?php echo anchor('showdown/admin', 'Gestió', 'class="h1"'); ?>
+            <?php echo anchor('showdown/admin', 'Admin', 'class="h1"'); ?>
         </li>
         <?php
             if($this->session->userdata('username') != '')  
@@ -128,6 +128,10 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
         });
+
+        setInterval(function() {
+                  window.location.reload();
+                }, 300000); 
     </script>
 </body>
 </html>

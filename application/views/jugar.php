@@ -270,6 +270,9 @@
 <script src = "<?php echo base_url();?>js/test.js"></script>
 
 <script>
+    setInterval(function() {
+                  window.location.reload();
+                }, 300000); 
 
     var baseURL= "<?php echo base_url();?>";
 
