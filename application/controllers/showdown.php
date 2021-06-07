@@ -205,11 +205,14 @@ class showdown extends CI_Controller {
                                 $this->load->model('users_model');
                                 $res['resultat'] = $this->users_model->inserirUsuari($_POST);
 
-                                echo '<script language="javascript">
-                                alert("Compte creat. Ja pots loguejar-te.")
-                                </script>';
+                                echo "<script>
+                                        alert('Compte creat correctament. Ja pots loguejar-te');
+                                        window.location.href='".base_url()."';
+                                </script>";
                                 
-                                redirect(base_url()); 
+                                //redirect(base_url()); 
+
+                                //header("location:".base_url());
                         }
                 }else if(isset($_POST['login'])){
                         $this->form_validation->run();
@@ -262,11 +265,10 @@ class showdown extends CI_Controller {
 
                                 //$res['resultat2'] = $this->tourns_model->inserirRondes($_POST);
 
-                                echo '<script language="javascript">';
-                                echo 'alert("Torneig registrat correctament.")';
-                                echo '</script>';
-                                
-                                redirect(base_url()); 
+                                echo "<script>
+                                        alert('Torneig creat correctament.');
+                                        window.location.href='".base_url()."';
+                                </script>";
                         }
 
                         

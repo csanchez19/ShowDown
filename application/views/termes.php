@@ -62,7 +62,7 @@
 
       <br><br>
       Aquesta pàgina funciona mitjançant una validació dels resultats per part dels administradors. Per cada ronda a la que l'usuari estigui apuntat, haurà de pujar una
-      captura de pantalla amb els resultats de la partida al joc. Aquestes captures son les que agafaran com a referència els administradors per vàlidar els vostres resultats. <br> I, d'aquesta manera, escullir el just guanyador. 
+      captura de pantalla amb els resultats de la partida al joc. Aquestes captures son les que agafaran com a referència els administradors per validar els vostres resultats. I, d'aquesta manera, escullir el just guanyador. 
       </div>
     </div>
 
