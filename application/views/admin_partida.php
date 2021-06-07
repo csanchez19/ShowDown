@@ -101,7 +101,7 @@
                                     echo form_open('showdown/admin_partida/'.$result->codiTorneig);
 
                                         //GUANYADOR
-                                        echo '<div class="form-group">';
+                                        /*echo '<div class="form-group">';
                                         //echo form_label('', 'guanyador');
                                         $valueGuanyador = (!empty($guanyador))?$guanyador:'';
                                         $dataGuanyador = array(
@@ -113,7 +113,19 @@
                                         );
                                         echo form_input($dataGuanyador);
                                         echo form_error('guanyador'); 
-                                        echo '</div>';
+                                        echo '</div>';*/
+
+                                        ?>
+                                            <select class="form-control" name="guanyador" required>
+                                                <option value="">Selecciona el guanyador...</option>
+                                                <?php 
+                                                foreach($participants as $row)
+                                                { 
+                                                echo '<option value="'.$row->participant.'">'.$row->ingame.'</option>';
+                                                }
+                                                ?>
+                                            </select>
+                                        <?php
 
                                     ?>
 
@@ -127,9 +139,7 @@
                                 ?>
                             <?php
                         }else{
-                            ?>
-
-                            <?php
+                            echo 'GUANYADOR: <span class="text-danger"> ' . $result->guanyador. '</span>';
                         }
                     ?>
 

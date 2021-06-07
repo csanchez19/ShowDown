@@ -151,7 +151,7 @@
                         'value' => $valuePaypal,
                         'class' => 'form-control',
                         'type' => 'email',
-                        'placeholder' => 'Compte de Paypal'
+                        'placeholder' => 'Correu associat a Paypal'
                     );
                     echo form_input($dataPaypal);
                     echo form_error('paypal'); ?>

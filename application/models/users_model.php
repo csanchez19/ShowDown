@@ -223,7 +223,7 @@
 
             $query = $this->db->query('UPDATE usuaris SET punts = punts + 450 WHERE usuari = "'.$winner.'"');
 
-            $this->db->query($query);
+            //$this->db->query($query);
 
             $num_files = $this->db->affected_rows();
 

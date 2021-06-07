@@ -163,7 +163,7 @@ class showdown extends CI_Controller {
                                 echo 'alert("Guanyador guardat.")';
                                 echo '</script>';
 
-                                header("Refresh:0");
+                                redirect(base_url(). 'index.php/showdown/admin'); 
                         }
                 }
 
@@ -205,9 +205,9 @@ class showdown extends CI_Controller {
                                 $this->load->model('users_model');
                                 $res['resultat'] = $this->users_model->inserirUsuari($_POST);
 
-                                echo '<script language="javascript">';
-                                echo 'alert("Compte creat. Ja pots loguejar-te.")';
-                                echo '</script>';
+                                echo '<script language="javascript">
+                                alert("Compte creat. Ja pots loguejar-te.")
+                                </script>';
                                 
                                 redirect(base_url()); 
                         }
@@ -231,6 +231,7 @@ class showdown extends CI_Controller {
                                                 'username' => $username
                                         );
                                         $this->session->set_userdata($session_data);
+
                                         redirect(base_url()); 
                                 }else{
                                         $this->session->set_flashdata('error', 'Usuari o contrasenya incorrectes.'); 
@@ -447,9 +448,12 @@ class showdown extends CI_Controller {
 
                 $dades['puntsUser'] = $puntos;
 
-                $gastat = ($puntos[0]['punts']) - ($this->cart->total());
+                if($this->session->userdata('username') != ''){
 
-                $dades['gastat'] = $gastat;
+                        $gastat = ($puntos[0]['punts']) - ($this->cart->total());
+
+                        $dades['gastat'] = $gastat;
+                }
                 
                 $this->template->load('layout', 'winnersleague', $dades);
         }

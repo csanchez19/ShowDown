@@ -206,7 +206,7 @@
             $winner = $_POST['guanyador'];
 
             $data = array(
-                'guanyador' => $winner,
+                'guanyador' => "$winner",
                 'activo' => 0
             );
 

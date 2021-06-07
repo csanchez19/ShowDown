@@ -29,7 +29,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'nom',
                                 'value' => $valueNom,
                                 'class' => 'form-control',
-                                'placeholder' => 'Nom'
+                                'placeholder' => 'Nom*'
                             );
                             echo form_input($dataNom);
                             echo form_error('nom'); ?>
@@ -42,7 +42,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'cognoms',
                                 'value' => $valueCognoms,
                                 'class' => 'form-control',
-                                'placeholder' => 'Cognoms'
+                                'placeholder' => 'Cognoms*'
                             );
                             echo form_input($dataCognoms);
                             echo form_error('cognoms'); ?>
@@ -59,7 +59,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'usuari',
                                 'value' => $valueUsuari,
                                 'class' => 'form-control',
-                                'placeholder' => 'Usuari'
+                                'placeholder' => 'Usuari*'
                             );
                             echo form_input($dataUsuari);
                             echo form_error('usuari'); ?>
@@ -76,7 +76,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'dni',
                                 'value' => $valueDni,
                                 'class' => 'form-control',
-                                'placeholder' => 'DNI'
+                                'placeholder' => 'DNI*'
                             );
                             echo form_input($dataDni);
                             echo form_error('dni'); ?>
@@ -93,7 +93,7 @@ echo base_url(); ?>css/register.css">
                                 'type' => 'text',
                                 'onfocus' => "(this.type='date')",
                                 'onfocusout' => "(this.type='text')",
-                                'placeholder' => 'Data de naixement'
+                                'placeholder' => 'Data de naixement*'
                             );
                             echo form_input($dataNaix);
                             echo form_error('naix'); ?>
@@ -110,7 +110,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'correu',
                                 'value' => $valueCorreu,
                                 'class' => 'form-control',
-                                'placeholder' => 'E-mail',
+                                'placeholder' => 'E-mail*',
                                 'type' => 'email'
                             );
                             echo form_input($dataCorreu);
@@ -128,7 +128,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'password',
                                 'value' => $valuePass,
                                 'class' => 'form-control',
-                                'placeholder' => 'Contrasenya',
+                                'placeholder' => 'Contrasenya*',
                                 'type' => 'password'
                             );
                             echo form_input($dataPass);
@@ -147,7 +147,7 @@ echo base_url(); ?>css/register.css">
                                 'value' => $valuePass2,
                                 'class' => 'form-control',
                                 'type' => 'password',
-                                'placeholder' => 'Torna a introduïr la Contrasenya'
+                                'placeholder' => 'Torna a introduïr la Contrasenya*'
                             );
                             echo form_input($dataPass2);
                             echo form_error('password2'); ?>
@@ -166,7 +166,7 @@ echo base_url(); ?>css/register.css">
                         'value' => $valuePaypal,
                         'class' => 'form-control',
                         'type' => 'email',
-                        'placeholder' => 'Compte de Paypal'
+                        'placeholder' => 'Correu associat a Paypal*'
                     );
                     echo form_input($dataPaypal);
                     echo form_error('paypal'); ?>
@@ -181,7 +181,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'provincia',
                                 'value' => $valueProvincia,
                                 'class' => 'form-control',
-                                'placeholder' => 'Provincia'
+                                'placeholder' => 'Provincia*'
                             );
                             echo form_input($dataProvincia);
                             echo form_error('provincia'); ?>
@@ -194,7 +194,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'poblacio',
                                 'value' => $valuePoblacio,
                                 'class' => 'form-control',
-                                'placeholder' => 'Poblacio'
+                                'placeholder' => 'Poblacio*'
                             );
                             echo form_input($dataPoblacio);
                             echo form_error('poblacio'); ?>
@@ -207,7 +207,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'codipostal',
                                 'value' => $valueCP,
                                 'class' => 'form-control',
-                                'placeholder' => 'Codi Postal',
+                                'placeholder' => 'Codi Postal*',
                                 'type' => 'number'
                             );
                             echo form_input($dataCP);
@@ -223,7 +223,7 @@ echo base_url(); ?>css/register.css">
                         'name' => 'carrer',
                         'value' => $valueCarrer,
                         'class' => 'form-control',
-                        'placeholder' => 'Carrer / Avinguda'
+                        'placeholder' => 'Carrer / Avinguda*'
                     );
                     echo form_input($dataCarrer);
                     echo form_error('carrer'); ?>
@@ -238,7 +238,7 @@ echo base_url(); ?>css/register.css">
                                 'name' => 'numero',
                                 'value' => $valueNum,
                                 'class' => 'form-control',
-                                'placeholder' => 'Numero'
+                                'placeholder' => 'Numero*'
                             );
                             echo form_input($dataNum);
                             echo form_error('numero'); ?>

@@ -21,7 +21,7 @@ echo base_url(); ?>css/register.css">
             <p class="dadesCobrament">Dades del torneig</p>
         </div>
         <div class="form-group mt-5 pt-5">
-        <p class="text-center"><i>(Tingues en compte que la data i ha de ser accessible per que l'administrador pugui estar al tant)</i></p>
+        <p class="text-center"><i>(Tingues en compte que la data ha de ser accessible per que l'administrador pugui estar al tant)</i></p>
             <div class="row">
                 <div class="col">
                     <label for="nom" class="sr-only">Nom</label>
@@ -31,7 +31,7 @@ echo base_url(); ?>css/register.css">
                         'name' => 'nom',
                         'value' => $valueNom,
                         'class' => 'form-control',
-                        'placeholder' => 'Nom'
+                        'placeholder' => 'Nom*'
                     );
                     echo form_input($dataNom);
                     echo form_error('nom'); ?>
@@ -47,7 +47,7 @@ echo base_url(); ?>css/register.css">
                         'type' => 'text',
                         'onfocus' => "(this.type='date')",
                         'onfocusout' => "(this.type='text')",
-                        'placeholder' => 'Data del torneig'
+                        'placeholder' => 'Data del torneig*'
                     );
                     echo form_input($dataData);
                     echo form_error('data'); ?>
@@ -63,7 +63,7 @@ echo base_url(); ?>css/register.css">
                         'type' => 'text',
                         'onfocus' => "(this.type='time')",
                         'onfocusout' => "(this.type='text')",
-                        'placeholder' => 'Hora del torneig'
+                        'placeholder' => 'Hora del torneig*'
                     );
                     echo form_input($dataHora);
                     echo form_error('hora'); ?>
@@ -74,7 +74,7 @@ echo base_url(); ?>css/register.css">
             <div class="row">
                 <div class="col">
                 <select class="form-control" name="jocs">
-                    <option value="">Selecciona el joc...</option>
+                    <option value="">Selecciona el joc...*</option>
                     <?php 
                     foreach($result as $row)
                     { 
@@ -90,7 +90,7 @@ echo base_url(); ?>css/register.css">
                 <div class="col">
                 <label for="places" class="sr-only">Places</label>
                 <select class="form-control" name="places" id="places">
-                    <option value="">Selecciona el numero de places...</option>
+                    <option value="">Selecciona el numero de places...*</option>
                     <option value="2">2</option>
                     <option value="4">4</option>
                     <option value="8">8</option>
@@ -102,7 +102,7 @@ echo base_url(); ?>css/register.css">
         <div class="form-group">
             <div class="row">
                 <div class="col">
-                    <label for="desc" class="">Descripció</label>
+                    <label for="desc" class="">Descripció*</label>
                     <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"></textarea>
                     <?php echo form_error('desc'); ?>
                 </div>

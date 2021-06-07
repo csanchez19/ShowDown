@@ -63,7 +63,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content modalCarrito">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el control de resultats. <br> Si no concorda amb les imatges de comprovació, no es donaràn per vàlids els resultats.</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Introdueix el teu nom d'usuari al joc per facilitar el contacte amb els contrincants.</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -73,7 +73,7 @@
             echo form_open('showdown/validation');
 
             //NOM D'USUARI AL JOC
-            echo '<div class="form-group">';
+            /*echo '<div class="form-group">';
             echo form_label('Nom al joc', 'ingame');
             $valueIngame = (!empty($ingame))?$ingame:'';
             $dataIngame = array(
@@ -83,7 +83,14 @@
             );
             echo form_input($dataIngame);
             echo form_error('ingame'); 
-            echo '</div>';
+            echo '</div>';*/
+            ?>
+            <div class="form-group">
+                <label for="ingame">Nom al joc</label>
+                <input type="text" name="ingame" value="" class="form-control" required>
+                <?php echo form_error('ingame');  ?>
+            </div>
+            <?php
 
             //NOM D'USUARI
             echo '<div class="form-group">';
@@ -112,6 +119,7 @@
     
 
         ?>
+        <p class="text-danger"> <i> Si no concorda amb les imatges de comprovació, no es donaràn per vàlids els resultats.</i></p>
 
             <div class="form-group pt-5 text-center">
                 <label for="enviar" class="sr-only"></label>
@@ -153,7 +161,7 @@
     </div>
 
     <div class="mt-4 text-center text-secondary">
-        <p><i>(Tenir en compte que fins que no s'omplin totes les places, no es podrà veure el bracket ni jugar)</i></p>
+        <p><i>(Tenir en compte que fins que no s'omplin totes les places, no es podrà veure el bracket de més de 4 contrincants ni jugar)</i></p>
     </div> 
 
     <div class="text-center text-white">
