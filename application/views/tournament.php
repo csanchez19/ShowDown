@@ -133,6 +133,10 @@
     </div>
     </div>
 
+    <div class="mt-4 text-center text-secondary">
+        <p><i>Fins que no s'omplin totes les places, no es podrà veure el bracket de més de 4 contrincants ni jugar</i></p>
+    </div> 
+
     <div class="row marginado">
         <div class="col-12 cajaInfo">
             <div class="row">
@@ -160,14 +164,12 @@
         </div> 
     </div>
 
-    <div class="mt-4 text-center text-secondary">
-        <p><i>(Tenir en compte que fins que no s'omplin totes les places, no es podrà veure el bracket de més de 4 contrincants ni jugar)</i></p>
-    </div> 
+    
 
-    <div class="text-center text-white">
+    <div class="mt-4 text-center text-white">
             <h2>
                 <i><?php  
-                    if($result->guanyador != null && $result->places == 8){
+                    if($result->guanyador != null){
 
                          echo 'GUANYADOR: <span class="text-danger"> ' . $result->guanyador. '</span>';
                         
@@ -179,7 +181,7 @@
             </h2>
     </div>
 
-    <h2 class="marginado text-center" style="color: white;">Bracket</h2>
+    <h2 class="mt-5 text-center" style="color: white;">Bracket</h2>
 
     <div class="row justify-content-center demo">
     
